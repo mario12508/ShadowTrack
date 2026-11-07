@@ -1,0 +1,17 @@
+[paths]
+detection_run = "../artifacts/detections/3f764abf202cfb544e6f6a67"
+evidence_dir = "../artifacts/detection/input_evidence"
+raw_dir = "../data/raw"
+output_dir = "../artifacts/mvp/local_tracks"
+
+[tracking]
+configuration_name = "small_640"
+
+[bytetrack]
+track_activation_threshold = 0.30
+lost_track_buffer = 45
+minimum_matching_threshold = 0.80
+minimum_consecutive_frames = 3
+
+[video]
+enabled = false

@@ -1,0 +1,16 @@
+{
+  "sources": [
+    {
+      "path": "C:\\Users\\mario\\Downloads\\ТЗ на хакатон_v2 (1).docx",
+      "bytes": 330862,
+      "sha256": "b809d60a9e20ae800bb7a00b8d9c459c729fa1c102d7df3c1f6b94f159fb3b4e"
+    },
+    {
+      "path": "C:\\Users\\mario\\Downloads\\Хакатон презентация.pdf",
+      "bytes": 347405,
+      "sha256": "0894a7cdf83c04eff48f4924e599d047bdb947e3ad3f68eeb141fc195d52ca46"
+    }
+  ],
+  "pdf_pages": 9,
+  "docx_embedded_images": []
+}

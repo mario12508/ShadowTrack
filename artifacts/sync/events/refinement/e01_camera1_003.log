@@ -1,0 +1,35 @@
+[aist#0:1/pcm_alaw @ 0000022229860cc0] Guessed Channel Layout: mono
+Input #0, matroska,webm, from 'C:\Users\mario\PycharmProjects\ShadowTrack-AInura\data\raw\camera_new_1.mkv':
+  Metadata:
+    title           : Media Server
+    ENCODER         : Lavf62.3.100
+  Duration: 00:20:00.03, start: 0.051000, bitrate: 290 kb/s
+  Stream #0:0: Video: h264 (Main), yuv420p(tv, progressive), 2592x1944, 25 fps, 25 tbr, 1k tbn, start 0.785000
+    Metadata:
+      DURATION        : 00:20:00.004000000
+  Stream #0:1: Audio: pcm_alaw ([6][0][0][0] / 0x0006), 8000 Hz, mono, s16, 64 kb/s, start 0.051000
+    Metadata:
+      DURATION        : 00:20:00.033000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+[Parsed_showinfo_0 @ 0000022229a1fcc0] config in time_base: 1/1000, frame_rate: 25/1
+[Parsed_showinfo_0 @ 0000022229a1fcc0] config out time_base: 0/0, frame_rate: 0/0
+[Parsed_showinfo_0 @ 0000022229a1fcc0] n:   0 pts: 903236 pts_time:903.236 duration:     40 duration_time:0.04    fmt:yuv420p cl:left sar:0/1 s:2592x1944 i:P iskey:0 type:P checksum:13DC56EA plane_checksum:[A468DC6F BBB06768 0B841304] mean:[102 137 124] stdev:[58.8 16.3 18.2]
+[Parsed_showinfo_0 @ 0000022229a1fcc0] color_range:tv color_space:unknown color_primaries:unknown color_trc:unknown
+[swscaler @ 000002222a87fd40] deprecated pixel format used, make sure you did set range correctly
+Output #0, image2, to 'C:\Users\mario\PycharmProjects\ShadowTrack-AInura\artifacts\sync\events\refinement\e01_camera1_003.jpg':
+  Metadata:
+    title           : Media Server
+    encoder         : Lavf63.1.102
+  Stream #0:0: Video: mjpeg, yuvj420p(pc, progressive), 2592x1944, q=2-31, 200 kb/s, 25 fps, 25 tbn
+    Metadata:
+      encoder         : Lavc63.1.102 mjpeg
+      DURATION        : 00:20:00.004000000
+    Side data:
+      CPB properties: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[Parsed_showinfo_0 @ 0000022229a1fcc0] n:   1 pts: 903275 pts_time:903.275 duration:     40 duration_time:0.04    fmt:yuv420p cl:left sar:0/1 s:2592x1944 i:P iskey:0 type:P checksum:0CE0DADE plane_checksum:[400EBC6D 4D822EB2 1316EFB0] mean:[102 137 124] stdev:[58.8 16.3 18.2]
+[Parsed_showinfo_0 @ 0000022229a1fcc0] color_range:tv color_space:unknown color_primaries:unknown color_trc:unknown
+[image2 @ 00000222299eb040] The specified filename 'C:\Users\mario\PycharmProjects\ShadowTrack-AInura\artifacts\sync\events\refinement\e01_camera1_003.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 00000222299eb040] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 0000022227d24680] video:489KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.0 q=3.0 Lsize=N/A time=00:00:00.00 bitrate=N/A speed=   0x elapsed=0:00:00.14    

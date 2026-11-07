@@ -1,0 +1,3091 @@
+{
+  "status": "NO_RELIABLE_SHARED_EVIDENCE",
+  "cameras": {
+    "1": {
+      "input_sha256": "744331b88aadaf56a83540d3081f22f11cf207ee93b62bacf03972c679814dc5",
+      "pcm_sha256": "65ad322c546a818555d85ab9d1f576dbea46802a0abbed34a5f595d7285252ba",
+      "audio_frames_sha256": "d7868d8f81f4cdb2c6f0e60ae0a32cbe23bf19cf096212d2b27bdeb9d6333954",
+      "commands": [
+        [
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+          "-v",
+          "error",
+          "-nostdin",
+          "-y",
+          "-i",
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+          "-map",
+          "0:a:0",
+          "-vn",
+          "-c:a",
+          "pcm_s16le",
+          "-f",
+          "s16le",
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\audio\\camera_1.s16le"
+        ],
+        [
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffprobe.exe",
+          "-v",
+          "error",
+          "-select_streams",
+          "a:0",
+          "-show_frames",
+          "-show_entries",
+          "frame=pts_time,best_effort_timestamp_time,nb_samples,sample_rate,channels",
+          "-of",
+          "json",
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv"
+        ]
+      ],
+      "codec": "pcm_alaw",
+      "metrics": {
+        "samples": 9439680,
+        "sample_rate": 8000,
+        "decoded_sample_duration_seconds": 1179.96,
+        "minimum": -8,
+        "maximum": 8,
+        "unique_values": 2,
+        "ac_rms_dbfs": -76.61417449846579,
+        "dc_mean": 6.370685446964304,
+        "lag1_autocorrelation": 0.31389992149139856,
+        "near_full_scale_fraction": 0.0,
+        "rms_block_p10_p90": [
+          8.0,
+          8.0
+        ],
+        "informative": false,
+        "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+      },
+      "segments": [
+        {
+          "sample_start": 0,
+          "sample_stop": 1807680,
+          "first_pts": 0.051,
+          "last_end_pts": 226.011
+        },
+        {
+          "sample_start": 1807680,
+          "sample_stop": 5705280,
+          "first_pts": 236.019,
+          "last_end_pts": 723.217
+        },
+        {
+          "sample_start": 5705280,
+          "sample_stop": 9439680,
+          "first_pts": 733.233,
+          "last_end_pts": 1200.033
+        }
+      ],
+      "timestamp_gaps": [
+        {
+          "before_end_pts": 226.011,
+          "after_pts": 236.019,
+          "delta_seconds": 10.00800000000001
+        },
+        {
+          "before_end_pts": 723.217,
+          "after_pts": 733.233,
+          "delta_seconds": 10.015999999999963
+        }
+      ],
+      "audio_video_latency": "UNVERIFIED",
+      "full_video_probe_repeated": false
+    },
+    "2": {
+      "input_sha256": "6839e486dd14c70b948f5f8e120d3cb339c45a1a26dd1baa496200704fef59c4",
+      "pcm_sha256": "657c1e5f576055f0bc8db9c2fdb1e578eb6d27cf00ded19ca44dc70b7d8b8768",
+      "audio_frames_sha256": "9b5958fe7bb5a81f25789452a1156c3940163eb7d3f41fbd344226d88468179f",
+      "commands": [
+        [
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+          "-v",
+          "error",
+          "-nostdin",
+          "-y",
+          "-i",
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_2.mkv",
+          "-map",
+          "0:a:0",
+          "-vn",
+          "-c:a",
+          "pcm_s16le",
+          "-f",
+          "s16le",
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\audio\\camera_2.s16le"
+        ],
+        [
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffprobe.exe",
+          "-v",
+          "error",
+          "-select_streams",
+          "a:0",
+          "-show_frames",
+          "-show_entries",
+          "frame=pts_time,best_effort_timestamp_time,nb_samples,sample_rate,channels",
+          "-of",
+          "json",
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_2.mkv"
+        ]
+      ],
+      "codec": "pcm_alaw",
+      "metrics": {
+        "samples": 9440640,
+        "sample_rate": 8000,
+        "decoded_sample_duration_seconds": 1180.08,
+        "minimum": -8,
+        "maximum": 8,
+        "unique_values": 2,
+        "ac_rms_dbfs": -76.19371516980168,
+        "dc_mean": 6.181053826859196,
+        "lag1_autocorrelation": 0.3273932754785931,
+        "near_full_scale_fraction": 0.0,
+        "rms_block_p10_p90": [
+          8.0,
+          8.0
+        ],
+        "informative": false,
+        "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+      },
+      "segments": [
+        {
+          "sample_start": 0,
+          "sample_stop": 2496960,
+          "first_pts": 0.012,
+          "last_end_pts": 312.132
+        },
+        {
+          "sample_start": 2496960,
+          "sample_stop": 2672640,
+          "first_pts": 322.135,
+          "last_end_pts": 344.095
+        },
+        {
+          "sample_start": 2672640,
+          "sample_stop": 6448320,
+          "first_pts": 344.092,
+          "last_end_pts": 816.052
+        },
+        {
+          "sample_start": 6448320,
+          "sample_stop": 9440640,
+          "first_pts": 826.056,
+          "last_end_pts": 1200.096
+        }
+      ],
+      "timestamp_gaps": [
+        {
+          "before_end_pts": 312.132,
+          "after_pts": 322.135,
+          "delta_seconds": 10.002999999999986
+        },
+        {
+          "before_end_pts": 344.095,
+          "after_pts": 344.092,
+          "delta_seconds": -0.0030000000000427463
+        },
+        {
+          "before_end_pts": 816.052,
+          "after_pts": 826.056,
+          "delta_seconds": 10.004000000000019
+        }
+      ],
+      "audio_video_latency": "UNVERIFIED",
+      "full_video_probe_repeated": false
+    },
+    "3": {
+      "input_sha256": "f90f08498e306b3e75b07489a253ebdfcbb5f3373b73478b086bd5d7ef9a8873",
+      "pcm_sha256": "76c3edb7904dbff7367a44a60d18a56befd4cd7aa00d26d17a131c31a09a5949",
+      "audio_frames_sha256": "f439b56b3684fdadebcdfee33863b3c3fc7f31d31bcf9d6a48e9b70368124b5d",
+      "commands": [
+        [
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+          "-v",
+          "error",
+          "-nostdin",
+          "-y",
+          "-i",
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+          "-map",
+          "0:a:0",
+          "-vn",
+          "-c:a",
+          "pcm_s16le",
+          "-f",
+          "s16le",
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\audio\\camera_3.s16le"
+        ],
+        [
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffprobe.exe",
+          "-v",
+          "error",
+          "-select_streams",
+          "a:0",
+          "-show_frames",
+          "-show_entries",
+          "frame=pts_time,best_effort_timestamp_time,nb_samples,sample_rate,channels",
+          "-of",
+          "json",
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv"
+        ]
+      ],
+      "codec": "pcm_alaw",
+      "metrics": {
+        "samples": 9440640,
+        "sample_rate": 8000,
+        "decoded_sample_duration_seconds": 1180.08,
+        "minimum": -8,
+        "maximum": 8,
+        "unique_values": 2,
+        "ac_rms_dbfs": -75.64017074720913,
+        "dc_mean": 5.890583689241407,
+        "lag1_autocorrelation": 0.38299575861281326,
+        "near_full_scale_fraction": 0.0,
+        "rms_block_p10_p90": [
+          8.0,
+          8.0
+        ],
+        "informative": false,
+        "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+      },
+      "segments": [
+        {
+          "sample_start": 0,
+          "sample_stop": 2435520,
+          "first_pts": 0.026,
+          "last_end_pts": 304.466
+        },
+        {
+          "sample_start": 2435520,
+          "sample_stop": 2679360,
+          "first_pts": 314.485,
+          "last_end_pts": 344.96500000000003
+        },
+        {
+          "sample_start": 2679360,
+          "sample_stop": 6374400,
+          "first_pts": 344.958,
+          "last_end_pts": 806.838
+        },
+        {
+          "sample_start": 6374400,
+          "sample_stop": 9440640,
+          "first_pts": 816.839,
+          "last_end_pts": 1200.119
+        }
+      ],
+      "timestamp_gaps": [
+        {
+          "before_end_pts": 304.466,
+          "after_pts": 314.485,
+          "delta_seconds": 10.019000000000005
+        },
+        {
+          "before_end_pts": 344.96500000000003,
+          "after_pts": 344.958,
+          "delta_seconds": -0.007000000000005002
+        },
+        {
+          "before_end_pts": 806.838,
+          "after_pts": 816.839,
+          "delta_seconds": 10.00100000000009
+        }
+      ],
+      "audio_video_latency": "UNVERIFIED",
+      "full_video_probe_repeated": false
+    },
+    "4": {
+      "input_sha256": "8ede342c3d0d98ab912e98c1a31ef5458ca04a8329b882634b277d7c4634bef2",
+      "pcm_sha256": "8e43c63b1d226853faf9cba22fd59e926528464e050749b422d23058a00011c1",
+      "audio_frames_sha256": "c91ed1b2b70f91d058165bba7cc1bdbc7eef2918cf8082c86600c3778dc72d3c",
+      "commands": [
+        [
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+          "-v",
+          "error",
+          "-nostdin",
+          "-y",
+          "-i",
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_4.mkv",
+          "-map",
+          "0:a:0",
+          "-vn",
+          "-c:a",
+          "pcm_s16le",
+          "-f",
+          "s16le",
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\audio\\camera_4.s16le"
+        ],
+        [
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffprobe.exe",
+          "-v",
+          "error",
+          "-select_streams",
+          "a:0",
+          "-show_frames",
+          "-show_entries",
+          "frame=pts_time,best_effort_timestamp_time,nb_samples,sample_rate,channels",
+          "-of",
+          "json",
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_4.mkv"
+        ]
+      ],
+      "codec": "pcm_alaw",
+      "metrics": {
+        "samples": 9600000,
+        "sample_rate": 8000,
+        "decoded_sample_duration_seconds": 1200.0,
+        "minimum": -32256,
+        "maximum": 32256,
+        "unique_values": 256,
+        "ac_rms_dbfs": -1.4335521874986892,
+        "dc_mean": -4.374075833333333,
+        "lag1_autocorrelation": 0.5446946672627497,
+        "near_full_scale_fraction": 0.5290469791666667,
+        "rms_block_p10_p90": [
+          27015.39376429566,
+          28698.400978263417
+        ],
+        "informative": true,
+        "reason": "AC energy above -60 dBFS"
+      },
+      "segments": [
+        {
+          "sample_start": 0,
+          "sample_stop": 1898240,
+          "first_pts": 0.0,
+          "last_end_pts": 237.28
+        },
+        {
+          "sample_start": 1898240,
+          "sample_stop": 2083840,
+          "first_pts": 237.285,
+          "last_end_pts": 260.485
+        },
+        {
+          "sample_start": 2083840,
+          "sample_stop": 9600000,
+          "first_pts": 260.49,
+          "last_end_pts": 1200.01
+        }
+      ],
+      "timestamp_gaps": [
+        {
+          "before_end_pts": 237.28,
+          "after_pts": 237.285,
+          "delta_seconds": 0.0049999999999954525
+        },
+        {
+          "before_end_pts": 260.485,
+          "after_pts": 260.49,
+          "delta_seconds": 0.0049999999999954525
+        }
+      ],
+      "audio_video_latency": "UNVERIFIED",
+      "full_video_probe_repeated": false
+    },
+    "5": {
+      "input_sha256": "6e3dd8bb2bb0c7b640b79b7a2c85f54d8346e930e9d89f55d86cf20f43aa4be5",
+      "pcm_sha256": "97f3eb3ff0c10dd469a64ef87b0266aacccbe6a120d9478991906ac4bd9af4f6",
+      "audio_frames_sha256": "f3995f4acaa2cdcc6029f777a158b75ed9a22e0b237d6b5861434c03de8b96c8",
+      "commands": [
+        [
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+          "-v",
+          "error",
+          "-nostdin",
+          "-y",
+          "-i",
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_5.mkv",
+          "-map",
+          "0:a:0",
+          "-vn",
+          "-c:a",
+          "pcm_s16le",
+          "-f",
+          "s16le",
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\audio\\camera_5.s16le"
+        ],
+        [
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffprobe.exe",
+          "-v",
+          "error",
+          "-select_streams",
+          "a:0",
+          "-show_frames",
+          "-show_entries",
+          "frame=pts_time,best_effort_timestamp_time,nb_samples,sample_rate,channels",
+          "-of",
+          "json",
+          "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_5.mkv"
+        ]
+      ],
+      "codec": "pcm_alaw",
+      "metrics": {
+        "samples": 9440640,
+        "sample_rate": 8000,
+        "decoded_sample_duration_seconds": 1180.08,
+        "minimum": -8,
+        "maximum": 8,
+        "unique_values": 2,
+        "ac_rms_dbfs": -76.91425884838424,
+        "dc_mean": 6.492215781980883,
+        "lag1_autocorrelation": 0.32144491189916335,
+        "near_full_scale_fraction": 0.0,
+        "rms_block_p10_p90": [
+          8.0,
+          8.0
+        ],
+        "informative": false,
+        "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+      },
+      "segments": [
+        {
+          "sample_start": 0,
+          "sample_stop": 2152320,
+          "first_pts": 0.0,
+          "last_end_pts": 269.04
+        },
+        {
+          "sample_start": 2152320,
+          "sample_stop": 2640000,
+          "first_pts": 279.047,
+          "last_end_pts": 340.007
+        },
+        {
+          "sample_start": 2640000,
+          "sample_stop": 6095040,
+          "first_pts": 339.988,
+          "last_end_pts": 771.868
+        },
+        {
+          "sample_start": 6095040,
+          "sample_stop": 9440640,
+          "first_pts": 781.875,
+          "last_end_pts": 1200.0749999999998
+        }
+      ],
+      "timestamp_gaps": [
+        {
+          "before_end_pts": 269.04,
+          "after_pts": 279.047,
+          "delta_seconds": 10.007000000000005
+        },
+        {
+          "before_end_pts": 340.007,
+          "after_pts": 339.988,
+          "delta_seconds": -0.019000000000005457
+        },
+        {
+          "before_end_pts": 771.868,
+          "after_pts": 781.875,
+          "delta_seconds": 10.006999999999948
+        }
+      ],
+      "audio_video_latency": "UNVERIFIED",
+      "full_video_probe_repeated": false
+    }
+  },
+  "pairs": [
+    {
+      "camera_a": "1",
+      "camera_b": "2",
+      "windows": [
+        {
+          "raw_window_start": 30,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.11851311232287,
+            "dc_mean": 6.1445,
+            "lag1_autocorrelation": 0.4336463139382667,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.89944984790029,
+            "dc_mean": 6.033,
+            "lag1_autocorrelation": 0.3753306728053695,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.20333039696592,
+            "dc_mean": 6.185666666666667,
+            "lag1_autocorrelation": 0.374013947911632,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.13516325205062,
+            "dc_mean": 6.152666666666667,
+            "lag1_autocorrelation": 0.3431417704243394,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 450,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.09655812597445,
+            "dc_mean": 6.133666666666667,
+            "lag1_autocorrelation": 0.36058060951157056,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.24711393239889,
+            "dc_mean": 6.2065,
+            "lag1_autocorrelation": 0.33729273302849827,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 650,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.15544817252439,
+            "dc_mean": 6.5825,
+            "lag1_autocorrelation": 0.23911523648343705,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.09319369262553,
+            "dc_mean": 6.132,
+            "lag1_autocorrelation": 0.30036533925028747,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 950,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.14061869137437,
+            "dc_mean": 6.155333333333333,
+            "lag1_autocorrelation": 0.3663416347826261,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.63886076925604,
+            "dc_mean": 5.889833333333334,
+            "lag1_autocorrelation": 0.38889872354856425,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 1150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.81953290151907,
+            "dc_mean": 6.455,
+            "lag1_autocorrelation": 0.320227142333017,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.99517347503496,
+            "dc_mean": 6.082666666666666,
+            "lag1_autocorrelation": 0.3532373027959261,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        }
+      ],
+      "calibration_anchor": false,
+      "interpretation": "No anchor without informative distinctive common event and A/V association"
+    },
+    {
+      "camera_a": "1",
+      "camera_b": "3",
+      "windows": [
+        {
+          "raw_window_start": 30,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.11851311232287,
+            "dc_mean": 6.1445,
+            "lag1_autocorrelation": 0.4336463139382667,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.9640193483415,
+            "dc_mean": 6.066666666666666,
+            "lag1_autocorrelation": 0.29980954001961185,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.20333039696592,
+            "dc_mean": 6.185666666666667,
+            "lag1_autocorrelation": 0.374013947911632,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.2736689623918,
+            "dc_mean": 6.219,
+            "lag1_autocorrelation": 0.32669946869073374,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 450,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.09655812597445,
+            "dc_mean": 6.133666666666667,
+            "lag1_autocorrelation": 0.36058060951157056,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.76202557950435,
+            "dc_mean": 5.959,
+            "lag1_autocorrelation": 0.38009257695735715,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 650,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.15544817252439,
+            "dc_mean": 6.5825,
+            "lag1_autocorrelation": 0.23911523648343705,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.6467253409809,
+            "dc_mean": 5.894333333333333,
+            "lag1_autocorrelation": 0.3763726522879668,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 950,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.14061869137437,
+            "dc_mean": 6.155333333333333,
+            "lag1_autocorrelation": 0.3663416347826261,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.16390759814206,
+            "dc_mean": 6.166666666666667,
+            "lag1_autocorrelation": 0.3268696808197755,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 1150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.81953290151907,
+            "dc_mean": 6.455,
+            "lag1_autocorrelation": 0.320227142333017,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.56046216331629,
+            "dc_mean": 5.844333333333333,
+            "lag1_autocorrelation": 0.37666393503177287,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        }
+      ],
+      "calibration_anchor": false,
+      "interpretation": "No anchor without informative distinctive common event and A/V association"
+    },
+    {
+      "camera_a": "1",
+      "camera_b": "4",
+      "windows": [
+        {
+          "raw_window_start": 30,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.11851311232287,
+            "dc_mean": 6.1445,
+            "lag1_autocorrelation": 0.4336463139382667,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 252,
+            "ac_rms_dbfs": -1.3599560227762924,
+            "dc_mean": 2.281416666666667,
+            "lag1_autocorrelation": 0.5894483882600667,
+            "near_full_scale_fraction": 0.5313125,
+            "rms_block_p10_p90": [
+              27175.488938330556,
+              29123.995873019983
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        },
+        {
+          "raw_window_start": 150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.20333039696592,
+            "dc_mean": 6.185666666666667,
+            "lag1_autocorrelation": 0.374013947911632,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 250,
+            "ac_rms_dbfs": -1.3655613085897733,
+            "dc_mean": -115.70108333333333,
+            "lag1_autocorrelation": 0.5853523833892924,
+            "near_full_scale_fraction": 0.53065625,
+            "rms_block_p10_p90": [
+              27025.195107803647,
+              29166.121608036152
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        },
+        {
+          "raw_window_start": 450,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.09655812597445,
+            "dc_mean": 6.133666666666667,
+            "lag1_autocorrelation": 0.36058060951157056,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 248,
+            "ac_rms_dbfs": -1.475224519950683,
+            "dc_mean": -21.01075,
+            "lag1_autocorrelation": 0.5254349176622898,
+            "near_full_scale_fraction": 0.5248020833333333,
+            "rms_block_p10_p90": [
+              26833.943778692366,
+              28664.001432027027
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        },
+        {
+          "raw_window_start": 650,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.15544817252439,
+            "dc_mean": 6.5825,
+            "lag1_autocorrelation": 0.23911523648343705,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 251,
+            "ac_rms_dbfs": -1.342413229438833,
+            "dc_mean": 1.6675,
+            "lag1_autocorrelation": 0.5994385831929,
+            "near_full_scale_fraction": 0.5372291666666666,
+            "rms_block_p10_p90": [
+              27113.399922947658,
+              28973.973078484873
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        },
+        {
+          "raw_window_start": 950,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.14061869137437,
+            "dc_mean": 6.155333333333333,
+            "lag1_autocorrelation": 0.3663416347826261,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 249,
+            "ac_rms_dbfs": -1.437463925761543,
+            "dc_mean": 95.82025,
+            "lag1_autocorrelation": 0.5462539454548442,
+            "near_full_scale_fraction": 0.5282708333333334,
+            "rms_block_p10_p90": [
+              26984.864508262992,
+              28576.898954265595
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        },
+        {
+          "raw_window_start": 1150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.81953290151907,
+            "dc_mean": 6.455,
+            "lag1_autocorrelation": 0.320227142333017,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 255,
+            "ac_rms_dbfs": -1.4689459350327239,
+            "dc_mean": -96.31775,
+            "lag1_autocorrelation": 0.5381929200972415,
+            "near_full_scale_fraction": 0.5215104166666666,
+            "rms_block_p10_p90": [
+              27106.438728603473,
+              28295.766725486486
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        }
+      ],
+      "calibration_anchor": false,
+      "interpretation": "No anchor without informative distinctive common event and A/V association"
+    },
+    {
+      "camera_a": "1",
+      "camera_b": "5",
+      "windows": [
+        {
+          "raw_window_start": 30,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.11851311232287,
+            "dc_mean": 6.1445,
+            "lag1_autocorrelation": 0.4336463139382667,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.75364300775455,
+            "dc_mean": 6.4285,
+            "lag1_autocorrelation": 0.3356373165580688,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.20333039696592,
+            "dc_mean": 6.185666666666667,
+            "lag1_autocorrelation": 0.374013947911632,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.84388761080484,
+            "dc_mean": 6.464666666666667,
+            "lag1_autocorrelation": 0.3347760627819855,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 450,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.09655812597445,
+            "dc_mean": 6.133666666666667,
+            "lag1_autocorrelation": 0.36058060951157056,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.44849680815807,
+            "dc_mean": 6.684166666666667,
+            "lag1_autocorrelation": 0.27005100397497867,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 650,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.15544817252439,
+            "dc_mean": 6.5825,
+            "lag1_autocorrelation": 0.23911523648343705,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.17718225516934,
+            "dc_mean": 6.590333333333334,
+            "lag1_autocorrelation": 0.29960650347051393,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 950,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.14061869137437,
+            "dc_mean": 6.155333333333333,
+            "lag1_autocorrelation": 0.3663416347826261,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.74585378295869,
+            "dc_mean": 6.425333333333334,
+            "lag1_autocorrelation": 0.33075034016165966,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 1150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.81953290151907,
+            "dc_mean": 6.455,
+            "lag1_autocorrelation": 0.320227142333017,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.54493616737523,
+            "dc_mean": 6.715833333333333,
+            "lag1_autocorrelation": 0.2331992871376699,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        }
+      ],
+      "calibration_anchor": false,
+      "interpretation": "No anchor without informative distinctive common event and A/V association"
+    },
+    {
+      "camera_a": "2",
+      "camera_b": "3",
+      "windows": [
+        {
+          "raw_window_start": 30,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.89944984790029,
+            "dc_mean": 6.033,
+            "lag1_autocorrelation": 0.3753306728053695,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.9640193483415,
+            "dc_mean": 6.066666666666666,
+            "lag1_autocorrelation": 0.29980954001961185,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.13516325205062,
+            "dc_mean": 6.152666666666667,
+            "lag1_autocorrelation": 0.3431417704243394,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.2736689623918,
+            "dc_mean": 6.219,
+            "lag1_autocorrelation": 0.32669946869073374,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 450,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.24711393239889,
+            "dc_mean": 6.2065,
+            "lag1_autocorrelation": 0.33729273302849827,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.76202557950435,
+            "dc_mean": 5.959,
+            "lag1_autocorrelation": 0.38009257695735715,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 650,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.09319369262553,
+            "dc_mean": 6.132,
+            "lag1_autocorrelation": 0.30036533925028747,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.6467253409809,
+            "dc_mean": 5.894333333333333,
+            "lag1_autocorrelation": 0.3763726522879668,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 950,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.63886076925604,
+            "dc_mean": 5.889833333333334,
+            "lag1_autocorrelation": 0.38889872354856425,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.16390759814206,
+            "dc_mean": 6.166666666666667,
+            "lag1_autocorrelation": 0.3268696808197755,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 1150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.99517347503496,
+            "dc_mean": 6.082666666666666,
+            "lag1_autocorrelation": 0.3532373027959261,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.56046216331629,
+            "dc_mean": 5.844333333333333,
+            "lag1_autocorrelation": 0.37666393503177287,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        }
+      ],
+      "calibration_anchor": false,
+      "interpretation": "No anchor without informative distinctive common event and A/V association"
+    },
+    {
+      "camera_a": "2",
+      "camera_b": "4",
+      "windows": [
+        {
+          "raw_window_start": 30,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.89944984790029,
+            "dc_mean": 6.033,
+            "lag1_autocorrelation": 0.3753306728053695,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 252,
+            "ac_rms_dbfs": -1.3599560227762924,
+            "dc_mean": 2.281416666666667,
+            "lag1_autocorrelation": 0.5894483882600667,
+            "near_full_scale_fraction": 0.5313125,
+            "rms_block_p10_p90": [
+              27175.488938330556,
+              29123.995873019983
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        },
+        {
+          "raw_window_start": 150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.13516325205062,
+            "dc_mean": 6.152666666666667,
+            "lag1_autocorrelation": 0.3431417704243394,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 250,
+            "ac_rms_dbfs": -1.3655613085897733,
+            "dc_mean": -115.70108333333333,
+            "lag1_autocorrelation": 0.5853523833892924,
+            "near_full_scale_fraction": 0.53065625,
+            "rms_block_p10_p90": [
+              27025.195107803647,
+              29166.121608036152
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        },
+        {
+          "raw_window_start": 450,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.24711393239889,
+            "dc_mean": 6.2065,
+            "lag1_autocorrelation": 0.33729273302849827,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 248,
+            "ac_rms_dbfs": -1.475224519950683,
+            "dc_mean": -21.01075,
+            "lag1_autocorrelation": 0.5254349176622898,
+            "near_full_scale_fraction": 0.5248020833333333,
+            "rms_block_p10_p90": [
+              26833.943778692366,
+              28664.001432027027
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        },
+        {
+          "raw_window_start": 650,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.09319369262553,
+            "dc_mean": 6.132,
+            "lag1_autocorrelation": 0.30036533925028747,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 251,
+            "ac_rms_dbfs": -1.342413229438833,
+            "dc_mean": 1.6675,
+            "lag1_autocorrelation": 0.5994385831929,
+            "near_full_scale_fraction": 0.5372291666666666,
+            "rms_block_p10_p90": [
+              27113.399922947658,
+              28973.973078484873
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        },
+        {
+          "raw_window_start": 950,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.63886076925604,
+            "dc_mean": 5.889833333333334,
+            "lag1_autocorrelation": 0.38889872354856425,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 249,
+            "ac_rms_dbfs": -1.437463925761543,
+            "dc_mean": 95.82025,
+            "lag1_autocorrelation": 0.5462539454548442,
+            "near_full_scale_fraction": 0.5282708333333334,
+            "rms_block_p10_p90": [
+              26984.864508262992,
+              28576.898954265595
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        },
+        {
+          "raw_window_start": 1150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.99517347503496,
+            "dc_mean": 6.082666666666666,
+            "lag1_autocorrelation": 0.3532373027959261,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 255,
+            "ac_rms_dbfs": -1.4689459350327239,
+            "dc_mean": -96.31775,
+            "lag1_autocorrelation": 0.5381929200972415,
+            "near_full_scale_fraction": 0.5215104166666666,
+            "rms_block_p10_p90": [
+              27106.438728603473,
+              28295.766725486486
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        }
+      ],
+      "calibration_anchor": false,
+      "interpretation": "No anchor without informative distinctive common event and A/V association"
+    },
+    {
+      "camera_a": "2",
+      "camera_b": "5",
+      "windows": [
+        {
+          "raw_window_start": 30,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.89944984790029,
+            "dc_mean": 6.033,
+            "lag1_autocorrelation": 0.3753306728053695,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.75364300775455,
+            "dc_mean": 6.4285,
+            "lag1_autocorrelation": 0.3356373165580688,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.13516325205062,
+            "dc_mean": 6.152666666666667,
+            "lag1_autocorrelation": 0.3431417704243394,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.84388761080484,
+            "dc_mean": 6.464666666666667,
+            "lag1_autocorrelation": 0.3347760627819855,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 450,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.24711393239889,
+            "dc_mean": 6.2065,
+            "lag1_autocorrelation": 0.33729273302849827,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.44849680815807,
+            "dc_mean": 6.684166666666667,
+            "lag1_autocorrelation": 0.27005100397497867,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 650,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.09319369262553,
+            "dc_mean": 6.132,
+            "lag1_autocorrelation": 0.30036533925028747,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.17718225516934,
+            "dc_mean": 6.590333333333334,
+            "lag1_autocorrelation": 0.29960650347051393,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 950,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.63886076925604,
+            "dc_mean": 5.889833333333334,
+            "lag1_autocorrelation": 0.38889872354856425,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.74585378295869,
+            "dc_mean": 6.425333333333334,
+            "lag1_autocorrelation": 0.33075034016165966,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 1150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.99517347503496,
+            "dc_mean": 6.082666666666666,
+            "lag1_autocorrelation": 0.3532373027959261,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.54493616737523,
+            "dc_mean": 6.715833333333333,
+            "lag1_autocorrelation": 0.2331992871376699,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        }
+      ],
+      "calibration_anchor": false,
+      "interpretation": "No anchor without informative distinctive common event and A/V association"
+    },
+    {
+      "camera_a": "3",
+      "camera_b": "4",
+      "windows": [
+        {
+          "raw_window_start": 30,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.9640193483415,
+            "dc_mean": 6.066666666666666,
+            "lag1_autocorrelation": 0.29980954001961185,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 252,
+            "ac_rms_dbfs": -1.3599560227762924,
+            "dc_mean": 2.281416666666667,
+            "lag1_autocorrelation": 0.5894483882600667,
+            "near_full_scale_fraction": 0.5313125,
+            "rms_block_p10_p90": [
+              27175.488938330556,
+              29123.995873019983
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        },
+        {
+          "raw_window_start": 150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.2736689623918,
+            "dc_mean": 6.219,
+            "lag1_autocorrelation": 0.32669946869073374,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 250,
+            "ac_rms_dbfs": -1.3655613085897733,
+            "dc_mean": -115.70108333333333,
+            "lag1_autocorrelation": 0.5853523833892924,
+            "near_full_scale_fraction": 0.53065625,
+            "rms_block_p10_p90": [
+              27025.195107803647,
+              29166.121608036152
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        },
+        {
+          "raw_window_start": 450,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.76202557950435,
+            "dc_mean": 5.959,
+            "lag1_autocorrelation": 0.38009257695735715,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 248,
+            "ac_rms_dbfs": -1.475224519950683,
+            "dc_mean": -21.01075,
+            "lag1_autocorrelation": 0.5254349176622898,
+            "near_full_scale_fraction": 0.5248020833333333,
+            "rms_block_p10_p90": [
+              26833.943778692366,
+              28664.001432027027
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        },
+        {
+          "raw_window_start": 650,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.6467253409809,
+            "dc_mean": 5.894333333333333,
+            "lag1_autocorrelation": 0.3763726522879668,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 251,
+            "ac_rms_dbfs": -1.342413229438833,
+            "dc_mean": 1.6675,
+            "lag1_autocorrelation": 0.5994385831929,
+            "near_full_scale_fraction": 0.5372291666666666,
+            "rms_block_p10_p90": [
+              27113.399922947658,
+              28973.973078484873
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        },
+        {
+          "raw_window_start": 950,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.16390759814206,
+            "dc_mean": 6.166666666666667,
+            "lag1_autocorrelation": 0.3268696808197755,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 249,
+            "ac_rms_dbfs": -1.437463925761543,
+            "dc_mean": 95.82025,
+            "lag1_autocorrelation": 0.5462539454548442,
+            "near_full_scale_fraction": 0.5282708333333334,
+            "rms_block_p10_p90": [
+              26984.864508262992,
+              28576.898954265595
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        },
+        {
+          "raw_window_start": 1150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.56046216331629,
+            "dc_mean": 5.844333333333333,
+            "lag1_autocorrelation": 0.37666393503177287,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 255,
+            "ac_rms_dbfs": -1.4689459350327239,
+            "dc_mean": -96.31775,
+            "lag1_autocorrelation": 0.5381929200972415,
+            "near_full_scale_fraction": 0.5215104166666666,
+            "rms_block_p10_p90": [
+              27106.438728603473,
+              28295.766725486486
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          }
+        }
+      ],
+      "calibration_anchor": false,
+      "interpretation": "No anchor without informative distinctive common event and A/V association"
+    },
+    {
+      "camera_a": "3",
+      "camera_b": "5",
+      "windows": [
+        {
+          "raw_window_start": 30,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.9640193483415,
+            "dc_mean": 6.066666666666666,
+            "lag1_autocorrelation": 0.29980954001961185,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.75364300775455,
+            "dc_mean": 6.4285,
+            "lag1_autocorrelation": 0.3356373165580688,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.2736689623918,
+            "dc_mean": 6.219,
+            "lag1_autocorrelation": 0.32669946869073374,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.84388761080484,
+            "dc_mean": 6.464666666666667,
+            "lag1_autocorrelation": 0.3347760627819855,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 450,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.76202557950435,
+            "dc_mean": 5.959,
+            "lag1_autocorrelation": 0.38009257695735715,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.44849680815807,
+            "dc_mean": 6.684166666666667,
+            "lag1_autocorrelation": 0.27005100397497867,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 650,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.6467253409809,
+            "dc_mean": 5.894333333333333,
+            "lag1_autocorrelation": 0.3763726522879668,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.17718225516934,
+            "dc_mean": 6.590333333333334,
+            "lag1_autocorrelation": 0.29960650347051393,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 950,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.16390759814206,
+            "dc_mean": 6.166666666666667,
+            "lag1_autocorrelation": 0.3268696808197755,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.74585378295869,
+            "dc_mean": 6.425333333333334,
+            "lag1_autocorrelation": 0.33075034016165966,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 1150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -75.56046216331629,
+            "dc_mean": 5.844333333333333,
+            "lag1_autocorrelation": 0.37666393503177287,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.54493616737523,
+            "dc_mean": 6.715833333333333,
+            "lag1_autocorrelation": 0.2331992871376699,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        }
+      ],
+      "calibration_anchor": false,
+      "interpretation": "No anchor without informative distinctive common event and A/V association"
+    },
+    {
+      "camera_a": "4",
+      "camera_b": "5",
+      "windows": [
+        {
+          "raw_window_start": 30,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 252,
+            "ac_rms_dbfs": -1.3599560227762924,
+            "dc_mean": 2.281416666666667,
+            "lag1_autocorrelation": 0.5894483882600667,
+            "near_full_scale_fraction": 0.5313125,
+            "rms_block_p10_p90": [
+              27175.488938330556,
+              29123.995873019983
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.75364300775455,
+            "dc_mean": 6.4285,
+            "lag1_autocorrelation": 0.3356373165580688,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 250,
+            "ac_rms_dbfs": -1.3655613085897733,
+            "dc_mean": -115.70108333333333,
+            "lag1_autocorrelation": 0.5853523833892924,
+            "near_full_scale_fraction": 0.53065625,
+            "rms_block_p10_p90": [
+              27025.195107803647,
+              29166.121608036152
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.84388761080484,
+            "dc_mean": 6.464666666666667,
+            "lag1_autocorrelation": 0.3347760627819855,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 450,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 248,
+            "ac_rms_dbfs": -1.475224519950683,
+            "dc_mean": -21.01075,
+            "lag1_autocorrelation": 0.5254349176622898,
+            "near_full_scale_fraction": 0.5248020833333333,
+            "rms_block_p10_p90": [
+              26833.943778692366,
+              28664.001432027027
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.44849680815807,
+            "dc_mean": 6.684166666666667,
+            "lag1_autocorrelation": 0.27005100397497867,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 650,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 251,
+            "ac_rms_dbfs": -1.342413229438833,
+            "dc_mean": 1.6675,
+            "lag1_autocorrelation": 0.5994385831929,
+            "near_full_scale_fraction": 0.5372291666666666,
+            "rms_block_p10_p90": [
+              27113.399922947658,
+              28973.973078484873
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.17718225516934,
+            "dc_mean": 6.590333333333334,
+            "lag1_autocorrelation": 0.29960650347051393,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 950,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 249,
+            "ac_rms_dbfs": -1.437463925761543,
+            "dc_mean": 95.82025,
+            "lag1_autocorrelation": 0.5462539454548442,
+            "near_full_scale_fraction": 0.5282708333333334,
+            "rms_block_p10_p90": [
+              26984.864508262992,
+              28576.898954265595
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -76.74585378295869,
+            "dc_mean": 6.425333333333334,
+            "lag1_autocorrelation": 0.33075034016165966,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        },
+        {
+          "raw_window_start": 1150,
+          "duration_seconds": 12.0,
+          "status": "UNINFORMATIVE",
+          "lag_seconds": null,
+          "x": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -32256,
+            "maximum": 32256,
+            "unique_values": 255,
+            "ac_rms_dbfs": -1.4689459350327239,
+            "dc_mean": -96.31775,
+            "lag1_autocorrelation": 0.5381929200972415,
+            "near_full_scale_fraction": 0.5215104166666666,
+            "rms_block_p10_p90": [
+              27106.438728603473,
+              28295.766725486486
+            ],
+            "informative": true,
+            "reason": "AC energy above -60 dBFS"
+          },
+          "y": {
+            "samples": 96000,
+            "sample_rate": 8000,
+            "decoded_sample_duration_seconds": 12.0,
+            "minimum": -8,
+            "maximum": 8,
+            "unique_values": 2,
+            "ac_rms_dbfs": -77.54493616737523,
+            "dc_mean": 6.715833333333333,
+            "lag1_autocorrelation": 0.2331992871376699,
+            "near_full_scale_fraction": 0.0,
+            "rms_block_p10_p90": [
+              8.0,
+              8.0
+            ],
+            "informative": false,
+            "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+          }
+        }
+      ],
+      "calibration_anchor": false,
+      "interpretation": "No anchor without informative distinctive common event and A/V association"
+    }
+  ],
+  "automatically_applied_anchors": []
+}

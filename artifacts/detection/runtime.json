@@ -1,0 +1,1 @@
+{"gpu":null,"nvidia_smi":{"status":"UNAVAILABLE"},"packages":{"av":"14.2.0","numpy":"2.3.5","opencv-python":"4.11.0.86","supervision":"0.25.1","torch":null,"ultralytics":null},"selected_device":"cpu","torch_cuda_is_available":false}

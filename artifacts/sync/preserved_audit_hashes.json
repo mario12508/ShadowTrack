@@ -1,0 +1,19 @@
+{
+  "DATA_AUDIT.md": "8c42904267adf366bdcea57ff903246ac4000dd707105ed2ff98652f1661f530",
+  "artifacts/inspect/stats.json": "49e70f7138950842523f4afbc5fd2188b5cbfcc00eddb234855cf8e5acfed9a7",
+  "artifacts/events/gaps_camera1/manifest.json": "5052faf37798fd0d4006009285028837b9331ad9f32513e6399fbbed7b88350a",
+  "artifacts/events/start/manifest.json": "c44adb1bbda3c54f3fe83b5f9c0777433b2a70805fa340b8214939ba83460b9a",
+  "artifacts/events/tv_cuts/manifest.json": "f6ce8a8abedca72d52894ab2ffbbfdb039516bbeae28fca0cd9896de264a1fa4",
+  "artifacts/events/tv_late/manifest.json": "d7e8fc9dbd1a432c8d5f42dd6cd560aedecc67708794229f6c546acc4b032cb2",
+  "artifacts/events/tv_refined/manifest.json": "b95479e5e32ee53cbe9a2a7b4aa3875054a7481d1d1f707c521a65d54ec7c3ac",
+  "artifacts/inspect/camera_01/timestamps/frames.json": "bee4f8fb016102569e0792c2d9f392be60e37278a442c153af0643c74e0aeded",
+  "artifacts/inspect/camera_01/timestamps/probe.json": "d1fc347d1d0d31d42288cd182604c8b5f6e398b6dd2a78a20591539f7e124f76",
+  "artifacts/inspect/camera_02/timestamps/frames.json": "f912c4eb7a431dc33923c08619812a9c93ebb8786132ccd5649a7c0d791aa2db",
+  "artifacts/inspect/camera_02/timestamps/probe.json": "d92401442efe96ff40f133288fe0e19b6d2a473bf52fa906de60c81042fed7f3",
+  "artifacts/inspect/camera_03/timestamps/frames.json": "a53334f3b549ee68ef2318e6c2bfb7b2587c7bd120831f5e62cf5d406a1530bd",
+  "artifacts/inspect/camera_03/timestamps/probe.json": "829a9fac4a24ee571bbef510a81aab2f86053d018a732d7570a7cf67088a130b",
+  "artifacts/inspect/camera_04/timestamps/frames.json": "bbb3b3d5758a364b0ff9bee8b32afbbeed25c8d6def5799dde0ada1a29097c73",
+  "artifacts/inspect/camera_04/timestamps/probe.json": "c573a6886692c6f0f10227e6fd1a43bf87e290672b62b333aca9b3355b487a9c",
+  "artifacts/inspect/camera_05/timestamps/frames.json": "86bdd2dfc39f4c251161c983fc1ae7e0a46ceb8c6220693538c7c9eb97528c8b",
+  "artifacts/inspect/camera_05/timestamps/probe.json": "a39ee0994ebaaa95734064b8c91319ed0573cc3d95eaa5117d320f8021cd7883"
+}

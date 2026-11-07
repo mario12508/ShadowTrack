@@ -1,0 +1,12 @@
+# Paths are relative to this configuration file, not the current directory.
+[inspect]
+raw_dir = "../data/raw"
+metadata_dir = "../data/metadata"
+output_dir = "../artifacts/inspect"
+previews = 20
+expected_cameras = 5
+timeout_seconds = 1800
+fps_relative_tolerance = 0.02
+# Analyst observations, accepted only if all input SHA256 values match.
+review_file = "../artifacts/visual_review.json"
+# Executables are resolved through PATH or SHADOWTRACK_FFMPEG / SHADOWTRACK_FFPROBE.

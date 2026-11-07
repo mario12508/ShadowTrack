@@ -1,0 +1,155 @@
+{
+  "events": [
+    {
+      "id": "middle_cut",
+      "description": "Tighten checked TV shot-cut brackets; extraction remains unchecked",
+      "kind": "shared_tv_cut",
+      "targets": {
+        "1": [
+          402.83,
+          402.91,
+          402.99,
+          403.07,
+          403.15,
+          403.23
+        ],
+        "3": [
+          402.03,
+          402.11,
+          402.19,
+          402.27,
+          402.35,
+          402.43
+        ]
+      },
+      "crops": {
+        "1": [
+          0,
+          275,
+          170,
+          490
+        ],
+        "3": [
+          1760,
+          410,
+          2110,
+          680
+        ]
+      }
+    },
+    {
+      "id": "late_cut_A",
+      "description": "Tighten checked TV shot-cut brackets; extraction remains unchecked",
+      "kind": "shared_tv_cut",
+      "targets": {
+        "1": [
+          902.82,
+          902.9,
+          902.98,
+          903.06,
+          903.14,
+          903.22,
+          903.3
+        ],
+        "3": [
+          902.03,
+          902.11,
+          902.19,
+          902.27,
+          902.35,
+          902.43
+        ]
+      },
+      "crops": {
+        "1": [
+          0,
+          275,
+          170,
+          490
+        ],
+        "3": [
+          1760,
+          410,
+          2110,
+          680
+        ]
+      }
+    },
+    {
+      "id": "late_cut_B",
+      "description": "Tighten checked TV shot-cut brackets; extraction remains unchecked",
+      "kind": "shared_tv_cut",
+      "targets": {
+        "1": [
+          908.03,
+          908.11,
+          908.19,
+          908.27,
+          908.35,
+          908.43
+        ],
+        "3": [
+          907.24,
+          907.32,
+          907.4,
+          907.48,
+          907.56,
+          907.64
+        ]
+      },
+      "crops": {
+        "1": [
+          0,
+          275,
+          170,
+          490
+        ],
+        "3": [
+          1760,
+          410,
+          2110,
+          680
+        ]
+      }
+    },
+    {
+      "id": "end_cut",
+      "description": "Tighten checked TV shot-cut brackets; extraction remains unchecked",
+      "kind": "shared_tv_cut",
+      "targets": {
+        "1": [
+          1158.01,
+          1158.09,
+          1158.17,
+          1158.25,
+          1158.33,
+          1158.41,
+          1158.49
+        ],
+        "3": [
+          1157.21,
+          1157.29,
+          1157.37,
+          1157.45,
+          1157.53,
+          1157.61,
+          1157.69
+        ]
+      },
+      "crops": {
+        "1": [
+          0,
+          275,
+          170,
+          490
+        ],
+        "3": [
+          1760,
+          410,
+          2110,
+          680
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shadowtrack"
+version = "0.1.0"
+description = "Evidence-based multi-camera video data audit for the NTechLab hackathon"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["Pillow>=10.1,<13"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "numpy>=1.26,<3", "matplotlib>=3.8,<4", "av==14.2.0", "supervision==0.25.1", "opencv-python==4.11.0.86", "nbformat>=5.10,<6", "jsonschema>=4.23,<5", "fastapi==0.162.2", "httpx==0.28.1"]
+sync = ["numpy>=1.26,<3", "matplotlib>=3.8,<4"]
+detection-cpu = ["numpy>=1.26,<3", "av==14.2.0", "supervision==0.25.1", "opencv-python==4.11.0.86"]
+detection-gpu = ["numpy>=1.26,<3", "av==14.2.0", "ultralytics==8.3.161", "opencv-python==4.11.0.86"]
+notebooks = ["nbformat>=5.10,<6"]
+web = ["fastapi==0.162.2", "uvicorn==0.54.0", "httpx==0.28.1"]
+reid = ["torch==2.6.0"]
+
+[project.scripts]
+shadowtrack = "shadowtrack.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"shadowtrack.mvp.vendor" = ["*.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["integration: uses real ffmpeg and ffprobe on synthetic fixtures"]

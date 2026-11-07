@@ -1,0 +1,1 @@
+{"code_hash":"8a4c065b8ea45282e76e8d62ab9572d2a08e63ffda0212c05c4fdef71b792efe","dependency_install":false,"evidence_cameras":5,"input_type":"unpacked folder","model_inference":false,"scope":"Executed generated notebook bootstrap and folder/evidence/pinned-model input cells against final versioned bundle; no torch or GPU run","status":"PASS","weights_downloaded":false}

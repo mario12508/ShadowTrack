@@ -1,0 +1,51 @@
+name: shadowtrack
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports: ["127.0.0.1:8000:8000"]
+    environment:
+      SHADOWTRACK_ROOT: /workspace
+      SHADOWTRACK_EPISODE_TIMEOUT: ${SHADOWTRACK_EPISODE_TIMEOUT:-120}
+      SHADOWTRACK_CORS: http://localhost:3000,http://127.0.0.1:3000
+    volumes:
+      - ./src:/workspace/src:ro
+      - ./configs:/workspace/configs:ro
+      - ./data:/workspace/data:ro
+      - ./artifacts/detection:/workspace/artifacts/detection:ro
+      - ./artifacts/detections:/workspace/artifacts/detections:ro
+      - ./artifacts/sync:/workspace/artifacts/sync:ro
+      - ./artifacts/mvp:/workspace/artifacts/mvp
+    healthcheck:
+      test: ["CMD","python","-c","import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health',timeout=5)"]
+      interval: 15s
+      timeout: 6s
+      start_period: 15s
+      retries: 5
+    restart: unless-stopped
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports: ["127.0.0.1:3000:80"]
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+  prepare:
+    profiles: [tools]
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      SHADOWTRACK_ROOT: /workspace
+      SHADOWTRACK_EPISODE_TIMEOUT: ${SHADOWTRACK_EPISODE_TIMEOUT:-120}
+    entrypoint: ["shadowtrack","mvp","prepare"]
+    command: ["--source","/imports/full.zip","--render"]
+    volumes:
+      - ./src:/workspace/src:ro
+      - ./configs:/workspace/configs:ro
+      - ./data:/workspace/data:ro
+      - ./artifacts:/workspace/artifacts
+      - ${SHADOWTRACK_FULL_ZIP:-./inputs/full.zip}:/imports/full.zip:ro

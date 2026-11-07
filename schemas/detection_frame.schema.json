@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:shadowtrack:detection-frame:v1",
+  "title": "ShadowTrack processed-frame segmentation envelope v1",
+  "type": "object",
+  "required": ["schema_version","camera_id","source_frame_index","raw_media_pts","timestamp_segment_id","model_hash","config_hash","processed","frame_status","detections"],
+  "properties": {
+    "schema_version": {"const":1},
+    "camera_id": {"type":"string"},
+    "source_frame_index": {"type":"integer","minimum":0},
+    "raw_media_pts": {"type":"number"},
+    "timestamp_segment_id": {"type":"string"},
+    "model_hash": {"$ref":"#/$defs/sha256"},
+    "config_hash": {"$ref":"#/$defs/sha256"},
+    "processed": {"const":true},
+    "frame_status": {"enum":["empty","detections"]},
+    "detections": {"type":"array","items":{"$ref":"#/$defs/detection"}}
+  },
+  "$defs": {
+    "sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "mask": {
+      "type":"object","required":["encoding","size","counts"],
+      "properties": {
+        "encoding":{"const":"coco_rle_uncompressed"},
+        "size":{"type":"array","minItems":2,"maxItems":2,"items":{"type":"integer","minimum":1}},
+        "counts":{"type":"array","minItems":1,"items":{"type":"integer","minimum":0}}
+      }
+    },
+    "detection": {
+      "type":"object",
+      "required":["camera_id","source_frame_index","raw_media_pts","timestamp_segment_id","model_hash","config_hash","bbox_xyxy","confidence","class_id","mask_rle"],
+      "properties": {
+        "camera_id":{"type":"string"},
+        "source_frame_index":{"type":"integer","minimum":0},
+        "raw_media_pts":{"type":"number"},
+        "timestamp_segment_id":{"type":"string"},
+        "model_hash":{"$ref":"#/$defs/sha256"},
+        "config_hash":{"$ref":"#/$defs/sha256"},
+        "bbox_xyxy":{"type":"array","minItems":4,"maxItems":4,"items":{"type":"number"}},
+        "confidence":{"type":"number","minimum":0,"maximum":1},
+        "class_id":{"const":0},
+        "mask_rle":{"$ref":"#/$defs/mask"}
+      }
+    }
+  },
+  "allOf":[
+    {"if":{"properties":{"frame_status":{"const":"empty"}}},"then":{"properties":{"detections":{"maxItems":0}}}},
+    {"if":{"properties":{"frame_status":{"const":"detections"}}},"then":{"properties":{"detections":{"minItems":1}}}}
+  ],
+  "$comment":"The Python validator additionally enforces identity equality, audited frame PTS, source/segment coverage, box geometry and full original-resolution nonempty RLE cardinality."
+}

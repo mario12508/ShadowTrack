@@ -1,0 +1,35 @@
+[aist#0:1/pcm_alaw @ 000002280994ec80] Guessed Channel Layout: mono
+Input #0, matroska,webm, from 'C:\Users\mario\PycharmProjects\ShadowTrack-AInura\data\raw\camera_new_1.mkv':
+  Metadata:
+    title           : Media Server
+    ENCODER         : Lavf62.3.100
+  Duration: 00:20:00.03, start: 0.051000, bitrate: 290 kb/s
+  Stream #0:0: Video: h264 (Main), yuv420p(tv, progressive), 2592x1944, 25 fps, 25 tbr, 1k tbn, start 0.785000
+    Metadata:
+      DURATION        : 00:20:00.004000000
+  Stream #0:1: Audio: pcm_alaw ([6][0][0][0] / 0x0006), 8000 Hz, mono, s16, 64 kb/s, start 0.051000
+    Metadata:
+      DURATION        : 00:20:00.033000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+[Parsed_showinfo_0 @ 000002280b672e40] config in time_base: 1/1000, frame_rate: 25/1
+[Parsed_showinfo_0 @ 000002280b672e40] config out time_base: 0/0, frame_rate: 0/0
+[Parsed_showinfo_0 @ 000002280b672e40] n:   0 pts:1105008 pts_time:1105.008 duration:     40 duration_time:0.04    fmt:yuv420p cl:left sar:0/1 s:2592x1944 i:P iskey:0 type:P checksum:AF929A04 plane_checksum:[9D47687E 6E288BAB DA8CA5CC] mean:[102 136 124] stdev:[56.3 16.5 18.0]
+[Parsed_showinfo_0 @ 000002280b672e40] color_range:tv color_space:unknown color_primaries:unknown color_trc:unknown
+[swscaler @ 000002280c50f200] deprecated pixel format used, make sure you did set range correctly
+Output #0, image2, to 'artifacts\events\tv_late\camera_new_1_005.jpg':
+  Metadata:
+    title           : Media Server
+    encoder         : Lavf63.1.102
+  Stream #0:0: Video: mjpeg, yuvj420p(pc, progressive), 2592x1944, q=2-31, 200 kb/s, 25 fps, 25 tbn
+    Metadata:
+      encoder         : Lavc63.1.102 mjpeg
+      DURATION        : 00:20:00.004000000
+    Side data:
+      CPB properties: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[Parsed_showinfo_0 @ 000002280b672e40] n:   1 pts:1105047 pts_time:1105.047 duration:     40 duration_time:0.04    fmt:yuv420p cl:left sar:0/1 s:2592x1944 i:P iskey:0 type:P checksum:1FBA82F6 plane_checksum:[855C5925 E8398B10 7D249EB2] mean:[102 136 124] stdev:[56.3 16.5 18.0]
+[Parsed_showinfo_0 @ 000002280b672e40] color_range:tv color_space:unknown color_primaries:unknown color_trc:unknown
+[image2 @ 000002280c1aac40] The specified filename 'artifacts\events\tv_late\camera_new_1_005.jpg' does not contain an image sequence pattern or a pattern is invalid.
+[image2 @ 000002280c1aac40] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.
+[out#0/image2 @ 00000228098bf100] video:560KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    1 fps=0.0 q=3.0 Lsize=N/A time=00:00:00.00 bitrate=N/A speed=   0x elapsed=0:00:00.61    

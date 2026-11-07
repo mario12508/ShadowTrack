@@ -1,0 +1,10 @@
+{
+  "browser": "Microsoft Edge headless via Playwright",
+  "images": 4,
+  "broken_images": 0,
+  "desktop_viewport_width": 1440,
+  "desktop_scroll_width": 1440,
+  "mobile_viewport_width": 390,
+  "mobile_scroll_width": 390,
+  "checked_event_rows": 6
+}

@@ -1,0 +1,101 @@
+{
+  "input_sha256": "f90f08498e306b3e75b07489a253ebdfcbb5f3373b73478b086bd5d7ef9a8873",
+  "pcm_sha256": "76c3edb7904dbff7367a44a60d18a56befd4cd7aa00d26d17a131c31a09a5949",
+  "audio_frames_sha256": "f439b56b3684fdadebcdfee33863b3c3fc7f31d31bcf9d6a48e9b70368124b5d",
+  "commands": [
+    [
+      "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+      "-v",
+      "error",
+      "-nostdin",
+      "-y",
+      "-i",
+      "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_s16le",
+      "-f",
+      "s16le",
+      "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\audio\\camera_3.s16le"
+    ],
+    [
+      "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffprobe.exe",
+      "-v",
+      "error",
+      "-select_streams",
+      "a:0",
+      "-show_frames",
+      "-show_entries",
+      "frame=pts_time,best_effort_timestamp_time,nb_samples,sample_rate,channels",
+      "-of",
+      "json",
+      "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv"
+    ]
+  ],
+  "codec": "pcm_alaw",
+  "metrics": {
+    "samples": 9440640,
+    "sample_rate": 8000,
+    "decoded_sample_duration_seconds": 1180.08,
+    "minimum": -8,
+    "maximum": 8,
+    "unique_values": 2,
+    "ac_rms_dbfs": -75.64017074720913,
+    "dc_mean": 5.890583689241407,
+    "lag1_autocorrelation": 0.38299575861281326,
+    "near_full_scale_fraction": 0.0,
+    "rms_block_p10_p90": [
+      8.0,
+      8.0
+    ],
+    "informative": false,
+    "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+  },
+  "segments": [
+    {
+      "sample_start": 0,
+      "sample_stop": 2435520,
+      "first_pts": 0.026,
+      "last_end_pts": 304.466
+    },
+    {
+      "sample_start": 2435520,
+      "sample_stop": 2679360,
+      "first_pts": 314.485,
+      "last_end_pts": 344.96500000000003
+    },
+    {
+      "sample_start": 2679360,
+      "sample_stop": 6374400,
+      "first_pts": 344.958,
+      "last_end_pts": 806.838
+    },
+    {
+      "sample_start": 6374400,
+      "sample_stop": 9440640,
+      "first_pts": 816.839,
+      "last_end_pts": 1200.119
+    }
+  ],
+  "timestamp_gaps": [
+    {
+      "before_end_pts": 304.466,
+      "after_pts": 314.485,
+      "delta_seconds": 10.019000000000005
+    },
+    {
+      "before_end_pts": 344.96500000000003,
+      "after_pts": 344.958,
+      "delta_seconds": -0.007000000000005002
+    },
+    {
+      "before_end_pts": 806.838,
+      "after_pts": 816.839,
+      "delta_seconds": 10.00100000000009
+    }
+  ],
+  "audio_video_latency": "UNVERIFIED",
+  "full_video_probe_repeated": false
+}

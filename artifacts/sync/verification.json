@@ -1,0 +1,90 @@
+{
+  "acceptance_status": "PARTIAL",
+  "tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "45",
+    "time": "5.544",
+    "timestamp": "2026-11-07T00:42:31.370214+03:00",
+    "hostname": "Mar1o"
+  },
+  "all_previous_audit_files_unchanged": true,
+  "previous_audit_file_count": 17,
+  "raw_mkv_hashes_match": {
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true
+  },
+  "strictly_monotone_local_frame_estimates": {
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true
+  },
+  "accepted_anchor_endpoints_are_real_frame_pts": true,
+  "corrected_local_jump_count": 2,
+  "supported_example": {
+    "raw_pts": 3.0,
+    "camera_id": "1",
+    "global_time": 1.317,
+    "uncertainty": {
+      "lower_seconds": 1.2190000000000003,
+      "upper_seconds": 1.4149999999999996,
+      "radius_seconds": 0.09799999999999964,
+      "kind": "admissible_model_bounds_not_confidence_interval",
+      "source_model_ids": [
+        "1:s0->3:s0"
+      ],
+      "basis": "arbitrary relative seconds from first decoded frame of camera 3, first uninterrupted epoch; NOT UTC",
+      "conditional_on": "affine interpolation between checked anchors; local rate not independently verified"
+    },
+    "status": "SUPPORTED_CONDITIONAL"
+  },
+  "unresolved_camera_checks": {
+    "2": "unavailable",
+    "4": "unavailable",
+    "5": "unavailable"
+  },
+  "late_global_time_unavailable": true,
+  "inverse_mapping_roundtrip_error_seconds": 0.0,
+  "require_complete_exit_code": 1,
+  "full_video_probe_repeated": false,
+  "audio_window_pairs": 60,
+  "audio_auto_anchors": [],
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.3.5",
+    "matplotlib": "3.11.2",
+    "pytest": "9.2.0",
+    "Pillow": "12.3.0"
+  },
+  "source_files": {
+    ".gitignore": "e977e7043abbdb32abf18b27b0a327c4622146f0f57edefe3748394ad8d67599",
+    "README.md": "74a6a1ada57514a42372cdeec74ee87c0a8b1ba1308193a0483eb10199659dad",
+    "TIME_ALIGNMENT.md": "896dc5686d746433b39ec4610607b6250785a9c243184e6ed75fe33124dfa588",
+    "configs/sync_event_requests.json": "c9e45a018cdc47c3a906f130d63c301a570b827bb08e6314d3ee06ea5a150b33",
+    "configs/sync_evidence.json": "96901d42753028c2d69f72e26a4d74a1f81ec2abdf460179fe0be23f445561d6",
+    "configs/sync_fine_requests.json": "206a09ce03568c95289aeda5d92a503ae34b5de93b7c67c29edf6f2118276a14",
+    "configs/sync_refine_requests.json": "791aaba609aa3f86eb3bd30b674186ab7b6e4768d73fb48b9e93ce00206978f6",
+    "pyproject.toml": "a974ad15dffd2799b5521014e39c73106aa9bab8d16317f31d6afe7ce75b0a07",
+    "scripts/import_audit_sync_evidence.py": "db1367209f7586a4253942010d82b60006c9b8dda56e47a4efe9abbff385c4f3",
+    "scripts/sync.ps1": "075dd78b89d3b7c0a89e4fecbd3d2aba5cb41493ea5a47c0cd964db30f78c757",
+    "scripts/verify_sync.py": "a42838b81357421df8aac5a25f73e0d5fdc7297ce5eb159224f8dfb8dd5be64d",
+    "src/shadowtrack/cli.py": "d26923085d791e955ce5b43e299fae53f1186ba2c03f71d4f77bd15d89139693",
+    "src/shadowtrack/sync/__init__.py": "e984cde671566ae6b3544e55e9416166040cffd1a40f8667cfe77874fd5fe924",
+    "src/shadowtrack/sync/api.py": "340193d16ec9baca8b5272a5b5ca679d2aea432af5f2623901e9f4ff62152f04",
+    "src/shadowtrack/sync/audio.py": "560580cda81ecab72aa1225eb81e738ecc4734004fb73c20e9e913aa7d6238c4",
+    "src/shadowtrack/sync/cli.py": "4c4ab83c3444fb44e943e05bc97093c2f5dc94848ec9128a6a922c46a10ed29e",
+    "src/shadowtrack/sync/collect.py": "92987ab484a69b0d3104bb390949f92549c72935c2efd8eb6ef195866c518ccb",
+    "src/shadowtrack/sync/engine.py": "b5106c764feb7436cc77e9246e2112a5fde7e52dacb54b2099eb96f1495fb2b8",
+    "src/shadowtrack/sync/fit.py": "5a1f1f9c67ef278b9eb85d32467056d7f740154bfeedb8fc803fdb530d8642f2",
+    "src/shadowtrack/sync/local.py": "c20bb6aae6ee09c00a305e7b77413602885dc59272ed9e5d1a66137f9f0bc2f0",
+    "src/shadowtrack/sync/report.py": "d6cfeb244fea5ccb429987000b3c341df1fdc2ce9518ab0969ba9ea475399e45",
+    "tests/test_sync.py": "581afb044d176f79d53c87f8b0f83adaa287545b3fa1787dc4cc61a3a5439fc7"
+  }
+}

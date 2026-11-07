@@ -1,0 +1,90 @@
+{
+  "input_sha256": "744331b88aadaf56a83540d3081f22f11cf207ee93b62bacf03972c679814dc5",
+  "pcm_sha256": "65ad322c546a818555d85ab9d1f576dbea46802a0abbed34a5f595d7285252ba",
+  "audio_frames_sha256": "d7868d8f81f4cdb2c6f0e60ae0a32cbe23bf19cf096212d2b27bdeb9d6333954",
+  "commands": [
+    [
+      "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+      "-v",
+      "error",
+      "-nostdin",
+      "-y",
+      "-i",
+      "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_s16le",
+      "-f",
+      "s16le",
+      "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\audio\\camera_1.s16le"
+    ],
+    [
+      "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffprobe.exe",
+      "-v",
+      "error",
+      "-select_streams",
+      "a:0",
+      "-show_frames",
+      "-show_entries",
+      "frame=pts_time,best_effort_timestamp_time,nb_samples,sample_rate,channels",
+      "-of",
+      "json",
+      "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv"
+    ]
+  ],
+  "codec": "pcm_alaw",
+  "metrics": {
+    "samples": 9439680,
+    "sample_rate": 8000,
+    "decoded_sample_duration_seconds": 1179.96,
+    "minimum": -8,
+    "maximum": 8,
+    "unique_values": 2,
+    "ac_rms_dbfs": -76.61417449846579,
+    "dc_mean": 6.370685446964304,
+    "lag1_autocorrelation": 0.31389992149139856,
+    "near_full_scale_fraction": 0.0,
+    "rms_block_p10_p90": [
+      8.0,
+      8.0
+    ],
+    "informative": false,
+    "reason": "below_energy_gate; absence of shared evidence, not contradictory sync evidence"
+  },
+  "segments": [
+    {
+      "sample_start": 0,
+      "sample_stop": 1807680,
+      "first_pts": 0.051,
+      "last_end_pts": 226.011
+    },
+    {
+      "sample_start": 1807680,
+      "sample_stop": 5705280,
+      "first_pts": 236.019,
+      "last_end_pts": 723.217
+    },
+    {
+      "sample_start": 5705280,
+      "sample_stop": 9439680,
+      "first_pts": 733.233,
+      "last_end_pts": 1200.033
+    }
+  ],
+  "timestamp_gaps": [
+    {
+      "before_end_pts": 226.011,
+      "after_pts": 236.019,
+      "delta_seconds": 10.00800000000001
+    },
+    {
+      "before_end_pts": 723.217,
+      "after_pts": 733.233,
+      "delta_seconds": 10.015999999999963
+    }
+  ],
+  "audio_video_latency": "UNVERIFIED",
+  "full_video_probe_repeated": false
+}

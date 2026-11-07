@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "name": "yolo11n-seg",
+  "task": "segment",
+  "class_id": 0,
+  "class_name": "person",
+  "weights_filename": "yolo11n-seg.pt",
+  "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-seg.pt",
+  "weights_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+  "weights_bytes": 6182636,
+  "ultralytics_version": "8.3.161",
+  "license": "AGPL-3.0 / separate Ultralytics Enterprise terms",
+  "license_url": "https://www.ultralytics.com/license",
+  "license_source": "https://github.com/ultralytics/ultralytics/blob/v8.3.161/LICENSE",
+  "pyav_version": "14.2.0",
+  "configurations": [
+    {"name": "nano_640", "imgsz": 640, "conf": 0.1, "iou": 0.7, "max_det": 100, "classes": [0], "retina_masks": true, "half": false},
+    {"name": "nano_960", "imgsz": 960, "conf": 0.1, "iou": 0.7, "max_det": 100, "classes": [0], "retina_masks": true, "half": false}
+  ]
+}

@@ -1,0 +1,19 @@
+[paths]
+detection_run = "../artifacts/detections/SET_IMPORTED_RUN_ID"
+evidence_dir = "../artifacts/detection/input_evidence"
+raw_dir = "../data/raw"
+output_dir = "../artifacts/local_tracks_v2"
+
+[tracking]
+# Replace with the configuration actually selected after the new benchmark.
+configuration_name = "small_640"
+
+[bytetrack]
+track_activation_threshold = 0.25
+lost_track_buffer = 30
+minimum_matching_threshold = 0.8
+minimum_consecutive_frames = 1
+
+[video]
+enabled = true
+output_dir = "../private_outputs/local_track_v2_videos"

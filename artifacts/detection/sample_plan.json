@@ -1,0 +1,346 @@
+{
+  "mode": "SAMPLE",
+  "sample_seconds_per_camera": 30.0,
+  "chunk_frames": 128,
+  "windows": [
+    {
+      "camera_id": "1",
+      "segment_id": "1:s0",
+      "raw_interval": [
+        97.58765,
+        107.58765
+      ],
+      "first_frame": 2470,
+      "stop_frame": 2725
+    },
+    {
+      "camera_id": "1",
+      "segment_id": "1:s1",
+      "raw_interval": [
+        450.70664999999997,
+        460.70664999999997
+      ],
+      "first_frame": 11222,
+      "stop_frame": 11477
+    },
+    {
+      "camera_id": "1",
+      "segment_id": "1:s2",
+      "raw_interval": [
+        938.7669,
+        948.7669
+      ],
+      "first_frame": 23419,
+      "stop_frame": 23674
+    },
+    {
+      "camera_id": "2",
+      "segment_id": "2:s0",
+      "raw_interval": [
+        136.37089999999998,
+        146.37089999999998
+      ],
+      "first_frame": 3459,
+      "stop_frame": 3714
+    },
+    {
+      "camera_id": "2",
+      "segment_id": "2:s1",
+      "raw_interval": [
+        539.8849,
+        549.8849
+      ],
+      "first_frame": 13496,
+      "stop_frame": 13750
+    },
+    {
+      "camera_id": "2",
+      "segment_id": "2:s2",
+      "raw_interval": [
+        989.83125,
+        999.83125
+      ],
+      "first_frame": 24717,
+      "stop_frame": 24972
+    },
+    {
+      "camera_id": "3",
+      "segment_id": "3:s0",
+      "raw_interval": [
+        132.94,
+        142.94
+      ],
+      "first_frame": 3371,
+      "stop_frame": 3626
+    },
+    {
+      "camera_id": "3",
+      "segment_id": "3:s1",
+      "raw_interval": [
+        531.5516,
+        541.5516
+      ],
+      "first_frame": 13284,
+      "stop_frame": 13539
+    },
+    {
+      "camera_id": "3",
+      "segment_id": "3:s2",
+      "raw_interval": [
+        984.7558,
+        994.7558
+      ],
+      "first_frame": 24590,
+      "stop_frame": 24845
+    },
+    {
+      "camera_id": "4",
+      "segment_id": "4:s0",
+      "raw_interval": [
+        104.80710000000002,
+        114.80710000000002
+      ],
+      "first_frame": 2004,
+      "stop_frame": 2204
+    },
+    {
+      "camera_id": "4",
+      "segment_id": "4:s1",
+      "raw_interval": [
+        243.1889,
+        253.1889
+      ],
+      "first_frame": 4772,
+      "stop_frame": 4972
+    },
+    {
+      "camera_id": "4",
+      "segment_id": "4:s2",
+      "raw_interval": [
+        678.7957,
+        688.7957
+      ],
+      "first_frame": 13483,
+      "stop_frame": 13683
+    },
+    {
+      "camera_id": "5",
+      "segment_id": "5:s0",
+      "raw_interval": [
+        119.47315,
+        129.47315
+      ],
+      "first_frame": 2913,
+      "stop_frame": 3168
+    },
+    {
+      "camera_id": "5",
+      "segment_id": "5:s1",
+      "raw_interval": [
+        496.3068,
+        506.3068
+      ],
+      "first_frame": 12270,
+      "stop_frame": 12525
+    },
+    {
+      "camera_id": "5",
+      "segment_id": "5:s2",
+      "raw_interval": [
+        965.5478499999999,
+        975.5478499999999
+      ],
+      "first_frame": 23983,
+      "stop_frame": 24238
+    }
+  ],
+  "chunks": [
+    {
+      "camera_id": "1",
+      "segment_id": "1:s0",
+      "start": 2470,
+      "stop": 2598
+    },
+    {
+      "camera_id": "1",
+      "segment_id": "1:s0",
+      "start": 2598,
+      "stop": 2725
+    },
+    {
+      "camera_id": "1",
+      "segment_id": "1:s1",
+      "start": 11222,
+      "stop": 11350
+    },
+    {
+      "camera_id": "1",
+      "segment_id": "1:s1",
+      "start": 11350,
+      "stop": 11477
+    },
+    {
+      "camera_id": "1",
+      "segment_id": "1:s2",
+      "start": 23419,
+      "stop": 23547
+    },
+    {
+      "camera_id": "1",
+      "segment_id": "1:s2",
+      "start": 23547,
+      "stop": 23674
+    },
+    {
+      "camera_id": "2",
+      "segment_id": "2:s0",
+      "start": 3459,
+      "stop": 3587
+    },
+    {
+      "camera_id": "2",
+      "segment_id": "2:s0",
+      "start": 3587,
+      "stop": 3714
+    },
+    {
+      "camera_id": "2",
+      "segment_id": "2:s1",
+      "start": 13496,
+      "stop": 13624
+    },
+    {
+      "camera_id": "2",
+      "segment_id": "2:s1",
+      "start": 13624,
+      "stop": 13750
+    },
+    {
+      "camera_id": "2",
+      "segment_id": "2:s2",
+      "start": 24717,
+      "stop": 24845
+    },
+    {
+      "camera_id": "2",
+      "segment_id": "2:s2",
+      "start": 24845,
+      "stop": 24972
+    },
+    {
+      "camera_id": "3",
+      "segment_id": "3:s0",
+      "start": 3371,
+      "stop": 3499
+    },
+    {
+      "camera_id": "3",
+      "segment_id": "3:s0",
+      "start": 3499,
+      "stop": 3626
+    },
+    {
+      "camera_id": "3",
+      "segment_id": "3:s1",
+      "start": 13284,
+      "stop": 13412
+    },
+    {
+      "camera_id": "3",
+      "segment_id": "3:s1",
+      "start": 13412,
+      "stop": 13539
+    },
+    {
+      "camera_id": "3",
+      "segment_id": "3:s2",
+      "start": 24590,
+      "stop": 24718
+    },
+    {
+      "camera_id": "3",
+      "segment_id": "3:s2",
+      "start": 24718,
+      "stop": 24845
+    },
+    {
+      "camera_id": "4",
+      "segment_id": "4:s0",
+      "start": 2004,
+      "stop": 2132
+    },
+    {
+      "camera_id": "4",
+      "segment_id": "4:s0",
+      "start": 2132,
+      "stop": 2204
+    },
+    {
+      "camera_id": "4",
+      "segment_id": "4:s1",
+      "start": 4772,
+      "stop": 4900
+    },
+    {
+      "camera_id": "4",
+      "segment_id": "4:s1",
+      "start": 4900,
+      "stop": 4972
+    },
+    {
+      "camera_id": "4",
+      "segment_id": "4:s2",
+      "start": 13483,
+      "stop": 13611
+    },
+    {
+      "camera_id": "4",
+      "segment_id": "4:s2",
+      "start": 13611,
+      "stop": 13683
+    },
+    {
+      "camera_id": "5",
+      "segment_id": "5:s0",
+      "start": 2913,
+      "stop": 3041
+    },
+    {
+      "camera_id": "5",
+      "segment_id": "5:s0",
+      "start": 3041,
+      "stop": 3168
+    },
+    {
+      "camera_id": "5",
+      "segment_id": "5:s1",
+      "start": 12270,
+      "stop": 12398
+    },
+    {
+      "camera_id": "5",
+      "segment_id": "5:s1",
+      "start": 12398,
+      "stop": 12525
+    },
+    {
+      "camera_id": "5",
+      "segment_id": "5:s2",
+      "start": 23983,
+      "stop": 24111
+    },
+    {
+      "camera_id": "5",
+      "segment_id": "5:s2",
+      "start": 24111,
+      "stop": 24238
+    }
+  ],
+  "selected_frame_counts": {
+    "1": 765,
+    "2": 764,
+    "3": 765,
+    "4": 600,
+    "5": 765
+  }
+}

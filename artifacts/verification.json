@@ -1,0 +1,24 @@
+{
+  "tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "18",
+    "time": "4.275",
+    "timestamp": "2026-11-06T23:41:50.738230+03:00",
+    "hostname": "Mar1o"
+  },
+  "full_probe_files": 5,
+  "decoded_frames": 144110,
+  "preview_count": 100,
+  "all_input_hashes_match": true,
+  "all_preview_pts_in_full_probe": true,
+  "html_images": 106,
+  "html_broken_images": 0,
+  "desktop_viewport_width": 1440,
+  "mobile_viewport_width": 390,
+  "mobile_scroll_width": 390,
+  "browser": "Microsoft Edge headless via Playwright",
+  "applied_offsets": null
+}

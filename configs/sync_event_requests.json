@@ -1,0 +1,8 @@
+{
+  "events": [
+    {"id":"tv_before_jumps_100","description":"Search shared physical TV cuts before first jumps","kind":"shared_tv_cut_candidate","targets":{"1":[100,102,104,106,108,110,112],"3":[100,102,104,106,108,110,112]},"crops":{"1":[0,275,170,490],"3":[1760,410,2110,680]}},
+    {"id":"tv_middle_400","description":"Search shared TV cuts after first jumps in both cameras","kind":"shared_tv_cut_candidate","targets":{"1":[400,402,404,406,408,410,412],"3":[400,402,404,406,408,410,412]},"crops":{"1":[0,275,170,490],"3":[1760,410,2110,680]}},
+    {"id":"tv_after_jumps_900","description":"Search shared TV cuts after second jumps in both cameras","kind":"shared_tv_cut_candidate","targets":{"1":[900,902,904,906,908,910,912],"3":[900,902,904,906,908,910,912]},"crops":{"1":[0,275,170,490],"3":[1760,410,2110,680]}},
+    {"id":"tv_late_1150","description":"Search independent shared TV cuts near end","kind":"shared_tv_cut_candidate","targets":{"1":[1150,1152,1154,1156,1158,1160,1162],"3":[1150,1152,1154,1156,1158,1160,1162]},"crops":{"1":[0,275,170,490],"3":[1760,410,2110,680]}}
+  ]
+}

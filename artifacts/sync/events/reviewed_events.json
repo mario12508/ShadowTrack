@@ -1,0 +1,94 @@
+{
+  "checked": true,
+  "events": [
+    {
+      "id": "sync_middle_tv_cut",
+      "kind": "shared_tv_cut",
+      "checked": true,
+      "reviewer": "Codex visual review 2026-11-07",
+      "description": "close shot to wide stage, include the visible dissolve; same physical television, no office person matching",
+      "observations": {
+        "1": [
+          402.932,
+          403.089
+        ],
+        "3": [
+          402.056,
+          402.213
+        ]
+      },
+      "source": {
+        "manifest": "artifacts/sync/events/fine/manifest.json",
+        "sha256": "e06c782c25cc07ce31cec99c5a65f4d644427b3e40ce8d7f1ede5e36ed4e5a46"
+      },
+      "review_notes": "Bounds are actual showinfo PTS of before/after frames; transition included conservatively."
+    },
+    {
+      "id": "sync_late_tv_cut_A",
+      "kind": "shared_tv_cut",
+      "checked": true,
+      "reviewer": "Codex visual review 2026-11-07",
+      "description": "wide stage to audience/walking shot; same physical television, no office person matching",
+      "observations": {
+        "1": [
+          902.922,
+          903.0
+        ],
+        "3": [
+          902.059,
+          902.138
+        ]
+      },
+      "source": {
+        "manifest": "artifacts/sync/events/fine/manifest.json",
+        "sha256": "e06c782c25cc07ce31cec99c5a65f4d644427b3e40ce8d7f1ede5e36ed4e5a46"
+      },
+      "review_notes": "Bounds are actual showinfo PTS of before/after frames; transition included conservatively."
+    },
+    {
+      "id": "sync_late_tv_cut_B",
+      "kind": "shared_tv_cut",
+      "checked": true,
+      "reviewer": "Codex visual review 2026-11-07",
+      "description": "walking shot to wide stage; same physical television, no office person matching",
+      "observations": {
+        "1": [
+          908.293,
+          908.372
+        ],
+        "3": [
+          907.426,
+          907.504
+        ]
+      },
+      "source": {
+        "manifest": "artifacts/sync/events/fine/manifest.json",
+        "sha256": "e06c782c25cc07ce31cec99c5a65f4d644427b3e40ce8d7f1ede5e36ed4e5a46"
+      },
+      "review_notes": "Bounds are actual showinfo PTS of before/after frames; transition included conservatively."
+    },
+    {
+      "id": "sync_end_tv_cut",
+      "kind": "shared_tv_cut",
+      "checked": true,
+      "reviewer": "Codex visual review 2026-11-07",
+      "description": "presenter close shot to wide stage; same physical television, no office person matching",
+      "observations": {
+        "1": [
+          1158.197,
+          1158.276
+        ],
+        "3": [
+          1157.396,
+          1157.474
+        ]
+      },
+      "source": {
+        "manifest": "artifacts/sync/events/fine/manifest.json",
+        "sha256": "e06c782c25cc07ce31cec99c5a65f4d644427b3e40ce8d7f1ede5e36ed4e5a46"
+      },
+      "review_notes": "Bounds are actual showinfo PTS of before/after frames; transition included conservatively."
+    }
+  ],
+  "source_sha256": "e06c782c25cc07ce31cec99c5a65f4d644427b3e40ce8d7f1ede5e36ed4e5a46"
+}

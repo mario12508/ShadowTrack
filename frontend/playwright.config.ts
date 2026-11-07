@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'./e2e',timeout:60000,workers:1,fullyParallel:false,reporter:[['list'],['json',{outputFile:'../artifacts/mvp/playwright-results.json'}]],outputDir:'../private_outputs/mvp_browser_smoke',use:{baseURL:process.env.SHADOWTRACK_WEB_URL||'http://127.0.0.1:3000',channel:'chrome',headless:true,viewport:{width:1440,height:1000},screenshot:'only-on-failure',video:'off',trace:'retain-on-failure'}});

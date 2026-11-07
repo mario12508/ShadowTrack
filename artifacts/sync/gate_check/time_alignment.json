@@ -1,0 +1,3539 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-11-06T21:40:37.619932+00:00",
+  "status": "PARTIAL",
+  "acceptance_status": "PARTIAL",
+  "global_time_basis": "arbitrary relative seconds from first decoded frame of camera 3, first uninterrupted epoch; NOT UTC",
+  "reference_camera": "3",
+  "reference_node": "3:s0",
+  "reference_support": [
+    [
+      0.19499999999999995,
+      3.5300000000000002
+    ]
+  ],
+  "reference_coordinate_resolution_seconds": 0.001,
+  "cameras": [
+    {
+      "camera_id": "1",
+      "file": "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+      "sha256": "744331b88aadaf56a83540d3081f22f11cf207ee93b62bacf03972c679814dc5",
+      "nominal_fps": 25.0,
+      "frame_count": 30083,
+      "raw_pts_evidence": "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\inspect\\camera_01\\timestamps\\frames.json",
+      "raw_pts_evidence_sha256": "bee4f8fb016102569e0792c2d9f392be60e37278a442c153af0643c74e0aeded",
+      "local_frame_times_file": "camera_1_frame_times.npz",
+      "local_frame_times_sha256": "e630c52abef3069eddc3a953cc4593779f4293642490268e0906013eeb482d45",
+      "local_segments": [
+        {
+          "id": "1:s0",
+          "frame_start": 0,
+          "frame_end": 5742,
+          "raw_start": 0.785,
+          "raw_end": 225.902,
+          "local_start": 0.0,
+          "local_end": 225.117,
+          "status": "LOCAL_ESTIMATE",
+          "physical_rate_verified": false
+        },
+        {
+          "id": "1:s1",
+          "frame_start": 5743,
+          "frame_end": 18174,
+          "raw_start": 235.95,
+          "raw_end": 723.187,
+          "local_start": 225.15599999999998,
+          "local_end": 712.393,
+          "status": "LOCAL_ESTIMATE",
+          "physical_rate_verified": false
+        },
+        {
+          "id": "1:s2",
+          "frame_start": 18175,
+          "frame_end": 30082,
+          "raw_start": 733.242,
+          "raw_end": 1199.964,
+          "local_start": 712.432,
+          "local_end": 1179.154,
+          "status": "LOCAL_ESTIMATE",
+          "physical_rate_verified": false
+        }
+      ],
+      "anomalies": [
+        {
+          "frame_before": 5742,
+          "frame_after": 5743,
+          "before_pts": 225.902,
+          "after_pts": 235.95,
+          "raw_delta_seconds": 10.048000000000002,
+          "classification": "CONFIRMED_CLOCK_DISCONTINUITY",
+          "corrected": true,
+          "estimated_capture_delta": 0.039,
+          "capture_delta_interval": [
+            1e-06,
+            1.0
+          ],
+          "evidence_id": "audit_camera1_jump_a",
+          "source": {
+            "manifest": "artifacts/events/gaps_camera1/manifest.json",
+            "sha256": "5052faf37798fd0d4006009285028837b9331ad9f32513e6399fbbed7b88350a"
+          },
+          "assumption": "OSD is running locally; same displayed second bounds elapsed time below 1s. Median step is an estimate, not verified physical cadence."
+        },
+        {
+          "frame_before": 18174,
+          "frame_after": 18175,
+          "before_pts": 723.187,
+          "after_pts": 733.242,
+          "raw_delta_seconds": 10.05499999999995,
+          "classification": "CONFIRMED_CLOCK_DISCONTINUITY",
+          "corrected": true,
+          "estimated_capture_delta": 0.039,
+          "capture_delta_interval": [
+            1e-06,
+            1.0
+          ],
+          "evidence_id": "audit_camera1_jump_b",
+          "source": {
+            "manifest": "artifacts/events/gaps_camera1/manifest.json",
+            "sha256": "5052faf37798fd0d4006009285028837b9331ad9f32513e6399fbbed7b88350a"
+          },
+          "assumption": "OSD is running locally; same displayed second bounds elapsed time below 1s. Median step is an estimate, not verified physical cadence."
+        }
+      ],
+      "local_time_status": "ESTIMATE_ONLY_RATE_UNVERIFIED",
+      "synchronization_status": "PARTIAL",
+      "supported_regions": [
+        {
+          "local_interval_candidate": [
+            1.094,
+            4.4265
+          ],
+          "raw_interval_candidate": [
+            1.879,
+            5.2115
+          ],
+          "status": "SUPPORTED_CONDITIONAL",
+          "note": "Query API checks exact path support and uncertainty; boundary values may be unavailable."
+        }
+      ],
+      "unsupported_regions": [
+        {
+          "raw_interval": [
+            0.785,
+            1.879
+          ],
+          "open_end": true,
+          "reason": "no calibrated global support"
+        },
+        {
+          "raw_interval": [
+            5.2115,
+            225.902
+          ],
+          "open_start": true,
+          "reason": "no calibrated global support"
+        },
+        {
+          "raw_interval": [
+            235.95,
+            723.187
+          ],
+          "open_start": true,
+          "reason": "no calibrated global support"
+        },
+        {
+          "raw_interval": [
+            733.242,
+            1199.964
+          ],
+          "open_start": true,
+          "reason": "no calibrated global support"
+        }
+      ],
+      "unavailable_raw_gaps": [
+        {
+          "raw_interval": [
+            225.902,
+            235.95
+          ],
+          "reason": "CONFIRMED_CLOCK_DISCONTINUITY"
+        },
+        {
+          "raw_interval": [
+            723.187,
+            733.242
+          ],
+          "reason": "CONFIRMED_CLOCK_DISCONTINUITY"
+        }
+      ]
+    },
+    {
+      "camera_id": "2",
+      "file": "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_2.mkv",
+      "sha256": "6839e486dd14c70b948f5f8e120d3cb339c45a1a26dd1baa496200704fef59c4",
+      "nominal_fps": 25.0,
+      "frame_count": 30077,
+      "raw_pts_evidence": "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\inspect\\camera_02\\timestamps\\frames.json",
+      "raw_pts_evidence_sha256": "f912c4eb7a431dc33923c08619812a9c93ebb8786132ccd5649a7c0d791aa2db",
+      "local_frame_times_file": "camera_2_frame_times.npz",
+      "local_frame_times_sha256": "a3b77c2c03adb1ae07131a245402822cefdbb879021356f871abc09b3d77a578",
+      "local_segments": [
+        {
+          "id": "2:s0",
+          "frame_start": 0,
+          "frame_end": 7940,
+          "raw_start": 0.785,
+          "raw_end": 312.087,
+          "local_start": 0.0,
+          "local_end": 311.302,
+          "status": "LOCAL_ESTIMATE",
+          "physical_rate_verified": false
+        },
+        {
+          "id": "2:s1",
+          "frame_start": 7941,
+          "frame_end": 20539,
+          "raw_start": 322.129,
+          "raw_end": 816.031,
+          "local_start": 321.34400000000005,
+          "local_end": 815.246,
+          "status": "LOCAL_ESTIMATE",
+          "physical_rate_verified": false
+        },
+        {
+          "id": "2:s2",
+          "frame_start": 20540,
+          "frame_end": 30076,
+          "raw_start": 826.074,
+          "raw_end": 1199.979,
+          "local_start": 825.289,
+          "local_end": 1199.194,
+          "status": "LOCAL_ESTIMATE",
+          "physical_rate_verified": false
+        }
+      ],
+      "anomalies": [
+        {
+          "frame_before": 7940,
+          "frame_after": 7941,
+          "before_pts": 312.087,
+          "after_pts": 322.129,
+          "raw_delta_seconds": 10.04200000000003,
+          "classification": "UNRESOLVED_GAP_OR_JITTER",
+          "corrected": false,
+          "physical_elapsed_time": "UNKNOWN"
+        },
+        {
+          "frame_before": 20539,
+          "frame_after": 20540,
+          "before_pts": 816.031,
+          "after_pts": 826.074,
+          "raw_delta_seconds": 10.043000000000006,
+          "classification": "UNRESOLVED_GAP_OR_JITTER",
+          "corrected": false,
+          "physical_elapsed_time": "UNKNOWN"
+        }
+      ],
+      "local_time_status": "ESTIMATE_ONLY_RATE_UNVERIFIED",
+      "synchronization_status": "UNCALIBRATED",
+      "supported_regions": [],
+      "unsupported_regions": [
+        {
+          "raw_interval": [
+            0.785,
+            312.087
+          ],
+          "open_start": false,
+          "reason": "no calibrated global support"
+        },
+        {
+          "raw_interval": [
+            322.129,
+            816.031
+          ],
+          "open_start": false,
+          "reason": "no calibrated global support"
+        },
+        {
+          "raw_interval": [
+            826.074,
+            1199.979
+          ],
+          "open_start": false,
+          "reason": "no calibrated global support"
+        }
+      ],
+      "unavailable_raw_gaps": [
+        {
+          "raw_interval": [
+            312.087,
+            322.129
+          ],
+          "reason": "UNRESOLVED_GAP_OR_JITTER"
+        },
+        {
+          "raw_interval": [
+            816.031,
+            826.074
+          ],
+          "reason": "UNRESOLVED_GAP_OR_JITTER"
+        }
+      ]
+    },
+    {
+      "camera_id": "3",
+      "file": "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+      "sha256": "f90f08498e306b3e75b07489a253ebdfcbb5f3373b73478b086bd5d7ef9a8873",
+      "nominal_fps": 25.0,
+      "frame_count": 30080,
+      "raw_pts_evidence": "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\inspect\\camera_03\\timestamps\\frames.json",
+      "raw_pts_evidence_sha256": "a53334f3b549ee68ef2318e6c2bfb7b2587c7bd120831f5e62cf5d406a1530bd",
+      "local_frame_times_file": "camera_3_frame_times.npz",
+      "local_frame_times_sha256": "da642caffb08db9eb7d0f3903e76c7c4869ac3ac52199b5a0fc7f10f90d4a7d6",
+      "local_segments": [
+        {
+          "id": "3:s0",
+          "frame_start": 0,
+          "frame_end": 7747,
+          "raw_start": 0.784,
+          "raw_end": 304.464,
+          "local_start": 0.0,
+          "local_end": 303.68,
+          "status": "LOCAL_ESTIMATE",
+          "physical_rate_verified": false
+        },
+        {
+          "id": "3:s1",
+          "frame_start": 7748,
+          "frame_end": 20306,
+          "raw_start": 314.522,
+          "raw_end": 806.81,
+          "local_start": 313.738,
+          "local_end": 806.026,
+          "status": "LOCAL_ESTIMATE",
+          "physical_rate_verified": false
+        },
+        {
+          "id": "3:s2",
+          "frame_start": 20307,
+          "frame_end": 30079,
+          "raw_start": 816.85,
+          "raw_end": 1199.974,
+          "local_start": 816.066,
+          "local_end": 1199.19,
+          "status": "LOCAL_ESTIMATE",
+          "physical_rate_verified": false
+        }
+      ],
+      "anomalies": [
+        {
+          "frame_before": 7747,
+          "frame_after": 7748,
+          "before_pts": 304.464,
+          "after_pts": 314.522,
+          "raw_delta_seconds": 10.057999999999993,
+          "classification": "UNRESOLVED_GAP_OR_JITTER",
+          "corrected": false,
+          "physical_elapsed_time": "UNKNOWN"
+        },
+        {
+          "frame_before": 20306,
+          "frame_after": 20307,
+          "before_pts": 806.81,
+          "after_pts": 816.85,
+          "raw_delta_seconds": 10.040000000000077,
+          "classification": "UNRESOLVED_GAP_OR_JITTER",
+          "corrected": false,
+          "physical_elapsed_time": "UNKNOWN"
+        }
+      ],
+      "local_time_status": "ESTIMATE_ONLY_RATE_UNVERIFIED",
+      "synchronization_status": "PARTIAL",
+      "supported_regions": [
+        {
+          "local_interval_candidate": [
+            0.19499999999999995,
+            3.5300000000000002
+          ],
+          "raw_interval_candidate": [
+            0.979,
+            4.314
+          ],
+          "status": "SUPPORTED_CONDITIONAL",
+          "note": "Query API checks exact path support and uncertainty; boundary values may be unavailable."
+        }
+      ],
+      "unsupported_regions": [
+        {
+          "raw_interval": [
+            0.784,
+            0.979
+          ],
+          "open_end": true,
+          "reason": "no calibrated global support"
+        },
+        {
+          "raw_interval": [
+            4.314,
+            304.464
+          ],
+          "open_start": true,
+          "reason": "no calibrated global support"
+        },
+        {
+          "raw_interval": [
+            314.522,
+            806.81
+          ],
+          "open_start": true,
+          "reason": "no calibrated global support"
+        },
+        {
+          "raw_interval": [
+            816.85,
+            1199.974
+          ],
+          "open_start": true,
+          "reason": "no calibrated global support"
+        }
+      ],
+      "unavailable_raw_gaps": [
+        {
+          "raw_interval": [
+            304.464,
+            314.522
+          ],
+          "reason": "UNRESOLVED_GAP_OR_JITTER"
+        },
+        {
+          "raw_interval": [
+            806.81,
+            816.85
+          ],
+          "reason": "UNRESOLVED_GAP_OR_JITTER"
+        }
+      ]
+    },
+    {
+      "camera_id": "4",
+      "file": "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_4.mkv",
+      "sha256": "8ede342c3d0d98ab912e98c1a31ef5458ca04a8329b882634b277d7c4634bef2",
+      "nominal_fps": 20.0,
+      "frame_count": 23906,
+      "raw_pts_evidence": "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\inspect\\camera_04\\timestamps\\frames.json",
+      "raw_pts_evidence_sha256": "bbb3b3d5758a364b0ff9bee8b32afbbeed25c8d6def5799dde0ada1a29097c73",
+      "local_frame_times_file": "camera_4_frame_times.npz",
+      "local_frame_times_sha256": "83fcd28d162e49de40e0a85c64e0a93a339d384531d761c9e17f131c62917447",
+      "local_segments": [
+        {
+          "id": "4:s0",
+          "frame_start": 0,
+          "frame_end": 4652,
+          "raw_start": 4.629,
+          "raw_end": 237.247,
+          "local_start": 0.0,
+          "local_end": 232.618,
+          "status": "LOCAL_ESTIMATE",
+          "physical_rate_verified": false
+        },
+        {
+          "id": "4:s1",
+          "frame_start": 4653,
+          "frame_end": 5117,
+          "raw_start": 237.248,
+          "raw_end": 260.45,
+          "local_start": 232.61899999999997,
+          "local_end": 255.82099999999997,
+          "status": "LOCAL_ESTIMATE",
+          "physical_rate_verified": false
+        },
+        {
+          "id": "4:s2",
+          "frame_start": 5118,
+          "frame_end": 23905,
+          "raw_start": 260.554,
+          "raw_end": 1199.98,
+          "local_start": 255.92499999999995,
+          "local_end": 1195.3509999999999,
+          "status": "LOCAL_ESTIMATE",
+          "physical_rate_verified": false
+        }
+      ],
+      "anomalies": [
+        {
+          "frame_before": 4652,
+          "frame_after": 4653,
+          "before_pts": 237.247,
+          "after_pts": 237.248,
+          "raw_delta_seconds": 0.0009999999999763531,
+          "classification": "UNRESOLVED_GAP_OR_JITTER",
+          "corrected": false,
+          "physical_elapsed_time": "UNKNOWN"
+        },
+        {
+          "frame_before": 5117,
+          "frame_after": 5118,
+          "before_pts": 260.45,
+          "after_pts": 260.554,
+          "raw_delta_seconds": 0.103999999999985,
+          "classification": "UNRESOLVED_GAP_OR_JITTER",
+          "corrected": false,
+          "physical_elapsed_time": "UNKNOWN"
+        }
+      ],
+      "local_time_status": "ESTIMATE_ONLY_RATE_UNVERIFIED",
+      "synchronization_status": "UNCALIBRATED",
+      "supported_regions": [],
+      "unsupported_regions": [
+        {
+          "raw_interval": [
+            4.629,
+            237.247
+          ],
+          "open_start": false,
+          "reason": "no calibrated global support"
+        },
+        {
+          "raw_interval": [
+            237.248,
+            260.45
+          ],
+          "open_start": false,
+          "reason": "no calibrated global support"
+        },
+        {
+          "raw_interval": [
+            260.554,
+            1199.98
+          ],
+          "open_start": false,
+          "reason": "no calibrated global support"
+        }
+      ],
+      "unavailable_raw_gaps": [
+        {
+          "raw_interval": [
+            237.247,
+            237.248
+          ],
+          "reason": "UNRESOLVED_GAP_OR_JITTER"
+        },
+        {
+          "raw_interval": [
+            260.45,
+            260.554
+          ],
+          "reason": "UNRESOLVED_GAP_OR_JITTER"
+        }
+      ]
+    },
+    {
+      "camera_id": "5",
+      "file": "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_5.mkv",
+      "sha256": "6e3dd8bb2bb0c7b640b79b7a2c85f54d8346e930e9d89f55d86cf20f43aa4be5",
+      "nominal_fps": 25.0,
+      "frame_count": 29964,
+      "raw_pts_evidence": "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\inspect\\camera_05\\timestamps\\frames.json",
+      "raw_pts_evidence_sha256": "86bdd2dfc39f4c251161c983fc1ae7e0a46ceb8c6220693538c7c9eb97528c8b",
+      "local_frame_times_file": "camera_5_frame_times.npz",
+      "local_frame_times_sha256": "d66bf1e264431d6aaebbd09be4279ea9b4fd11bf08030d4a55480366747519ca",
+      "local_segments": [
+        {
+          "id": "5:s0",
+          "frame_start": 0,
+          "frame_end": 6726,
+          "raw_start": 5.323,
+          "raw_end": 268.99,
+          "local_start": 0.0,
+          "local_end": 263.667,
+          "status": "LOCAL_ESTIMATE",
+          "physical_rate_verified": false
+        },
+        {
+          "id": "5:s1",
+          "frame_start": 6727,
+          "frame_end": 19298,
+          "raw_start": 279.036,
+          "raw_end": 771.86,
+          "local_start": 273.71299999999997,
+          "local_end": 766.537,
+          "status": "LOCAL_ESTIMATE",
+          "physical_rate_verified": false
+        },
+        {
+          "id": "5:s2",
+          "frame_start": 19299,
+          "frame_end": 29963,
+          "raw_start": 781.906,
+          "raw_end": 1199.999,
+          "local_start": 776.583,
+          "local_end": 1194.6760000000002,
+          "status": "LOCAL_ESTIMATE",
+          "physical_rate_verified": false
+        }
+      ],
+      "anomalies": [
+        {
+          "frame_before": 6726,
+          "frame_after": 6727,
+          "before_pts": 268.99,
+          "after_pts": 279.036,
+          "raw_delta_seconds": 10.045999999999992,
+          "classification": "UNRESOLVED_GAP_OR_JITTER",
+          "corrected": false,
+          "physical_elapsed_time": "UNKNOWN"
+        },
+        {
+          "frame_before": 19298,
+          "frame_after": 19299,
+          "before_pts": 771.86,
+          "after_pts": 781.906,
+          "raw_delta_seconds": 10.045999999999935,
+          "classification": "UNRESOLVED_GAP_OR_JITTER",
+          "corrected": false,
+          "physical_elapsed_time": "UNKNOWN"
+        }
+      ],
+      "local_time_status": "ESTIMATE_ONLY_RATE_UNVERIFIED",
+      "synchronization_status": "UNCALIBRATED",
+      "supported_regions": [],
+      "unsupported_regions": [
+        {
+          "raw_interval": [
+            5.323,
+            268.99
+          ],
+          "open_start": false,
+          "reason": "no calibrated global support"
+        },
+        {
+          "raw_interval": [
+            279.036,
+            771.86
+          ],
+          "open_start": false,
+          "reason": "no calibrated global support"
+        },
+        {
+          "raw_interval": [
+            781.906,
+            1199.999
+          ],
+          "open_start": false,
+          "reason": "no calibrated global support"
+        }
+      ],
+      "unavailable_raw_gaps": [
+        {
+          "raw_interval": [
+            268.99,
+            279.036
+          ],
+          "reason": "UNRESOLVED_GAP_OR_JITTER"
+        },
+        {
+          "raw_interval": [
+            771.86,
+            781.906
+          ],
+          "reason": "UNRESOLVED_GAP_OR_JITTER"
+        }
+      ]
+    }
+  ],
+  "pair_models": [
+    {
+      "id": "1:s0->3:s0",
+      "node_a": "1:s0",
+      "node_b": "3:s0",
+      "anchors": [
+        {
+          "id": "audit_tv_A",
+          "x": [
+            1.0550000000000002,
+            1.133
+          ],
+          "y": [
+            0.15599999999999992,
+            0.23399999999999999
+          ],
+          "raw_x": [
+            1.84,
+            1.918
+          ],
+          "raw_y": [
+            0.94,
+            1.018
+          ],
+          "source": {
+            "manifest": "artifacts/events/tv_refined/manifest.json",
+            "sha256": "b95479e5e32ee53cbe9a2a7b4aa3875054a7481d1d1f707c521a65d54ec7c3ac"
+          },
+          "kind": "shared_tv_cut"
+        },
+        {
+          "id": "audit_tv_B",
+          "x": [
+            4.387,
+            4.466
+          ],
+          "y": [
+            3.4910000000000005,
+            3.569
+          ],
+          "raw_x": [
+            5.172,
+            5.251
+          ],
+          "raw_y": [
+            4.275,
+            4.353
+          ],
+          "source": {
+            "manifest": "artifacts/events/tv_refined/manifest.json",
+            "sha256": "b95479e5e32ee53cbe9a2a7b4aa3875054a7481d1d1f707c521a65d54ec7c3ac"
+          },
+          "kind": "shared_tv_cut"
+        }
+      ],
+      "status": "SUPPORTED",
+      "model": "constant_offset",
+      "slope": 1.0,
+      "intercept_seconds": -0.8979999999999999,
+      "drift_ppm": null,
+      "drift_status": "NOT_IDENTIFIABLE_ON_THIS_SPAN",
+      "drift_interval_ppm": null,
+      "parameter_polygon": [
+        [
+          1.0,
+          -0.9949999999999997
+        ],
+        [
+          1.0,
+          -0.8010000000000002
+        ]
+      ],
+      "x_support": [
+        1.094,
+        4.4265
+      ],
+      "y_support": [
+        0.19499999999999995,
+        3.5300000000000002
+      ],
+      "systematic_seconds": 0.02,
+      "assumption": "affine only between checked anchors within the same uninterrupted segment",
+      "anchor_ids": [
+        "audit_tv_A",
+        "audit_tv_B"
+      ],
+      "outlier_ids": [],
+      "residuals": [
+        {
+          "id": "audit_tv_A",
+          "center_seconds": -0.001000000000000223,
+          "interval_violation_seconds": 0.0,
+          "inlier": true
+        },
+        {
+          "id": "audit_tv_B",
+          "center_seconds": 0.0015000000000000568,
+          "interval_violation_seconds": 0.0,
+          "inlier": true
+        }
+      ],
+      "rms_center_residual_seconds": 0.001274754878398317,
+      "raw_pts_model": {
+        "status": "SUPPORTED",
+        "model": "constant_offset",
+        "slope": 1.0,
+        "intercept_seconds": -0.899,
+        "drift_ppm": null,
+        "drift_status": "NOT_IDENTIFIABLE_ON_THIS_SPAN",
+        "drift_interval_ppm": null,
+        "parameter_polygon": [
+          [
+            1.0,
+            -0.996
+          ],
+          [
+            1.0,
+            -0.802
+          ]
+        ],
+        "x_support": [
+          1.879,
+          5.2115
+        ],
+        "y_support": [
+          0.979,
+          4.314
+        ],
+        "systematic_seconds": 0.02,
+        "assumption": "affine only between checked anchors within the same uninterrupted segment",
+        "anchor_ids": [
+          "audit_tv_A",
+          "audit_tv_B"
+        ],
+        "outlier_ids": [],
+        "residuals": [
+          {
+            "id": "audit_tv_A",
+            "center_seconds": -0.0010000000000000009,
+            "interval_violation_seconds": 0.0,
+            "inlier": true
+          },
+          {
+            "id": "audit_tv_B",
+            "center_seconds": 0.0015000000000000568,
+            "interval_violation_seconds": 0.0,
+            "inlier": true
+          }
+        ],
+        "rms_center_residual_seconds": 0.0012747548783982301
+      }
+    },
+    {
+      "id": "1:s1->3:s1",
+      "node_a": "1:s1",
+      "node_b": "3:s1",
+      "anchors": [
+        {
+          "id": "sync_middle_tv_cut",
+          "x": [
+            392.099001,
+            393.256
+          ],
+          "y": [
+            401.272,
+            401.42900000000003
+          ],
+          "raw_x": [
+            402.932,
+            403.089
+          ],
+          "raw_y": [
+            402.056,
+            402.213
+          ],
+          "source": {
+            "manifest": "artifacts/sync/events/fine/manifest.json",
+            "sha256": "e06c782c25cc07ce31cec99c5a65f4d644427b3e40ce8d7f1ede5e36ed4e5a46"
+          },
+          "kind": "shared_tv_cut"
+        }
+      ],
+      "status": "UNCALIBRATED",
+      "reason": "at least two independent checked events required",
+      "raw_pts_model": {
+        "status": "UNCALIBRATED",
+        "reason": "at least two independent checked events required"
+      }
+    },
+    {
+      "id": "1:s2->3:s2",
+      "node_a": "1:s2",
+      "node_b": "3:s2",
+      "anchors": [
+        {
+          "id": "sync_late_tv_cut_A",
+          "x": [
+            882.034002,
+            884.1120000000001
+          ],
+          "y": [
+            901.275,
+            901.354
+          ],
+          "raw_x": [
+            902.922,
+            903.0
+          ],
+          "raw_y": [
+            902.059,
+            902.138
+          ],
+          "source": {
+            "manifest": "artifacts/sync/events/fine/manifest.json",
+            "sha256": "e06c782c25cc07ce31cec99c5a65f4d644427b3e40ce8d7f1ede5e36ed4e5a46"
+          },
+          "kind": "shared_tv_cut"
+        },
+        {
+          "id": "sync_late_tv_cut_B",
+          "x": [
+            887.405002,
+            889.484
+          ],
+          "y": [
+            906.642,
+            906.72
+          ],
+          "raw_x": [
+            908.293,
+            908.372
+          ],
+          "raw_y": [
+            907.426,
+            907.504
+          ],
+          "source": {
+            "manifest": "artifacts/sync/events/fine/manifest.json",
+            "sha256": "e06c782c25cc07ce31cec99c5a65f4d644427b3e40ce8d7f1ede5e36ed4e5a46"
+          },
+          "kind": "shared_tv_cut"
+        },
+        {
+          "id": "sync_end_tv_cut",
+          "x": [
+            1137.3090019999997,
+            1139.3880000000001
+          ],
+          "y": [
+            1156.612,
+            1156.69
+          ],
+          "raw_x": [
+            1158.197,
+            1158.276
+          ],
+          "raw_y": [
+            1157.396,
+            1157.474
+          ],
+          "source": {
+            "manifest": "artifacts/sync/events/fine/manifest.json",
+            "sha256": "e06c782c25cc07ce31cec99c5a65f4d644427b3e40ce8d7f1ede5e36ed4e5a46"
+          },
+          "kind": "shared_tv_cut"
+        }
+      ],
+      "status": "SUPPORTED",
+      "model": "affine_drift",
+      "slope": 0.9999388761592477,
+      "intercept_seconds": 18.46878215718484,
+      "drift_ppm": -61.123840752297376,
+      "drift_status": "ZERO_NOT_EXCLUDED",
+      "drift_interval_ppm": [
+        -5000.000000000005,
+        4999.999999999894
+      ],
+      "parameter_polygon": [
+        [
+          1.005,
+          12.722440000041388
+        ],
+        [
+          1.005,
+          13.714452990000433
+        ],
+        [
+          1.0002641014149445,
+          19.10063308334292
+        ],
+        [
+          0.9990690746494657,
+          20.161105812552755
+        ],
+        [
+          0.995,
+          23.750168010010384
+        ],
+        [
+          0.995,
+          22.900940000000038
+        ],
+        [
+          1.0002389570503234,
+          16.93173520434598
+        ]
+      ],
+      "x_support": [
+        883.073001,
+        1138.348501
+      ],
+      "y_support": [
+        901.3145,
+        1156.651
+      ],
+      "systematic_seconds": 0.02,
+      "assumption": "affine only between checked anchors within the same uninterrupted segment",
+      "anchor_ids": [
+        "sync_late_tv_cut_A",
+        "sync_late_tv_cut_B",
+        "sync_end_tv_cut"
+      ],
+      "outlier_ids": [],
+      "residuals": [
+        {
+          "id": "sync_late_tv_cut_A",
+          "center_seconds": -0.17330634369909603,
+          "interval_violation_seconds": 0.0,
+          "inlier": true
+        },
+        {
+          "id": "sync_late_tv_cut_B",
+          "center_seconds": -0.17797801698839066,
+          "interval_violation_seconds": 0.0,
+          "inlier": true
+        },
+        {
+          "id": "sync_end_tv_cut",
+          "center_seconds": -0.09670292468899788,
+          "interval_violation_seconds": 0.0,
+          "inlier": true
+        }
+      ],
+      "rms_center_residual_seconds": 0.1539076768075319,
+      "raw_pts_model": {
+        "status": "SUPPORTED",
+        "model": "affine_drift",
+        "slope": 1.0002475016256183,
+        "intercept_seconds": -1.0881500099842598,
+        "drift_ppm": 247.50162561826272,
+        "drift_status": "ZERO_NOT_EXCLUDED",
+        "drift_interval_ppm": [
+          -524.035634423603,
+          1010.9836714955467
+        ],
+        "parameter_polygon": [
+          [
+            1.0002641014149432,
+            -1.0088814664830172
+          ],
+          [
+            0.9994759643655764,
+            -0.2930221015025519
+          ],
+          [
+            1.000238957050458,
+            -1.1767782165763323
+          ],
+          [
+            1.0010109836714955,
+            -1.873918255375138
+          ]
+        ],
+        "x_support": [
+          902.961,
+          1158.2365
+        ],
+        "y_support": [
+          902.0985000000001,
+          1157.435
+        ],
+        "systematic_seconds": 0.02,
+        "assumption": "affine only between checked anchors within the same uninterrupted segment",
+        "anchor_ids": [
+          "sync_late_tv_cut_A",
+          "sync_late_tv_cut_B",
+          "sync_end_tv_cut"
+        ],
+        "outlier_ids": [],
+        "residuals": [
+          {
+            "id": "sync_late_tv_cut_A",
+            "center_seconds": 0.002165694614404856,
+            "interval_violation_seconds": 0.0,
+            "inlier": true
+          },
+          {
+            "id": "sync_late_tv_cut_B",
+            "center_seconds": -0.004163760367646319,
+            "interval_violation_seconds": 0.0,
+            "inlier": true
+          },
+          {
+            "id": "sync_end_tv_cut",
+            "center_seconds": -1.5406616284963093e-05,
+            "interval_violation_seconds": 0.0,
+            "inlier": true
+          }
+        ],
+        "rms_center_residual_seconds": 0.0027096968419529736
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "audit_tv_A",
+      "kind": "shared_tv_cut",
+      "checked": true,
+      "reviewer": "imported from completed DATA_AUDIT visual review",
+      "description": "close shot to wide stage, same physical TV; transition is bracketed",
+      "observations": {
+        "1": [
+          1.84,
+          1.918
+        ],
+        "3": [
+          0.94,
+          1.018
+        ]
+      },
+      "source": {
+        "manifest": "artifacts/events/tv_refined/manifest.json",
+        "sha256": "b95479e5e32ee53cbe9a2a7b4aa3875054a7481d1d1f707c521a65d54ec7c3ac"
+      },
+      "accepted_for_fit": true,
+      "exclusion_reason": null
+    },
+    {
+      "id": "audit_tv_B",
+      "kind": "shared_tv_cut",
+      "checked": true,
+      "reviewer": "imported from completed DATA_AUDIT visual review",
+      "description": "wide stage to close shot, same physical TV",
+      "observations": {
+        "1": [
+          5.172,
+          5.251
+        ],
+        "3": [
+          4.275,
+          4.353
+        ]
+      },
+      "source": {
+        "manifest": "artifacts/events/tv_refined/manifest.json",
+        "sha256": "b95479e5e32ee53cbe9a2a7b4aa3875054a7481d1d1f707c521a65d54ec7c3ac"
+      },
+      "accepted_for_fit": true,
+      "exclusion_reason": null
+    },
+    {
+      "id": "sync_middle_tv_cut",
+      "kind": "shared_tv_cut",
+      "checked": true,
+      "reviewer": "Codex visual review 2026-11-07",
+      "description": "close shot to wide stage, include the visible dissolve; same physical television, no office person matching",
+      "observations": {
+        "1": [
+          402.932,
+          403.089
+        ],
+        "3": [
+          402.056,
+          402.213
+        ]
+      },
+      "source": {
+        "manifest": "artifacts/sync/events/fine/manifest.json",
+        "sha256": "e06c782c25cc07ce31cec99c5a65f4d644427b3e40ce8d7f1ede5e36ed4e5a46"
+      },
+      "review_notes": "Bounds are actual showinfo PTS of before/after frames; transition included conservatively.",
+      "accepted_for_fit": true,
+      "exclusion_reason": null
+    },
+    {
+      "id": "sync_late_tv_cut_A",
+      "kind": "shared_tv_cut",
+      "checked": true,
+      "reviewer": "Codex visual review 2026-11-07",
+      "description": "wide stage to audience/walking shot; same physical television, no office person matching",
+      "observations": {
+        "1": [
+          902.922,
+          903.0
+        ],
+        "3": [
+          902.059,
+          902.138
+        ]
+      },
+      "source": {
+        "manifest": "artifacts/sync/events/fine/manifest.json",
+        "sha256": "e06c782c25cc07ce31cec99c5a65f4d644427b3e40ce8d7f1ede5e36ed4e5a46"
+      },
+      "review_notes": "Bounds are actual showinfo PTS of before/after frames; transition included conservatively.",
+      "accepted_for_fit": true,
+      "exclusion_reason": null
+    },
+    {
+      "id": "sync_late_tv_cut_B",
+      "kind": "shared_tv_cut",
+      "checked": true,
+      "reviewer": "Codex visual review 2026-11-07",
+      "description": "walking shot to wide stage; same physical television, no office person matching",
+      "observations": {
+        "1": [
+          908.293,
+          908.372
+        ],
+        "3": [
+          907.426,
+          907.504
+        ]
+      },
+      "source": {
+        "manifest": "artifacts/sync/events/fine/manifest.json",
+        "sha256": "e06c782c25cc07ce31cec99c5a65f4d644427b3e40ce8d7f1ede5e36ed4e5a46"
+      },
+      "review_notes": "Bounds are actual showinfo PTS of before/after frames; transition included conservatively.",
+      "accepted_for_fit": true,
+      "exclusion_reason": null
+    },
+    {
+      "id": "sync_end_tv_cut",
+      "kind": "shared_tv_cut",
+      "checked": true,
+      "reviewer": "Codex visual review 2026-11-07",
+      "description": "presenter close shot to wide stage; same physical television, no office person matching",
+      "observations": {
+        "1": [
+          1158.197,
+          1158.276
+        ],
+        "3": [
+          1157.396,
+          1157.474
+        ]
+      },
+      "source": {
+        "manifest": "artifacts/sync/events/fine/manifest.json",
+        "sha256": "e06c782c25cc07ce31cec99c5a65f4d644427b3e40ce8d7f1ede5e36ed4e5a46"
+      },
+      "review_notes": "Bounds are actual showinfo PTS of before/after frames; transition included conservatively.",
+      "accepted_for_fit": true,
+      "exclusion_reason": null
+    },
+    {
+      "id": "tv_before_jumps_100",
+      "description": "Search shared physical TV cuts before first jumps",
+      "checked": false,
+      "reviewer": null,
+      "observations": {
+        "1": null,
+        "3": null
+      },
+      "samples": [
+        {
+          "target_pts_seconds": 100.0,
+          "actual_pts_seconds": 100.006,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "99.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e00_camera1_000.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e00_camera1_000.jpg",
+          "sha256": "9c01594b191ad7fd6dcd1cbf6427905ae4b1078ab3706f10e73e0ca6e41aa17b",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 102.0,
+          "actual_pts_seconds": 102.004,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "101.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e00_camera1_001.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e00_camera1_001.jpg",
+          "sha256": "e404069b5bf9ce9c3755fc48d804facac5ba52cb3e26aa63547a80dac8a971e4",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 104.0,
+          "actual_pts_seconds": 104.003,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "103.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e00_camera1_002.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e00_camera1_002.jpg",
+          "sha256": "649c3914d48fd4c3044aa1f2c17fda665aa71b4c734912174100579816cd4efb",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 106.0,
+          "actual_pts_seconds": 106.0,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "105.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e00_camera1_003.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e00_camera1_003.jpg",
+          "sha256": "cd7b08544864b3afa8094857edc673ff6b3042f7041701ff13b556ea38150c5a",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 108.0,
+          "actual_pts_seconds": 108.003,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "107.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e00_camera1_004.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e00_camera1_004.jpg",
+          "sha256": "6e368c4babc05804462f332fe40fad5ab3e23c3bde57c2638b005bc257921fc2",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 110.0,
+          "actual_pts_seconds": 110.004,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "109.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e00_camera1_005.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e00_camera1_005.jpg",
+          "sha256": "88037ba5b3e75469028c880885e83dcebbcb748f97a83f01a10a20ef66133da3",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 112.0,
+          "actual_pts_seconds": 112.003,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "111.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e00_camera1_006.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e00_camera1_006.jpg",
+          "sha256": "4ba7c6c9be58bdb7ae530564b7c1eb8281c37be065cbc110fc426bdab1157797",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 100.0,
+          "actual_pts_seconds": 100.029,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "99.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e00_camera3_000.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e00_camera3_000.jpg",
+          "sha256": "47a98f775a5e8339b9cca153052ae819c0a8c2d247041e474846d9149424867b",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 102.0,
+          "actual_pts_seconds": 102.028,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "101.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e00_camera3_001.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e00_camera3_001.jpg",
+          "sha256": "fb0c6c5f3d11a91a0a6fba88e101cf06f70a5f79675bff20a5de18377cafbf19",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 104.0,
+          "actual_pts_seconds": 104.028,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "103.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e00_camera3_002.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e00_camera3_002.jpg",
+          "sha256": "11cf03f2513590329eafc827491ee244e837984cf6c7438fd21bf3529dbecd8c",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 106.0,
+          "actual_pts_seconds": 106.03,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "105.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e00_camera3_003.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e00_camera3_003.jpg",
+          "sha256": "fd63fe71a4fc527a3f8098c2a9083aac38c5dded6e541317fc9dee8a9d42ed59",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 108.0,
+          "actual_pts_seconds": 108.027,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "107.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e00_camera3_004.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e00_camera3_004.jpg",
+          "sha256": "37a100a7f90d9194d679d17a393fcb7a172a245455bc73caa2ab79080ea78f3c",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 110.0,
+          "actual_pts_seconds": 110.026,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "109.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e00_camera3_005.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e00_camera3_005.jpg",
+          "sha256": "6a14da4afa3f1e2253b199254b3344e472244790e4e5af0516bdf43f0bcb52d0",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 112.0,
+          "actual_pts_seconds": 112.025,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "111.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e00_camera3_006.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e00_camera3_006.jpg",
+          "sha256": "e0d03c17fd1a3f5a1de406ad9a05b6cad0b3b42dea683091149615fe8e0cd2c5",
+          "checked": false
+        }
+      ],
+      "kind": "shared_tv_cut_candidate",
+      "source": {
+        "manifest": "artifacts/sync/events/exploration/manifest.json",
+        "sha256": "d66533f27e72c48ab8ad3bb5c5aeea9816de48d446f7a06449604b7ecd1897c2"
+      },
+      "accepted_for_fit": false,
+      "exclusion_reason": "unchecked"
+    },
+    {
+      "id": "tv_middle_400",
+      "description": "Search shared TV cuts after first jumps in both cameras",
+      "checked": false,
+      "reviewer": null,
+      "observations": {
+        "1": null,
+        "3": null
+      },
+      "samples": [
+        {
+          "target_pts_seconds": 400.0,
+          "actual_pts_seconds": 400.031,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "399.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e01_camera1_000.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e01_camera1_000.jpg",
+          "sha256": "4f5ea60963c4b7bc79d0c90acce973c0fe634e2209952ab63ac7cf42c348c457",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 402.0,
+          "actual_pts_seconds": 402.029,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "401.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e01_camera1_001.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e01_camera1_001.jpg",
+          "sha256": "85d692accf9af36af6a45d2f4e08da93068e8862213e0eb3dcc1740ffe167553",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 404.0,
+          "actual_pts_seconds": 404.03,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "403.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e01_camera1_002.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e01_camera1_002.jpg",
+          "sha256": "f9a0a8f5428a9b25ab610e0e3bd103ce270787be5f2cbcb71b744ae5aa39102a",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 406.0,
+          "actual_pts_seconds": 406.03,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "405.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e01_camera1_003.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e01_camera1_003.jpg",
+          "sha256": "5864cc2eb6b1f6380674e64af2ce75740c728b6f5551fbde4ab572be9bbd84db",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 408.0,
+          "actual_pts_seconds": 408.026,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "407.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e01_camera1_004.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e01_camera1_004.jpg",
+          "sha256": "185303886df9c508386a77c4b88871c5756155df9596f5944d0a83b5cf4b73de",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 410.0,
+          "actual_pts_seconds": 410.021,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "409.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e01_camera1_005.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e01_camera1_005.jpg",
+          "sha256": "ee225e56c0c80b019b39c578ffc30b57c4ff112f26840559eb5b7cb2b2fb68f9",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 412.0,
+          "actual_pts_seconds": 412.023,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "411.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e01_camera1_006.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e01_camera1_006.jpg",
+          "sha256": "454e3b199b70f3122f2db88892f6ab745bda4d626ad0cb4f2cb42683b0300f6e",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 400.0,
+          "actual_pts_seconds": 400.02,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "399.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e01_camera3_000.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e01_camera3_000.jpg",
+          "sha256": "2a10dc666a017b9342b86982cfd5f3c262bdd2cdce9ff1ca195ab74e19c3551f",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 402.0,
+          "actual_pts_seconds": 402.017,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "401.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e01_camera3_001.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e01_camera3_001.jpg",
+          "sha256": "343295bbcdeecc3fab093600795fc34bb845c7ff7491b37ef599b6c7ac0ae0d9",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 404.0,
+          "actual_pts_seconds": 404.015,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "403.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e01_camera3_002.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e01_camera3_002.jpg",
+          "sha256": "ad97c1248a07d6f6d3127b2bed1c8e6f8e146f6c128af0a60218431210665897",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 406.0,
+          "actual_pts_seconds": 406.013,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "405.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e01_camera3_003.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e01_camera3_003.jpg",
+          "sha256": "b7303bfafa0d0270df261698f9e6f4d3a9424355f9349cce43dcaedf150e2860",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 408.0,
+          "actual_pts_seconds": 408.012,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "407.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e01_camera3_004.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e01_camera3_004.jpg",
+          "sha256": "e6baf9c26b1e2398f1db162c7eb29ccf4f2ebceef0a50adb34abb2b2b60049ba",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 410.0,
+          "actual_pts_seconds": 410.013,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "409.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e01_camera3_005.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e01_camera3_005.jpg",
+          "sha256": "c846935ab795d9ca951aa636229c06288556ce0d746428511eb22cc9ca16b7a0",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 412.0,
+          "actual_pts_seconds": 412.013,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "411.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e01_camera3_006.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e01_camera3_006.jpg",
+          "sha256": "5dfc5dfd60277013d3899f578e1b332f867f256315857e60189a820a5bc0a169",
+          "checked": false
+        }
+      ],
+      "kind": "shared_tv_cut_candidate",
+      "source": {
+        "manifest": "artifacts/sync/events/exploration/manifest.json",
+        "sha256": "d66533f27e72c48ab8ad3bb5c5aeea9816de48d446f7a06449604b7ecd1897c2"
+      },
+      "accepted_for_fit": false,
+      "exclusion_reason": "unchecked"
+    },
+    {
+      "id": "tv_after_jumps_900",
+      "description": "Search shared TV cuts after second jumps in both cameras",
+      "checked": false,
+      "reviewer": null,
+      "observations": {
+        "1": null,
+        "3": null
+      },
+      "samples": [
+        {
+          "target_pts_seconds": 900.0,
+          "actual_pts_seconds": 900.019,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "899.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e02_camera1_000.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e02_camera1_000.jpg",
+          "sha256": "75ce03370f71be78344ee0996f4071891a20f295a2267678d4918ee205c35659",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 902.0,
+          "actual_pts_seconds": 902.02,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "901.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e02_camera1_001.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e02_camera1_001.jpg",
+          "sha256": "7173236d977fb3aaad0ed48e48b9091e758af7409d44ad5e332eea62b4e61c07",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 904.0,
+          "actual_pts_seconds": 904.022,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "903.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e02_camera1_002.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e02_camera1_002.jpg",
+          "sha256": "246492191fdb6cae7d6411328f51e1f86dcccde7476e84e5eadc2284474b64ab",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 906.0,
+          "actual_pts_seconds": 906.024,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "905.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e02_camera1_003.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e02_camera1_003.jpg",
+          "sha256": "171c1f19689de7304e1c6afde615d7ba1d3001507e809305643434097901b59e",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 908.0,
+          "actual_pts_seconds": 908.02,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "907.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e02_camera1_004.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e02_camera1_004.jpg",
+          "sha256": "395e8b4435dadb3c246de696c68de968a733310bfd9c0d59b86c527bfca16d90",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 910.0,
+          "actual_pts_seconds": 910.018,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "909.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e02_camera1_005.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e02_camera1_005.jpg",
+          "sha256": "6f7417505cba64973e124e2344a82a7197f21dcfb5c37639baa1701478648468",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 912.0,
+          "actual_pts_seconds": 912.013,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "911.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e02_camera1_006.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e02_camera1_006.jpg",
+          "sha256": "4579aeadca4ee69e8937006fd0462658d42408aed1c14b1559cd05f61e977e7e",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 900.0,
+          "actual_pts_seconds": 900.021,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "899.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e02_camera3_000.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e02_camera3_000.jpg",
+          "sha256": "7de5392dc0dfe79644cb11ca674d736e93ce08761616ba8093c8b1a8129b614c",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 902.0,
+          "actual_pts_seconds": 902.02,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "901.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e02_camera3_001.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e02_camera3_001.jpg",
+          "sha256": "003d8ebf01c9da10dae768d7fac9a5ed468810b4bff06c0b42df6742eeac928e",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 904.0,
+          "actual_pts_seconds": 904.019,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "903.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e02_camera3_002.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e02_camera3_002.jpg",
+          "sha256": "e3c96692999ecaccdfe566d9edb5096af27e2563e381f4ccc2f7ab1af96e59de",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 906.0,
+          "actual_pts_seconds": 906.014,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "905.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e02_camera3_003.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e02_camera3_003.jpg",
+          "sha256": "1cceee95a8b3054121791274b869615797a7be6af28bfd1ea980c2af3e4ab782",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 908.0,
+          "actual_pts_seconds": 908.016,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "907.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e02_camera3_004.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e02_camera3_004.jpg",
+          "sha256": "e74d95bb62ec3ae872b66d0934a388a9e863098a4beecb39a0c9f63a9cff9cf3",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 910.0,
+          "actual_pts_seconds": 910.013,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "909.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e02_camera3_005.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e02_camera3_005.jpg",
+          "sha256": "2d1814fb7c6f07420b622bd085ac67041bbd5f2e0cc806517c890c1859f48511",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 912.0,
+          "actual_pts_seconds": 912.013,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "911.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e02_camera3_006.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e02_camera3_006.jpg",
+          "sha256": "ee571e3ddaab963eadac6b7fff30b0715064360c73fff72f3da43aa84890ceb6",
+          "checked": false
+        }
+      ],
+      "kind": "shared_tv_cut_candidate",
+      "source": {
+        "manifest": "artifacts/sync/events/exploration/manifest.json",
+        "sha256": "d66533f27e72c48ab8ad3bb5c5aeea9816de48d446f7a06449604b7ecd1897c2"
+      },
+      "accepted_for_fit": false,
+      "exclusion_reason": "unchecked"
+    },
+    {
+      "id": "tv_late_1150",
+      "description": "Search independent shared TV cuts near end",
+      "checked": false,
+      "reviewer": null,
+      "observations": {
+        "1": null,
+        "3": null
+      },
+      "samples": [
+        {
+          "target_pts_seconds": 1150.0,
+          "actual_pts_seconds": 1150.005,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "1149.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e03_camera1_000.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e03_camera1_000.jpg",
+          "sha256": "b7fac2485be133edf4abd6fa14e63bcd43830c0c33551042fd23d07abafc9562",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 1152.0,
+          "actual_pts_seconds": 1152.004,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "1151.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e03_camera1_001.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e03_camera1_001.jpg",
+          "sha256": "ad7c23de3c7819f875cc391200c2c69c5943be6033c481e6f919acb6cb271ff9",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 1154.0,
+          "actual_pts_seconds": 1154.002,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "1153.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e03_camera1_002.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e03_camera1_002.jpg",
+          "sha256": "5019217983fa5a1c4319b4405ac8b9acdbb373fa4aac45e5e8c004d27c3e3263",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 1156.0,
+          "actual_pts_seconds": 1156.002,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "1155.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e03_camera1_003.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e03_camera1_003.jpg",
+          "sha256": "2aa8ee8c40fa0ecdb7e979730bdb1bbacf8657a4e9063d1f5e7dbc4249f414ce",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 1158.0,
+          "actual_pts_seconds": 1158.001,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "1157.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e03_camera1_004.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e03_camera1_004.jpg",
+          "sha256": "cf82f488cafe05b33c69b33c90c97d4419641a5d3da921c9e6b789ce010804db",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 1160.0,
+          "actual_pts_seconds": 1160.038,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "1159.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e03_camera1_005.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e03_camera1_005.jpg",
+          "sha256": "210f3c2f8f3dbfcce74dd950701a5bdc2f52f48ee9a23358058f62f192134524",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 1162.0,
+          "actual_pts_seconds": 1162.036,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "1161.949000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_1.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e03_camera1_006.jpg"
+          ],
+          "camera_id": "1",
+          "path": "e03_camera1_006.jpg",
+          "sha256": "eb3d7e819eb4ddb8600cbf4ce826f5ebb6ee30df35392ead4ac8e8b66f2a194e",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 1150.0,
+          "actual_pts_seconds": 1150.025,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "1149.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e03_camera3_000.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e03_camera3_000.jpg",
+          "sha256": "a5a51ca6e151bc26a3f40cc828fc40f2e1a2d2445d397bb4ae547b3bdfb204c1",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 1152.0,
+          "actual_pts_seconds": 1152.024,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "1151.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e03_camera3_001.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e03_camera3_001.jpg",
+          "sha256": "31b369ed86ba46cf2b0ee7374ae60624f2d97703b409f6b08d19303286d5baeb",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 1154.0,
+          "actual_pts_seconds": 1154.026,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "1153.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e03_camera3_002.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e03_camera3_002.jpg",
+          "sha256": "8d689e218a6d6c9c340ee9d7220582f756ed109386e2a4e346950a5bde095aee",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 1156.0,
+          "actual_pts_seconds": 1156.025,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "1155.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e03_camera3_003.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e03_camera3_003.jpg",
+          "sha256": "7bfbd3b247f66b5a49e2b0240a57abce8911e471d2a6945dbd08abf6ce861529",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 1158.0,
+          "actual_pts_seconds": 1158.023,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "1157.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e03_camera3_004.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e03_camera3_004.jpg",
+          "sha256": "5912430220d2bca9e0e5091f3425709c8b30f2fcd276e51d372024ad67c3132d",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 1160.0,
+          "actual_pts_seconds": 1160.023,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "1159.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e03_camera3_005.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e03_camera3_005.jpg",
+          "sha256": "39cf612446e4f87c135130089472560b8a7b1998d44606a4a754585cd2088db7",
+          "checked": false
+        },
+        {
+          "target_pts_seconds": 1162.0,
+          "actual_pts_seconds": 1162.022,
+          "command": [
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\.tools\\ffmpeg.exe",
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-nostdin",
+            "-y",
+            "-threads",
+            "2",
+            "-copyts",
+            "-ss",
+            "1161.974000000",
+            "-i",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\data\\raw\\camera_new_3.mkv",
+            "-map",
+            "0:v:0",
+            "-frames:v",
+            "1",
+            "-vf",
+            "showinfo",
+            "-filter_threads",
+            "1",
+            "-threads:v",
+            "1",
+            "-pix_fmt",
+            "yuvj420p",
+            "-fps_mode",
+            "passthrough",
+            "-q:v",
+            "3",
+            "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\sync\\events\\exploration\\e03_camera3_006.jpg"
+          ],
+          "camera_id": "3",
+          "path": "e03_camera3_006.jpg",
+          "sha256": "85b83a445a4e748b8c4156334947c565f212904cfd4d3497fbcac4ad4b40ba7d",
+          "checked": false
+        }
+      ],
+      "kind": "shared_tv_cut_candidate",
+      "source": {
+        "manifest": "artifacts/sync/events/exploration/manifest.json",
+        "sha256": "d66533f27e72c48ab8ad3bb5c5aeea9816de48d446f7a06449604b7ecd1897c2"
+      },
+      "accepted_for_fit": false,
+      "exclusion_reason": "unchecked"
+    }
+  ],
+  "audio": {
+    "status": "NOT_REQUESTED",
+    "automatically_applied_anchors": []
+  },
+  "source_stats": "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\artifacts\\inspect\\stats.json",
+  "source_stats_sha256": "49e70f7138950842523f4afbc5fd2188b5cbfcc00eddb234855cf8e5acfed9a7",
+  "source_evidence": "C:\\Users\\mario\\PycharmProjects\\ShadowTrack-AInura\\configs\\sync_evidence.json",
+  "source_evidence_sha256": "96901d42753028c2d69f72e26a4d74a1f81ec2abdf460179fe0be23f445561d6",
+  "full_video_probe_repeated": false,
+  "raw_media_modified": false,
+  "uncertainty_policy": "interval parameter envelopes + local correction bounds; not statistical confidence; no extrapolation",
+  "decisions": [
+    "Unresolved gaps retain raw duration and have no interior mapping.",
+    "Confirmed clock jumps are local estimates only, never automatic inter-camera anchors.",
+    "Models are fitted separately for each pair of uninterrupted timestamp segments.",
+    "Unchecked events and uninformative audio cannot calibrate cameras.",
+    "A single initial offset is not extended beyond checked anchor support."
+  ],
+  "invalid_cameras": [],
+  "linked_camera_count": 2,
+  "fully_calibrated": false
+}

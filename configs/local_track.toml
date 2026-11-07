@@ -1,0 +1,16 @@
+[paths]
+# Paths are relative to this TOML. Replace SET_IMPORTED_RUN_ID after import.
+detection_run = "../artifacts/detections/SET_IMPORTED_RUN_ID"
+evidence_dir = "../artifacts/detection/input_evidence"
+raw_dir = "../data/raw"
+output_dir = "../artifacts/local_tracks"
+
+[tracking]
+# Select one configuration after private visual comparison. This is an example, not a measured winner.
+configuration_name = "nano_640"
+
+[bytetrack]
+track_activation_threshold = 0.25
+lost_track_buffer = 30
+minimum_matching_threshold = 0.8
+minimum_consecutive_frames = 1
