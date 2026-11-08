@@ -12,7 +12,7 @@ def main():
 
 This notebook imports the versioned ShadowTrack package. It does not implement a second detector, decoder, schema or writer.
 
-**Default: SAMPLE, execution disabled.** Keep both Dataset and Notebook private; do not publish notebook outputs. Inputs are unpacked folders under `/kaggle/input`, not ZIP files. No image is displayed inline. Quality images/GIFs are sensitive files in private outputs only. Read `KAGGLE_SETUP.md` and the pinned model license before execution.
+**Default: SAMPLE, execution disabled.** Keep both Dataset and Notebook private; do not publish notebook outputs. Inputs are unpacked folders under `/kaggle/input`, not ZIP files. No image is displayed inline. Quality images/GIFs are sensitive files in private outputs only. Read `docs/KAGGLE_SETUP.md` and the pinned model license before execution.
 """))
     cells.append(code('''from pathlib import Path
 

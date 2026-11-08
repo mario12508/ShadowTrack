@@ -78,7 +78,7 @@ def main():
             assert sha256(source)==digest,f'Snapshot stale: {name}'
             assert hashlib.sha256(archive.read(name)).hexdigest()==digest
     (portable/(artifact['filename']+'.sha256')).write_text(artifact['sha256']+'  '+artifact['filename']+'\n',encoding='ascii')
-    sources=['README.md','KAGGLE_SETUP.md','KAGGLE_DETECTION_V2.md','DETECTION_REPORT.md','.gitignore','pyproject.toml',
+    sources=['README.md','docs/KAGGLE_SETUP.md','docs/KAGGLE_DETECTION_V2.md','docs/DETECTION_REPORT.md','.gitignore','pyproject.toml',
              'src/shadowtrack/cli.py','notebooks/kaggle_detection_v2.ipynb','configs/detection_v2.json',
              'configs/detection_v2_lock.json','configs/scene_filter_v1.json','configs/local_track_v2.toml',
              'schemas/detection_frame_v2.schema.json','scripts/build_kaggle_detection_v2.py',

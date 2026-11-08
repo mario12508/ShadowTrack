@@ -1,5 +1,7 @@
 # ShadowTrack требования к детекции и разбор ложных срабатываний
 
+> Разбор предыдущего SAMPLE; его показатели не являются оценкой текущего FULL. Актуальная сдача: [MVP_REPORT.md](MVP_REPORT.md).
+
 Статус: **SAMPLE_INTEGRITY_PASS / QUALITY_PARTIAL / FULL_NOT_APPROVED**.
 Проверен переданный пользователем `shadowtrack_sample_backup.zip`, run
 `988a8de217bb1d3c0b951e67`, код `0e05589acfd40f42`. Это реальный запуск пользователя
@@ -22,9 +24,9 @@ segmentation оставить опциональной. Явного требо�
 с источниками первоначального Data Audit; документы не изменялись.
 Нумерация абзацев DOCX ниже относится к порядку `w:p` в исходном OOXML, включая
 пустые абзацы. Полная проверка:
-[requirements_check.json](artifacts/detection/sample_review/requirements_check.json).
+[requirements_check.json](../artifacts/detection/sample_review/requirements_check.json).
 
-В [исходном DOCX](<C:/Users/mario/Downloads/ТЗ на хакатон_v2 (1).docx>):
+В [исходном DOCX](../<C:/Users/mario/Downloads/ТЗ на хакатон_v2 (1).docx>):
 
 - Абзац 25: «Можно применять любые открытые детекторы людей или силуэтов».
 - Абзац 31: «Найдите силуэты людей на видео самостоятельно».
@@ -32,7 +34,7 @@ segmentation оставить опциональной. Явного требо�
 - Абзац 54 перечисляет критерии проверки: сохранение ID при переходе между
   камерами, завершение и подсчёт треков, воспроизводимость и понятность демо.
 
-В [презентации](<C:/Users/mario/Downloads/Хакатон презентация.pdf>) стр. 5 разрешает
+В [презентации](../<C:/Users/mario/Downloads/Хакатон презентация.pdf>) стр. 5 разрешает
 готовые детекторы людей/силуэтов. На стр. 6 первый обязательный шаг прямо назван
 «Детекция»; стр. 9 оценивает сквозные ID, завершение, подсчёт и воспроизводимость.
 
@@ -79,9 +81,9 @@ MKV с проверкой фактического PTS; поверх налож�
 
 Фото остались только в игнорируемом `private_outputs/`. В текст отчёта они не
 встроены. Provenance и SHA256:
-[photos_validation.json](artifacts/detection/sample_review/photos_validation.json).
+[photos_validation.json](../artifacts/detection/sample_review/photos_validation.json).
 Точные bbox/scores целевых примеров:
-[camera2_cases.json](artifacts/detection/sample_review/camera2_cases.json).
+[camera2_cases.json](../artifacts/detection/sample_review/camera2_cases.json).
 
 **Камера 2, подвесная лампа — подтверждённая ошибка.** Source frame 13542,
 raw PTS 541.720, nano_640: detection index 1, score **0.2863348722**,
@@ -185,7 +187,7 @@ RLE-маски и связь с пятью исходными MKV. Все про
 Импортированная копия:
 `artifacts/detection/sample_review/validated/988a8de217bb1d3c0b951e67/`.
 Проверки и provenance:
-[validation.json](artifacts/detection/sample_review/validation.json).
+[validation.json](../artifacts/detection/sample_review/validation.json).
 
 В ZIP присутствуют записи каталогов, добавленные при скачивании Kaggle outputs.
 Исправлен `unpack_export`: безопасные directory entries допускаются, inventory
@@ -291,4 +293,4 @@ Time Alignment и Kaggle detections не изменены. FULL, ByteTrack, Re-I
 association не запускались. Nano_960 победителем не назначен.
 
 Подробные числовые результаты:
-[analysis.json](artifacts/detection/sample_review/analysis.json).
+[analysis.json](../artifacts/detection/sample_review/analysis.json).

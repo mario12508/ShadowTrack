@@ -12,6 +12,7 @@ class Settings:
     evidence: Path
     alignment: Path
     episode_timeout: float = 120.
+    database_override: Path | None = None
 
     @classmethod
     def environment(cls):
@@ -20,10 +21,11 @@ class Settings:
         timeout=float(os.environ.get('SHADOWTRACK_EPISODE_TIMEOUT','120'))
         if not 60 <= timeout <= 120:raise ValueError('Episode timeout must be 60–120 seconds')
         return cls(root,path('SHADOWTRACK_ARTIFACTS','artifacts/mvp'),path('SHADOWTRACK_RAW','data/raw'),
-                   path('SHADOWTRACK_EVIDENCE','artifacts/detection/input_evidence'),path('SHADOWTRACK_ALIGNMENT','artifacts/sync/time_alignment.json'),timeout)
+                   path('SHADOWTRACK_EVIDENCE','artifacts/detection/input_evidence'),path('SHADOWTRACK_ALIGNMENT','artifacts/sync/time_alignment.json'),timeout,
+                   Path(os.environ['SHADOWTRACK_DATABASE']).resolve() if os.environ.get('SHADOWTRACK_DATABASE') else None)
 
     @property
-    def database(self):return self.artifacts/'shadowtrack.sqlite3'
+    def database(self):return self.database_override or self.artifacts/'shadowtrack.sqlite3'
 
     @property
     def media(self):return self.artifacts/'media'

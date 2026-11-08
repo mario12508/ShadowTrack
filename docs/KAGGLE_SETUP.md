@@ -1,8 +1,10 @@
 # ShadowTrack private Kaggle GPU detection
 
+> Этот документ описывает исходный segmentation SAMPLE. Для готового демо используйте [MVP_SETUP.md](MVP_SETUP.md), для нового Detection FULL — [KAGGLE_DETECTION_V2.md](KAGGLE_DETECTION_V2.md).
+
 Для нового bbox detection pipeline и schema v2 используйте
 [KAGGLE_DETECTION_V2.md](KAGGLE_DETECTION_V2.md) и
-[kaggle_detection_v2.ipynb](notebooks/kaggle_detection_v2.ipynb).
+[kaggle_detection_v2.ipynb](../notebooks/kaggle_detection_v2.ipynb).
 Ниже сохранена инструкция предыдущего segmentation pipeline для воспроизводимости.
 
 Подготовлен гибридный процесс: YOLO person segmentation в приватном Kaggle GPU

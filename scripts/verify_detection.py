@@ -54,7 +54,7 @@ def main():
                  "model_hash":lock["weights_sha256"],"configurations":[c["name"] for c in lock["configurations"]],
                  "throughput_fps":None,"peak_vram_bytes":None,"detections":None,"quality_examples":None,"winner":None}
     atomic_json(output/"gpu_benchmark_status.json",benchmark)
-    sources = [".gitignore","README.md","pyproject.toml","src/shadowtrack/cli.py","KAGGLE_SETUP.md","DETECTION_REPORT.md",
+    sources = [".gitignore","README.md","pyproject.toml","src/shadowtrack/cli.py","docs/KAGGLE_SETUP.md","docs/DETECTION_REPORT.md",
                "configs/detection_model_lock.json","configs/local_track.toml","notebooks/kaggle_detection.ipynb",
                "scripts/build_kaggle_notebook.py","scripts/verify_detection.py","tests/test_detection.py",
                "schemas/detection_frame.schema.json","licenses/ULTRALYTICS_AGPL-3.0.txt"]

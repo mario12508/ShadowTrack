@@ -28,6 +28,21 @@ CREATE TABLE IF NOT EXISTS association(id TEXT PRIMARY KEY,track_a TEXT,track_b 
 CREATE TABLE IF NOT EXISTS embedding(track_id TEXT PRIMARY KEY,vector BLOB,dimensions INTEGER,samples INTEGER,model_hash TEXT,evidence TEXT);
 CREATE TABLE IF NOT EXISTS job(id TEXT PRIMARY KEY,kind TEXT,status TEXT,progress REAL,detail TEXT,updated_at TEXT);
 CREATE TABLE IF NOT EXISTS media_segment(id TEXT PRIMARY KEY,camera_id TEXT,segment_id TEXT,kind TEXT,path TEXT,sha256 TEXT,start_time REAL,end_time REAL,frame_start INTEGER,frame_stop INTEGER,frames INTEGER,width INTEGER,height INTEGER,metadata TEXT);
+CREATE TABLE IF NOT EXISTS mtmc_episode(id TEXT PRIMARY KEY,label TEXT,status TEXT,lifecycle TEXT,start_time REAL,end_time REAL,terminated_at REAL,termination_reason TEXT,confidence REAL,time_basis TEXT,revision TEXT);
+CREATE TABLE IF NOT EXISTS local_global(track_id TEXT PRIMARY KEY,episode_id TEXT,status TEXT,confidence REAL,revision TEXT);
+CREATE INDEX IF NOT EXISTS local_global_episode ON local_global(episode_id);
+CREATE TABLE IF NOT EXISTS mtmc_registry(id TEXT PRIMARY KEY,number INTEGER UNIQUE,seed_track TEXT,created_revision TEXT);
+CREATE TABLE IF NOT EXISTS mtmc_candidate(id TEXT PRIMARY KEY,track_a TEXT,track_b TEXT,similarity REAL,score REAL,status TEXT,reasons TEXT,evidence TEXT,revision TEXT);
+CREATE INDEX IF NOT EXISTS mtmc_pair ON mtmc_candidate(track_a,track_b);
+CREATE TABLE IF NOT EXISTS mtmc_review(id INTEGER PRIMARY KEY AUTOINCREMENT,candidate_id TEXT,track_a TEXT,track_b TEXT,decision TEXT,reviewer TEXT,evidence TEXT,created_at TEXT,source_run_id TEXT);
+CREATE TABLE IF NOT EXISTS alignment_estimate(camera_id TEXT,segment_id TEXT,raw_start REAL,raw_end REAL,offset REAL,uncertainty REAL,status TEXT,evidence TEXT,PRIMARY KEY(camera_id,segment_id));
+CREATE TABLE IF NOT EXISTS floor_mapping(camera_id TEXT PRIMARY KEY,points TEXT,matrix TEXT,residual REAL,status TEXT,evidence TEXT,updated_at TEXT);
+CREATE TABLE IF NOT EXISTS mtmc_run(revision TEXT PRIMARY KEY,config TEXT,summary TEXT,created_at TEXT);
+CREATE TABLE IF NOT EXISTS appearance_sample(parent_id TEXT,frame_index INTEGER,raw_pts REAL,vector BLOB,quality REAL,color TEXT,evidence TEXT,PRIMARY KEY(parent_id,frame_index));
+CREATE TABLE IF NOT EXISTS appearance_normalized(parent_id TEXT,frame_index INTEGER,vector BLOB,color TEXT,head_signature BLOB,evidence TEXT,PRIMARY KEY(parent_id,frame_index));
+CREATE TABLE IF NOT EXISTS mtmc_tracklet(id TEXT PRIMARY KEY,parent_id TEXT,start_frame INTEGER,end_frame INTEGER,start_time REAL,end_time REAL,observations INTEGER,evidence TEXT);
+CREATE INDEX IF NOT EXISTS mtmc_tracklet_parent ON mtmc_tracklet(parent_id,start_frame,end_frame);
+CREATE VIEW IF NOT EXISTS association_track AS SELECT s.id,s.parent_id,t.source_id,t.camera_id,t.segment_id,t.display_id,s.start_frame,s.end_frame,s.start_time,s.end_time,s.observations,t.mean_confidence,t.global_episode_id,s.evidence AS slice_evidence FROM mtmc_tracklet s JOIN local_track t ON t.id=s.parent_id;
 '''
 
 
@@ -43,6 +58,7 @@ def connect(path,readonly=False):
         connection.execute('PRAGMA busy_timeout=30000')
         connection.executescript(SCHEMA)
     connection.row_factory=sqlite3.Row
+    if readonly:connection.execute('BEGIN')
     try:
         yield connection
         if not readonly:connection.commit()

@@ -76,7 +76,7 @@ def main():
         assert object_hash(source_manifest['files'])==portable['code_hash']
         assert not any(name.lower().endswith(('.mkv','.mp4','.jpg','.pth','.pt','.sqlite3','.npz')) for name in z.namelist())
     changed_files=['README.md','pyproject.toml','src/shadowtrack/cli.py','docker-compose.yml','.dockerignore','.env.example','.gitignore',
-        'MVP_SETUP.md','MVP_REPORT.md','DEMO_SCRIPT.md','configs/local_track_full.toml','configs/reid_model_lock.json','tests/test_mvp.py',
+        'docs/MVP_SETUP.md','docs/MVP_REPORT.md','docs/DEMO_SCRIPT.md','configs/local_track_full.toml','configs/reid_model_lock.json','tests/test_mvp.py',
         'scripts/build_kaggle_reid.py','scripts/build_mvp_bundle.py','scripts/verify_mvp.py','scripts/verify_mvp_media.py','backend/Dockerfile','notebooks/kaggle_reid.ipynb']
     changed_files+=[p.relative_to(root).as_posix() for p in (root/'src/shadowtrack/mvp').rglob('*') if p.is_file() and p.suffix in ('.py','.txt')]
     changed_files+=[name for name in source_manifest['files'] if name.startswith('frontend/')]

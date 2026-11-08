@@ -49,6 +49,8 @@ class CalibrationInput(BaseModel):
 
 def create_app(settings=None):
     settings=settings or Settings.environment()
+    from .snapshot import bootstrap_native_database
+    bootstrap_native_database(settings)
     app=FastAPI(title='ShadowTrack',version='1.0.0',description='Precomputed Detection v2 → CPU ByteTrack → evidence-bound episodes. No online YOLO.')
     origins=os.environ.get('SHADOWTRACK_CORS','http://localhost:3000,http://127.0.0.1:3000').split(',')
     app.add_middleware(CORSMiddleware,allow_origins=origins,allow_methods=['GET','POST','DELETE'],allow_headers=['*'])
@@ -90,15 +92,20 @@ def create_app(settings=None):
     def stats():
         with db() as con:
             counts={name:con.execute(f'SELECT COUNT(*) FROM {name}').fetchone()[0] for name in ('camera','frame','detection','local_track','observation')}
-            counts['global_episodes']=con.execute('SELECT COUNT(*) FROM episode WHERE global_confirmed=1').fetchone()[0]
+            counts['global_episodes']=con.execute('SELECT COUNT(*) FROM mtmc_episode').fetchone()[0]
+            counts['reviewed_episodes']=con.execute('SELECT COUNT(*) FROM mtmc_episode WHERE status="CONFIRMED"').fetchone()[0]
+            counts['derived_tracklets']=con.execute('SELECT COUNT(*) FROM mtmc_tracklet').fetchone()[0]
+            counts['provisional_episodes']=con.execute('SELECT COUNT(*) FROM mtmc_episode WHERE status="PROVISIONAL"').fetchone()[0]
             counts['local_episodes']=con.execute('SELECT COUNT(*) FROM episode WHERE scope="LOCAL"').fetchone()[0]
+            from .accounting import accounting,counts as episode_counts
+            counts['episode_counts']=episode_counts(accounting(con))
             return {**counts,'source_run_id':meta(con,'source_run_id'),'global_association_status':meta(con,'global_association_status','GLOBAL_ASSOCIATION_PENDING'),
                 'episode_timeout_seconds':meta(con,'episode_timeout_seconds',120),'scene_counts':rows(con,'SELECT decision,COUNT(*) AS count FROM detection GROUP BY decision'),
                 'empty_frames':con.execute('SELECT COUNT(*) FROM frame WHERE input_empty=1').fetchone()[0],
                 'by_camera':rows(con,'SELECT camera_id,COUNT(*) AS tracks,SUM(observations) AS observations FROM local_track GROUP BY camera_id'),
                 'episode_states':rows(con,'SELECT scope,status,COUNT(*) AS count FROM episode GROUP BY scope,status'),
                 'detector':meta(con,'detector',{}),'tracker':meta(con,'tracker',{}),
-                'embeddings':meta(con,'embedding_status',{'status':'PENDING','tracks':0}),'associations':meta(con,'association_summary',{}),
+                'embeddings':meta(con,'embedding_status',{'status':'PENDING','tracks':0}),'associations':meta(con,'association_summary',{}),'mtmc':meta(con,'mtmc_summary',{}),
                 'identity_count':None,'identity_count_reason':'Local fragments and episode counts are not unique physical people',
                 'sync_status':'PARTIAL','inference':'PRECOMPUTED','data_status':'FULL_VALIDATED'}
 
@@ -124,7 +131,8 @@ def create_app(settings=None):
                 r['bbox_xyxy']=json.loads(r.pop('bbox'));r['reasons']=json.loads(r['reasons']);by_frame[r['frame_index']]['detections'].append(r)
             for r in observed:
                 r['bbox_xyxy']=json.loads(r.pop('bbox'));r['color']='#'+''.join(f'{c:02x}' for c in color_for(r['source_id']))
-                r['global_color']='#'+''.join(f'{c:02x}' for c in color_for(r['global_episode_id'])) if r['global_episode_id'] else None
+                from .mtmc import identity
+                r['source_track_id']=r['track_id'];r.update(identity(con,r['track_id'],r['frame_index']));r['track_id']=r['derived_tracklet_id']
                 by_frame[r['frame_index']]['tracks'].append(r)
             return {'camera_id':camera_id,'time_basis':'media_relative_raw_pts','frames':list(by_frame.values())}
 
@@ -133,26 +141,41 @@ def create_app(settings=None):
         where=['1=1'];args=[]
         for condition,value in [('t.camera_id=?',camera_id),('t.end_time>=?',start),('t.start_time<=?',end)]:
             if value is not None:where.append(condition);args.append(value)
-        if q:where.append('(t.display_id LIKE ? OR t.id LIKE ?)');args.extend(['%'+q+'%']*2)
+        if q:where.append('(t.display_id LIKE ? OR t.id LIKE ? OR e.label LIKE ? OR g.episode_id LIKE ?)');args.extend(['%'+q+'%']*4)
         clause=' AND '.join(where)
         with db() as con:
-            total=con.execute('SELECT COUNT(*) FROM local_track t WHERE '+clause,args).fetchone()[0]
-            found=rows(con,'SELECT t.*,e.status,e.termination_reason,e.terminated_at FROM local_track t LEFT JOIN episode_member em ON em.track_id=t.id LEFT JOIN episode e ON e.id=em.episode_id AND e.scope="LOCAL" WHERE '+clause+' ORDER BY t.observations DESC,t.id LIMIT ? OFFSET ?',(*args,limit,offset))
-            for r in found:r['thumbnail_url']=f"/api/tracks/{r['id']}/crop";r['scope']='LOCAL';r['duration']=r['end_time']-r['start_time']
+            base=' FROM association_track t LEFT JOIN local_global g ON g.track_id=t.id LEFT JOIN mtmc_episode e ON e.id=g.episode_id WHERE '
+            total=con.execute('SELECT COUNT(*)'+base+clause,args).fetchone()[0]
+            found=rows(con,'SELECT t.*,e.lifecycle AS status,e.termination_reason,e.terminated_at'+base+clause+' ORDER BY t.observations DESC,t.id LIMIT ? OFFSET ?',(*args,limit,offset))
+            from .mtmc import identity
+            for r in found:
+                r['thumbnail_url']=f"/api/tracks/{r['id']}/crop";r['scope']='LOCAL';r['duration']=r['end_time']-r['start_time'];r.update(identity(con,r['id']))
             return {'total':total,'items':found,'count_kind':'local_track_fragments_not_people'}
 
     @app.get('/api/tracks/{track_id}')
     def track_detail(track_id:str):
         with db() as con:
-            found=rows(con,'SELECT * FROM local_track WHERE id=?',(track_id,))
-            if not found:raise HTTPException(404,'Unknown track')
-            item=found[0]
+            from .tracklets import source_track
+            item=source_track(con,track_id)
+            if not item:raise HTTPException(404,'Unknown track')
+            parent=item['parent_id'];bounds=(parent,item['start_frame'],item['end_frame'])
             stride=max(1,item['observations']//150)
-            item['observations_sample']=rows(con,'SELECT frame_index,media_time,raw_pts,confidence,bbox FROM observation WHERE track_id=? AND frame_index%?=0 ORDER BY frame_index LIMIT 200',(track_id,stride))
-            item['episodes']=rows(con,'SELECT e.* FROM episode e JOIN episode_member em ON em.episode_id=e.id WHERE em.track_id=?',(track_id,))
-            item['events']=rows(con,'SELECT * FROM event WHERE track_id=? ORDER BY media_time',(track_id,))
-            item['associations']=rows(con,'SELECT * FROM association WHERE track_a=? OR track_b=?',(track_id,track_id))
-            item['thumbnail_url']=f'/api/tracks/{track_id}/crop';item['global_status']=meta(con,'global_association_status','GLOBAL_ASSOCIATION_PENDING')
+            item['observations_sample']=rows(con,'SELECT frame_index,media_time,raw_pts,confidence,bbox FROM observation WHERE track_id=? AND frame_index BETWEEN ? AND ? AND frame_index%?=0 ORDER BY frame_index LIMIT 200',(*bounds,stride))
+            item['episodes']=rows(con,'SELECT e.id,"GLOBAL" AS scope,e.lifecycle AS status,e.termination_reason,e.terminated_at FROM mtmc_episode e JOIN local_global g ON g.episode_id=e.id WHERE g.track_id=?',(track_id,))
+            from .accounting import accounting,lifecycle_for
+            ledger=accounting(con)
+            for episode in item['episodes']:
+                state=lifecycle_for(ledger,episode['id'])
+                if state:episode.update(status=state['state'],termination_reason=state['reason'],terminated_at=state['terminated_at'],right_censored=state['right_censored'],lifecycle_clock='source_recordings')
+            item['events']=rows(con,'SELECT * FROM event WHERE track_id=? AND media_time BETWEEN ? AND ? ORDER BY media_time',(parent,item['start_time'],item['end_time']))
+            item['associations']=rows(con,'SELECT * FROM mtmc_candidate WHERE track_a=? OR track_b=? ORDER BY similarity DESC LIMIT 30',(track_id,track_id))
+            from .mtmc import identity
+            item.update(identity(con,track_id))
+            item['global_members']=rows(con,'SELECT t.id,t.parent_id,t.display_id,t.camera_id,t.start_time,t.end_time FROM association_track t JOIN local_global g ON g.track_id=t.id WHERE g.episode_id=? ORDER BY start_time',(item['global_episode_id'],)) if item['global_episode_id'] else []
+            for member in item['global_members']:
+                estimate=con.execute('SELECT a.*,c.first_pts FROM association_track t JOIN alignment_estimate a ON a.segment_id=t.segment_id JOIN camera c ON c.id=t.camera_id WHERE t.id=?',(member['id'],)).fetchone()
+                member['estimated_start']=member['start_time']+estimate['first_pts']+estimate['offset']-json.loads(estimate['evidence'])['reference_first_pts'] if estimate else None
+            item['thumbnail_url']=f'/api/tracks/{track_id}/crop';item['association_run_status']=meta(con,'global_association_status','GLOBAL_ASSOCIATION_PENDING')
             item['duration']=item['end_time']-item['start_time'];return item
 
     @app.get('/api/events')
@@ -162,6 +185,7 @@ def create_app(settings=None):
     @app.get('/api/episodes')
     def episodes(scope:Literal['LOCAL','GLOBAL']='GLOBAL',limit:int=Query(default=50,ge=1,le=200)):
         with db() as con:
+            if scope=='GLOBAL':return {'status':meta(con,'global_association_status'),'items':rows(con,'SELECT * FROM mtmc_episode ORDER BY start_time LIMIT ?',(limit,)),'scope':'GLOBAL','timeout_seconds':120}
             return {'status':meta(con,'global_association_status'),'items':rows(con,'SELECT * FROM episode WHERE scope=? ORDER BY start_time LIMIT ?',(scope,limit)),
                     'timeout_seconds':meta(con,'episode_timeout_seconds',120),'scope':scope}
 
@@ -170,7 +194,10 @@ def create_app(settings=None):
             camera=con.execute('SELECT * FROM camera WHERE id=?',(camera_id,)).fetchone()
             if camera is None:raise HTTPException(404,'Unknown camera')
             if track_id:
-                observation=con.execute('SELECT * FROM observation WHERE track_id=? ORDER BY confidence DESC,frame_index LIMIT 1',(track_id,)).fetchone()
+                from .tracklets import source_track
+                track=source_track(con,track_id)
+                if not track:raise HTTPException(404,'Unknown track')
+                observation=con.execute('SELECT * FROM observation WHERE track_id=? AND frame_index BETWEEN ? AND ? ORDER BY confidence DESC,frame_index LIMIT 1',(track['parent_id'],track['start_frame'],track['end_frame'])).fetchone()
                 if observation is None:raise HTTPException(404,'No observations')
                 raw=observation['raw_pts'];index=observation['frame_index'];bbox=json.loads(observation['bbox'])
             else:
@@ -201,7 +228,8 @@ def create_app(settings=None):
 
     @app.get('/api/tracks/{track_id}/crop')
     def crop(track_id:str):
-        with db() as con:r=con.execute('SELECT camera_id FROM local_track WHERE id=?',(track_id,)).fetchone()
+        from .tracklets import source_track
+        with db() as con:r=source_track(con,track_id)
         if not r:raise HTTPException(404,'Unknown track')
         return snapshot(r['camera_id'],0,track_id)
 
@@ -217,6 +245,12 @@ def create_app(settings=None):
     def exports():
         with db() as con:
             found=rows(con,'SELECT * FROM media_segment ORDER BY kind,camera_id,start_time')
+            revision=meta(con,'mtmc_summary',{}).get('revision')
+            found=[r for r in found if r['kind']!='global_review' or json.loads(r['metadata']).get('revision')==revision]
+            for r in found:
+                if r['kind']=='global_review':
+                    evidence=json.loads(r['metadata'])
+                    r.update({k:evidence.get(k) for k in ('global_episode_id','global_label','identity_status','revision')})
             for r in found:r['url']='/api/media/'+r['id']+'?download=true';r.pop('metadata',None)
             return {'media':found,'tracks_csv':'/api/exports/tracks.csv','tracks_json':'/api/exports/tracks.json','report':'/api/report'}
 
@@ -225,22 +259,39 @@ def create_app(settings=None):
         manifest_path=settings.artifacts/'local_tracks/manifest.json'
         if not manifest_path.exists():raise HTTPException(404,'Machine track records unavailable')
         manifest=read_json(manifest_path)
+        from .mtmc import identity
+        from .prepare import track_key
+        with db() as con:
+            identities={}
+            for r in con.execute('SELECT * FROM mtmc_tracklet ORDER BY parent_id,start_frame'):
+                identities.setdefault(r['parent_id'],[]).append((r['start_frame'],r['end_frame'],identity(con,r['id'])))
+            revision=meta(con,'mtmc_summary',{}).get('revision')
         def content():
             header={'schema_version':2,'scope':'LOCAL','source_run_id':manifest['source_run_id'],
-                'source_manifest_sha256':manifest['source_manifest_sha256'],'global_association':False,'includes_empty_frames':True}
+                'source_manifest_sha256':manifest['source_manifest_sha256'],'global_association_revision':revision,'includes_empty_frames':True}
             yield (json.dumps(header,ensure_ascii=False)[:-1]+',"frames":[').encode('utf-8')
-            first=True
+            first=True;buffer=bytearray()
             for entry in manifest['files']:
                 with gzip.open(settings.artifacts/'local_tracks'/entry['path'],'rb') as stream:
                     for line in stream:
-                        if not first:yield b','
-                        yield line.rstrip(b'\r\n');first=False
+                        if not first:buffer.extend(b',')
+                        row=json.loads(line)
+                        for t in row['local_tracks']:
+                            choices=identities.get(track_key(t['local_track_id']),[])
+                            match=next((entry[2] for entry in choices if entry[0]<=row['source_frame_index']<=entry[1]),{})
+                            t.update(match)
+                        buffer.extend(json.dumps(row,ensure_ascii=False,separators=(',',':')).encode('utf-8'));first=False
+                        if len(buffer)>=65536:yield bytes(buffer);buffer.clear()
+            if buffer:yield bytes(buffer)
             yield b']}'
         return StreamingResponse(content(),media_type='application/json',headers={'Content-Disposition':'attachment; filename="shadowtrack_all_frame_tracks.json"'})
 
     @app.get('/api/exports/tracks.csv')
     def csv_tracks():
-        with db() as con:found=rows(con,'SELECT * FROM local_track ORDER BY camera_id,start_time')
+        from .mtmc import identity
+        with db() as con:
+            found=rows(con,'SELECT * FROM association_track ORDER BY camera_id,start_time')
+            for r in found:r.update(identity(con,r['id']))
         buffer=io.StringIO();writer=csv.DictWriter(buffer,fieldnames=list(found[0]) if found else ['id']);writer.writeheader();writer.writerows(found)
         return Response('\ufeff'+buffer.getvalue(),media_type='text/csv',headers={'Content-Disposition':'attachment; filename="shadowtrack_local_tracks.csv"'})
 
@@ -275,6 +326,7 @@ def create_app(settings=None):
             con.execute('DELETE FROM association');con.execute('DELETE FROM episode_member WHERE episode_id IN (SELECT id FROM episode WHERE scope="GLOBAL")')
             con.execute('DELETE FROM episode WHERE scope="GLOBAL"');con.execute('UPDATE local_track SET global_episode_id=NULL')
             set_meta(con,'global_association_status','GLOBAL_ASSOCIATION_PENDING');set_meta(con,'calibration_revision',time.time())
+            invalidate_mtmc(con)
         return {'id':key,'status':'MANUAL_CHECKED' if value.checked else 'UNCHECKED','associations_invalidated':True}
 
     def restore_window(con,camera_id,raw_start,raw_end):
@@ -283,6 +335,10 @@ def create_app(settings=None):
             t,u,status=alignment.map_time(camera_id,f['raw_pts']) if alignment else (None,None,'unavailable')
             changes.append((t,json.dumps(u),camera_id,f['frame_index']))
         con.executemany('UPDATE frame SET global_time=?,global_uncertainty=? WHERE camera_id=? AND frame_index=?',changes)
+
+    def invalidate_mtmc(con):
+        con.execute('DELETE FROM local_global');con.execute('DELETE FROM mtmc_episode');con.execute('DELETE FROM mtmc_candidate')
+        set_meta(con,'mtmc_summary',{'status':'STALE_RECOMPUTE_REQUIRED'})
 
     @app.delete('/api/calibration/{calibration_id}')
     def remove_calibration(calibration_id:str):
@@ -294,6 +350,7 @@ def create_app(settings=None):
             con.execute('DELETE FROM association');con.execute('DELETE FROM episode_member WHERE episode_id IN (SELECT id FROM episode WHERE scope="GLOBAL")')
             con.execute('DELETE FROM episode WHERE scope="GLOBAL"');con.execute('UPDATE local_track SET global_episode_id=NULL')
             set_meta(con,'global_association_status','GLOBAL_ASSOCIATION_PENDING')
+            invalidate_mtmc(con)
         return {'status':'REMOVED','original_evidence_restored':True,'associations_invalidated':True}
 
     @app.get('/api/sync/at')
@@ -320,12 +377,15 @@ def create_app(settings=None):
 
     @app.post('/api/associations/recompute')
     def recompute():
-        from .association import associate
-        return associate(settings)
+        from .mtmc import run_mtmc
+        from .mtmc_api import run_exclusive
+        return run_exclusive(app,lambda:run_mtmc(settings))
 
     @app.get('/api/report')
     def report():
-        return {'statistics':stats(),'synchronization':calibration(),'limitations':['GLOBAL_ASSOCIATION_PENDING until real multi-sample Re-ID and supported temporal evidence exist','Camera/segment scoped local tracks are not unique people','120-second inactivity terminates local episodes; global termination requires supported camera coverage','Raw PTS gaps are preserved, no invented observations'],
+        return {'statistics':stats(),'synchronization':calibration(),'limitations':['Estimated clocks and PROVISIONAL identity links are experimental; only explicit reviewer decisions become CONFIRMED','Camera/segment scoped local tracks and episode counts are not unique people','Global termination after 120 seconds requires supported camera coverage; estimated coverage cannot prove absence','Raw PTS gaps are preserved; no floor coordinates without separate checked correspondences'],
             'source_records':'immutable Detection schema v2','web_gpu_required':False}
 
+    from .mtmc_api import register
+    register(app,settings)
     return app

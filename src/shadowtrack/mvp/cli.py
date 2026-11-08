@@ -20,6 +20,12 @@ def add_parser(sub):
     crops=commands.add_parser('reid-crops');crops.add_argument('--samples',type=int,default=4)
     embeddings=commands.add_parser('embeddings-import');embeddings.add_argument('--source',type=Path,required=True)
     commands.add_parser('associate')
+    commands.add_parser('publish',help='Publish a closed SQLite snapshot for the native Docker serving database')
+    commands.add_parser('appearance-normalize',help='Explicit CPU scene-balanced crop features; no YOLO or source rewriting')
+    commands.add_parser('appearance',help='Explicit one-time CPU temporal OSNet cache; normal MTMC recompute does not run it')
+    commands.add_parser('mtmc',help='Experimental global assignment, existing OSNet only; no inference')
+    review=commands.add_parser('mtmc-preview',help='Private revision-bound candidate clips; not proof of identity')
+    review.add_argument('--episode',required=True);review.add_argument('--seconds',type=float,default=6)
 
 
 def execute(args):
@@ -86,7 +92,22 @@ def execute(args):
         from .reid import extract_embeddings,import_embeddings
         path=extract_embeddings(settings,args.weights,args.device,args.samples)
         print(import_embeddings(settings,path))
+    elif args.mvp_command=='publish':
+        from .snapshot import publish_snapshot
+        print(publish_snapshot(settings))
+    elif args.mvp_command=='appearance-normalize':
+        from .normalized_appearance import prepare as normalize
+        print(normalize(settings))
+    elif args.mvp_command=='appearance':
+        from .appearance import prepare_temporal_features
+        print(prepare_temporal_features(settings))
+    elif args.mvp_command=='mtmc':
+        from .mtmc import run_mtmc
+        print(run_mtmc(settings))
+    elif args.mvp_command=='mtmc-preview':
+        from .mtmc_render import review_highlight
+        print(review_highlight(settings,args.episode,args.seconds)['episode'])
     else:
-        from .association import associate
-        print(associate(settings))
+        from .mtmc import run_mtmc
+        print(run_mtmc(settings))
     return 0

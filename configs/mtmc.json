@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "mode": "estimated_alignment",
+  "clock_tolerance_seconds": 3.0,
+  "reference_camera": "3",
+  "appearance_threshold": 0.82,
+  "ambiguity_margin": 0.025,
+  "minimum_sample_coherence": 0.65,
+  "component_minimum_similarity": 0.72,
+  "assignment_time_limit_seconds": 12,
+  "episode_timeout_seconds": 120,
+  "offset_search_seconds": 15,
+  "offset_step_seconds": 0.5,
+  "minimum_offset_pairs": 3,
+  "topology_source": "data/metadata/office_camera.png; qualitative adjacency, no metric calibration",
+  "transitions": [
+    {
+      "cameras": [
+        "1",
+        "2"
+      ],
+      "seconds": [
+        0,
+        30
+      ],
+      "overlap_possible": true
+    },
+    {
+      "cameras": [
+        "1",
+        "3"
+      ],
+      "seconds": [
+        0,
+        30
+      ],
+      "overlap_possible": true
+    },
+    {
+      "cameras": [
+        "2",
+        "3"
+      ],
+      "seconds": [
+        0,
+        35
+      ],
+      "overlap_possible": true
+    },
+    {
+      "cameras": [
+        "3",
+        "4"
+      ],
+      "seconds": [
+        0,
+        45
+      ],
+      "overlap_possible": true
+    },
+    {
+      "cameras": [
+        "4",
+        "5"
+      ],
+      "seconds": [
+        0,
+        45
+      ],
+      "overlap_possible": true
+    },
+    {
+      "cameras": [
+        "3",
+        "5"
+      ],
+      "seconds": [
+        0,
+        45
+      ],
+      "overlap_possible": true,
+      "evidence": "Original plan: cameras 3 and 5 face opposite directions along the same unobstructed main corridor. Actual videos show opposing left/right walls and doors 338–342; overlapping corridor views are possible without a camera-4 handoff."
+    }
+  ],
+  "transition_status": "HYPOTHESIS_NOT_MEASURED_TRAVEL_TIME",
+  "manual_offsets": []
+}

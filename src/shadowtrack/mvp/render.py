@@ -31,26 +31,31 @@ def color_for(identity):
     return tuple(round(v*255) for v in colorsys.hsv_to_rgb(hue,.45,.94))
 
 
-def paint(rgb,row,labels,scale,trails=None):
+def paint(rgb,row,labels,scale,trails=None,identities=None):
     image=np.ascontiguousarray(rgb.copy());h,w=image.shape[:2]
     if trails is not None:
         alive={t['local_track_id'] for t in row['local_tracks']}
         for key in list(trails):
             if key not in alive:trails.pop(key,None)
     for t in row['local_tracks']:
-        key=t['local_track_id'];color=color_for(key)
+        key=t['local_track_id'];identity=(identities or {}).get(track_key(key),{})
+        color=color_for(identity.get('global_episode_id') or key)
         x1,y1,x2,y2=[round(v*scale) for v in t['bbox_xyxy']]
         cv2.rectangle(image,(x1,y1),(x2,y2),color,2,cv2.LINE_AA)
         if trails is not None:
             trail=trails.setdefault(key,deque(maxlen=18));trail.append(((x1+x2)//2,y2))
             for j,point in enumerate(trail):cv2.circle(image,point,1+int(j>len(trail)*.7),color,-1,cv2.LINE_AA)
-        label=f"{labels.get(track_key(key),key.split('/')[-1])}  {t['confidence']:.2f}"
+        identity_label=identity.get('global_label')
+        if identity_label and identity.get('global_status')=='PROVISIONAL':identity_label+=' ?'
+        label=f"{identity_label or labels.get(track_key(key),key.split('/')[-1])}  {t['confidence']:.2f}"
         size=cv2.getTextSize(label,cv2.FONT_HERSHEY_SIMPLEX,.43,1)[0]
         y=max(size[1]+10,y1-5);right=min(w-1,x1+size[0]+12)
         cv2.rectangle(image,(max(0,x1),y-size[1]-8),(right,y+4),(20,24,20),-1)
         cv2.putText(image,label,(max(0,x1)+5,y),cv2.FONT_HERSHEY_SIMPLEX,.43,color,1,cv2.LINE_AA)
     cv2.rectangle(image,(0,0),(w,34),(17,21,15),-1)
-    cv2.putText(image,f"SHADOWTRACK / CAM {row['camera_id']} / LOCAL TRACKING",(12,23),cv2.FONT_HERSHEY_SIMPLEX,.45,(211,255,56),1,cv2.LINE_AA)
+    status='CONFIRMED' if identities and all(v.get('global_status')=='CONFIRMED' for v in identities.values()) else 'PROVISIONAL'
+    kind='GLOBAL REVIEW / '+status if identities is not None else 'LOCAL TRACKING'
+    cv2.putText(image,f"SHADOWTRACK / CAM {row['camera_id']} / {kind}",(12,23),cv2.FONT_HERSHEY_SIMPLEX,.45,(211,255,56),1,cv2.LINE_AA)
     pts=f"raw PTS {row['raw_media_pts']:.3f}s"
     cv2.putText(image,pts,(max(12,w-190),23),cv2.FONT_HERSHEY_SIMPLEX,.43,(225,230,221),1,cv2.LINE_AA)
     return image

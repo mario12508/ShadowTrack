@@ -16,7 +16,7 @@ sync = ["numpy>=1.26,<3", "matplotlib>=3.8,<4"]
 detection-cpu = ["numpy>=1.26,<3", "av==14.2.0", "supervision==0.25.1", "opencv-python==4.11.0.86"]
 detection-gpu = ["numpy>=1.26,<3", "av==14.2.0", "ultralytics==8.3.161", "opencv-python==4.11.0.86"]
 notebooks = ["nbformat>=5.10,<6"]
-web = ["fastapi==0.162.2", "uvicorn==0.54.0", "httpx==0.28.1"]
+web = ["fastapi==0.162.2", "uvicorn==0.54.0", "httpx==0.28.1", "scipy>=1.10,<2"]
 reid = ["torch==2.6.0"]
 
 [project.scripts]

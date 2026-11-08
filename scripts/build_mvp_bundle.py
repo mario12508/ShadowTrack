@@ -9,14 +9,14 @@ from shadowtrack.detection.common import atomic_json,canonical,object_hash,read_
 
 def main():
     root=Path(__file__).resolve().parents[1];output=root/'artifacts/mvp/portable';output.mkdir(parents=True,exist_ok=True)
-    files=list((root/'src').rglob('*.py'))+list((root/'src/shadowtrack/mvp/vendor').glob('*.txt'))
+    files=list((root/'docs').glob('*.md'))+list((root/'src').rglob('*.py'))+list((root/'src/shadowtrack/mvp/vendor').glob('*.txt'))
     for folder,patterns in [('configs',('*.json','*.toml')),('schemas',('*.json',)),('licenses',('*.txt',)),('scripts',('*.py','*.ps1')),('tests',('*.py',))]:
         for pattern in patterns:files+=list((root/folder).glob(pattern))
     for folder in ('frontend/src','frontend/public','frontend/e2e'):
         files+=[p for p in (root/folder).rglob('*') if p.is_file()]
     files+=list((root/'frontend').glob('*.json'))+list((root/'frontend').glob('*.js'))+list((root/'frontend').glob('*.ts'))
     for name in ('frontend/Dockerfile','frontend/index.html','frontend/nginx.conf','backend/Dockerfile','docker-compose.yml','.dockerignore','.env.example','.gitignore',
-                 'pyproject.toml','AGENTS.md','README.md','MVP_SETUP.md','MVP_REPORT.md','DEMO_SCRIPT.md','DATA_AUDIT.md','TIME_ALIGNMENT.md','DETECTION_REPORT.md','KAGGLE_DETECTION_V2.md','KAGGLE_SETUP.md'):
+                 'pyproject.toml','AGENTS.md','README.md','docs/MVP_SETUP.md','docs/MVP_REPORT.md','docs/MTMC_SETUP.md','docs/MTMC_REPORT.md','docs/DEMO_SCRIPT.md','DATA_AUDIT.md','TIME_ALIGNMENT.md','docs/DETECTION_REPORT.md','docs/KAGGLE_DETECTION_V2.md','docs/KAGGLE_SETUP.md'):
         if (root/name).exists():files.append(root/name)
     for name in ('kaggle_detection.ipynb','kaggle_detection_v2.ipynb','kaggle_reid.ipynb'):
         path=root/'notebooks'/name;nb=read_json(path)

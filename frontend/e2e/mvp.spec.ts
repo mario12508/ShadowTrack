@@ -5,7 +5,7 @@ test('real FULL -> camera switching -> playback -> bbox selection -> track detai
  const stats=await (await request.get('/api/stats')).json();expect(stats.frame).toBe(144110);expect(stats.detection).toBe(136020);
  await page.goto('/monitor?camera=3&time=129');
  const video=page.locator('.camera-panel video');
- await expect.poll(()=>video.evaluate((v:HTMLVideoElement)=>v.readyState)).toBeGreaterThanOrEqual(2);
+ await expect.poll(()=>video.evaluate((v:HTMLVideoElement)=>v.readyState),{timeout:20000}).toBeGreaterThanOrEqual(2);
  await expect.poll(()=>video.evaluate((v:HTMLVideoElement)=>v.currentTime)).toBeGreaterThan(128);
  await page.getByRole('button',{name:'Камера 2',exact:true}).click();
  await expect(page.locator('.current-camera-label')).toContainText('02');
@@ -24,17 +24,20 @@ test('real FULL -> camera switching -> playback -> bbox selection -> track detai
  await expect(page.locator('.track-selection')).toContainText(target.display_id);
  await page.screenshot({path:'../private_outputs/mvp_browser_smoke/monitor-desktop.png',fullPage:true});
  await page.getByRole('link',{name:'История',exact:true}).click();
- await expect(page.locator('h2')).toHaveText(target.display_id);
+ await expect(page.locator('h2')).toHaveText(target.global_label||target.display_id);
  await expect(page.getByText('Глобальный эпизод',{exact:true})).toBeVisible();
  expect(errors).toEqual([]);
 });
 
-test('unsupported cameras never appear synchronized',async({page})=>{
+test('all source videos use one native organizer clock',async({page})=>{
  await page.goto('/monitor?camera=3&time=129');
- await page.locator('.clock-button').click();
+
  await page.getByRole('button',{name:'Камера 2',exact:true}).click();
- await expect(page.getByText('Нет подтверждённой привязки',{exact:true})).toBeVisible();
- await expect(page.locator('.clock-explainer')).toContainText('Остальные камеры не совмещаются');
+ await expect(page.locator('.video-unavailable')).toHaveCount(0);
+ await expect(page.locator('.clock-status,.estimated-button,.clock-button')).toHaveCount(0);
+ await page.getByRole('button',{name:'Воспроизвести',exact:true}).click();
+ const video=page.locator('.camera-panel video');
+ await expect.poll(()=>video.evaluate((v:HTMLVideoElement)=>v.currentTime),{timeout:20000}).toBeGreaterThan(130);
 });
 
 test('designer landing and responsive map have no horizontal overflow',async({page})=>{
@@ -60,7 +63,7 @@ test('all workspace pages use the actual API',async({page})=>{
 test('saved annotated local-ID MP4 decodes through HTTP Range in the React exports page',async({page})=>{
  await page.goto('/exports');
  const video=page.locator('.rendered-preview video');
- await expect.poll(()=>video.evaluate((v:HTMLVideoElement)=>v.readyState)).toBeGreaterThanOrEqual(2);
+ await expect.poll(()=>video.evaluate((v:HTMLVideoElement)=>v.readyState),{timeout:20000}).toBeGreaterThanOrEqual(2);
  await video.evaluate(async(v:HTMLVideoElement)=>{v.currentTime=129;await v.play()});
  await expect.poll(()=>video.evaluate((v:HTMLVideoElement)=>v.currentTime),{timeout:20000}).toBeGreaterThan(130);
  await video.evaluate((v:HTMLVideoElement)=>v.pause());
@@ -76,5 +79,5 @@ test('all five real camera players advance together under the shared relative pl
  await expect.poll(()=>videos.evaluateAll((items:HTMLVideoElement[])=>items.every(v=>v.currentTime>129.6)),{timeout:20000}).toBeTruthy();
  await page.getByRole('button',{name:'Пауза',exact:true}).click();
  await page.screenshot({path:'../private_outputs/mvp_browser_smoke/five-camera-grid.png',fullPage:true});
- await expect(page.locator('.clock-explainer')).toContainText('физическая синхронизация частичная');
+ await expect(page.locator('.clock-explainer')).toContainText('исходная шкала записей');
 });

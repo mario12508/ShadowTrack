@@ -20,7 +20,8 @@ class Progress:
         # Capture the actual notebook stream before YOLO redirects stdout/stderr.
         self.stream = stream if stream is not None else sys.stdout
         self.lock,self.stop_event = threading.RLock(),threading.Event()
-        self.started = self.activity = self.phase_started = time.monotonic()
+        # High-resolution relative clock avoids zero-age heartbeat races on Windows.
+        self.started = self.activity = self.phase_started = time.perf_counter()
         self.state = {"operation":operation,"status":"RUNNING","phase":"starting"}
         self.timings,self.directory,self.thread = {},None,None
 
@@ -51,9 +52,9 @@ class Progress:
             raise TypeError("Progress fields must be scalar metadata")
         with self.lock:
             if "phase" in fields and fields["phase"] != self.state["phase"]:
-                self.phase_started = time.monotonic()
+                self.phase_started = time.perf_counter()
             self.state.update(fields)
-            self.activity = time.monotonic()
+            self.activity = time.perf_counter()
             if event:
                 self.emit(event)
 
@@ -62,7 +63,7 @@ class Progress:
         if not self.enabled:
             yield
             return
-        started = time.monotonic()
+        started = time.perf_counter()
         with self.lock:
             previous,previous_start = self.state["phase"],self.phase_started
             self.state.update(fields,phase=name)
@@ -77,21 +78,21 @@ class Progress:
             raise
         finally:
             with self.lock:
-                elapsed = time.monotonic()-started
+                elapsed = time.perf_counter()-started
                 self.timings[name] = self.timings.get(name,0.)+elapsed
                 if announce:
                     self.emit(name+"_end")
                 self.state["phase"],self.phase_started = previous,previous_start
-                self.activity = time.monotonic()
+                self.activity = time.perf_counter()
 
     def emit(self, event):
         if not self.enabled:
             return
         with self.lock:
-            now = time.monotonic()
+            now = time.perf_counter()
             record = {**self.state,"event":event,"elapsed_s":round(now-self.started,3),
                       "phase_elapsed_s":round(now-self.phase_started,3),
-                      "no_counter_progress_s":round(now-self.activity,3),
+                      "no_counter_progress_s":now-self.activity,
                       "stage_seconds_inclusive":{k:round(v,3) for k,v in self.timings.items()}}
             parts = [f"[ShadowTrack +{record['elapsed_s']:.1f}s]",event,f"phase={record['phase']}"]
             for key in ("camera_id","config_name","device","file","camera_decoded_frames","camera_total_frames",

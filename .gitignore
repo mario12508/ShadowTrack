@@ -24,6 +24,7 @@ private_outputs/
 *.pt
 *.pth
 artifacts/mvp/
+artifacts/handoff/
 tmp/
 frontend/node_modules/
 frontend/.npm-cache/

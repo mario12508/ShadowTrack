@@ -1,0 +1,506 @@
+{
+  "cameras": {
+    "1": {
+      "regions": [
+        {
+          "floor_bounds": [
+            0.25,
+            0.08,
+            0.42,
+            0.22
+          ],
+          "image_bounds": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "name": "foyer_games"
+        }
+      ],
+      "source_sha256": "744331b88aadaf56a83540d3081f22f11cf207ee93b62bacf03972c679814dc5",
+      "projection": {
+        "kind": "TABLE_HEIGHT_BODY_PROXY",
+        "image_points": [
+          [
+            0.265,
+            0.317
+          ],
+          [
+            0.616,
+            0.255
+          ],
+          [
+            0.728,
+            0.426
+          ],
+          [
+            0.292,
+            0.552
+          ]
+        ],
+        "floor_points": [
+          [
+            0.355,
+            0.265
+          ],
+          [
+            0.255,
+            0.265
+          ],
+          [
+            0.255,
+            0.22
+          ],
+          [
+            0.355,
+            0.22
+          ]
+        ],
+        "body_fraction": 0.55,
+        "uncertainty_radius": 0.035,
+        "shared_plane": "foyer_table",
+        "shared_points": [
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "landmarks": "Four static yellow tabletop corners, clockwise and cross-view corresponding; tabletop-height body proxy, not a footpoint homography. Foyer table placement on schematic is approximate. Exit is upper-left foyer door.",
+        "maximum_extrapolation": 0.08
+      }
+    },
+    "2": {
+      "regions": [
+        {
+          "floor_bounds": [
+            0.11,
+            0.12,
+            0.36,
+            0.31
+          ],
+          "image_bounds": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "name": "foyer_stairs"
+        }
+      ],
+      "source_sha256": "6839e486dd14c70b948f5f8e120d3cb339c45a1a26dd1baa496200704fef59c4",
+      "projection": {
+        "kind": "TABLE_HEIGHT_BODY_PROXY",
+        "image_points": [
+          [
+            0.905,
+            0.532
+          ],
+          [
+            0.688,
+            0.719
+          ],
+          [
+            0.531,
+            0.48
+          ],
+          [
+            0.788,
+            0.396
+          ]
+        ],
+        "floor_points": [
+          [
+            0.355,
+            0.265
+          ],
+          [
+            0.255,
+            0.265
+          ],
+          [
+            0.255,
+            0.22
+          ],
+          [
+            0.355,
+            0.22
+          ]
+        ],
+        "body_fraction": 0.55,
+        "uncertainty_radius": 0.035,
+        "shared_plane": "foyer_table",
+        "shared_points": [
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "landmarks": "Four static yellow tabletop corners, clockwise and cross-view corresponding; tabletop-height body proxy, not a footpoint homography. Foyer table placement on schematic is approximate. Exit is upper-left foyer door.",
+        "maximum_extrapolation": 0.08
+      }
+    },
+    "3": {
+      "regions": [
+        {
+          "floor_bounds": [
+            0.42,
+            0.17,
+            0.55,
+            0.36
+          ],
+          "image_bounds": [
+            0,
+            0,
+            0.5,
+            0.73
+          ],
+          "name": "north_corridor"
+        },
+        {
+          "floor_bounds": [
+            0.31,
+            0.09,
+            0.54,
+            0.27
+          ],
+          "image_bounds": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "name": "foyer"
+        }
+      ],
+      "source_sha256": "f90f08498e306b3e75b07489a253ebdfcbb5f3373b73478b086bd5d7ef9a8873",
+      "projection": {
+        "kind": "APPROXIMATE_FLOOR_PLANE",
+        "image_points": [
+          [
+            0.285,
+            0.65
+          ],
+          [
+            0.53,
+            0.62
+          ],
+          [
+            0.415,
+            0.075
+          ],
+          [
+            0.34,
+            0.075
+          ]
+        ],
+        "floor_points": [
+          [
+            0.427,
+            0.245
+          ],
+          [
+            0.465,
+            0.245
+          ],
+          [
+            0.465,
+            0.5
+          ],
+          [
+            0.427,
+            0.5
+          ]
+        ],
+        "body_fraction": 1,
+        "uncertainty_radius": 0.04,
+        "landmarks": "Visible corridor floor boundaries: near doorway 338 and distant left/right wall bases. Corridor depth on plan is approximate.",
+        "maximum_extrapolation": 0.08
+      },
+      "secondary_projection": {
+        "kind": "APPROXIMATE_FLOOR_PLANE",
+        "image_points": [
+          [
+            0.285,
+            0.65
+          ],
+          [
+            0.53,
+            0.62
+          ],
+          [
+            0.98,
+            0.95
+          ],
+          [
+            0.32,
+            0.97
+          ]
+        ],
+        "floor_points": [
+          [
+            0.427,
+            0.245
+          ],
+          [
+            0.465,
+            0.245
+          ],
+          [
+            0.31,
+            0.16
+          ],
+          [
+            0.39,
+            0.16
+          ]
+        ],
+        "body_fraction": 1,
+        "uncertainty_radius": 0.05,
+        "landmarks": "Near doorway and foyer floor edges; schematic placement only.",
+        "maximum_extrapolation": 0.08
+      }
+    },
+    "4": {
+      "regions": [
+        {
+          "floor_bounds": [
+            0.33,
+            0.43,
+            0.51,
+            0.55
+          ],
+          "image_bounds": [
+            0.25,
+            0,
+            0.65,
+            0.62
+          ],
+          "name": "room_branch"
+        },
+        {
+          "floor_bounds": [
+            0.44,
+            0.46,
+            0.56,
+            0.61
+          ],
+          "image_bounds": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "name": "main_corridor"
+        }
+      ],
+      "source_sha256": "8ede342c3d0d98ab912e98c1a31ef5458ca04a8329b882634b277d7c4634bef2",
+      "projection": {
+        "kind": "APPROXIMATE_FLOOR_PLANE",
+        "image_points": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0.53,
+            0.16
+          ],
+          [
+            0.32,
+            0.16
+          ]
+        ],
+        "floor_points": [
+          [
+            0.448,
+            0.6
+          ],
+          [
+            0.448,
+            0.45
+          ],
+          [
+            0.235,
+            0.49
+          ],
+          [
+            0.235,
+            0.53
+          ]
+        ],
+        "body_fraction": 1,
+        "uncertainty_radius": 0.04,
+        "landmarks": "Cross-corridor foreground floor and branch end wall bases; camera on east corridor facing west.",
+        "maximum_extrapolation": 0.08
+      }
+    },
+    "5": {
+      "regions": [
+        {
+          "floor_bounds": [
+            0.43,
+            0.32,
+            0.55,
+            0.64
+          ],
+          "image_bounds": [
+            0,
+            0,
+            1,
+            0.38
+          ],
+          "name": "north_corridor"
+        },
+        {
+          "floor_bounds": [
+            0.43,
+            0.57,
+            0.56,
+            0.88
+          ],
+          "image_bounds": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "name": "south_corridor"
+        }
+      ],
+      "source_sha256": "6e3dd8bb2bb0c7b640b79b7a2c85f54d8346e930e9d89f55d86cf20f43aa4be5",
+      "projection": {
+        "kind": "APPROXIMATE_FLOOR_PLANE",
+        "image_points": [
+          [
+            0.4,
+            0.98
+          ],
+          [
+            0.95,
+            0.98
+          ],
+          [
+            0.62,
+            0.08
+          ],
+          [
+            0.49,
+            0.08
+          ]
+        ],
+        "floor_points": [
+          [
+            0.43,
+            0.84
+          ],
+          [
+            0.465,
+            0.84
+          ],
+          [
+            0.465,
+            0.46
+          ],
+          [
+            0.43,
+            0.46
+          ]
+        ],
+        "body_fraction": 1,
+        "uncertainty_radius": 0.04,
+        "landmarks": "Long corridor left/right floor edges near door 342 and distant corridor; camera faces north.",
+        "maximum_extrapolation": 0.08
+      }
+    }
+  },
+  "floorplan_sha256": "f434a33ab1638889c8eb88f28b3692afa40473cf41bf497626dbff069c9d7437",
+  "original_plan_sha256": "45433d1ef162ea4b5defaa55a22e5a487ac14da2a983807921b1577b1834243d",
+  "schema_version": 2,
+  "source": "Reviewed original office_camera.png, designer floorplan and static scene landmarks; schematic placement, not surveyed geometry. No identity annotations.",
+  "status": "SCENE_REVIEW_APPROXIMATE",
+  "walkable_regions": [
+    [
+      [
+        0.17,
+        0.153
+      ],
+      [
+        0.468,
+        0.153
+      ],
+      [
+        0.468,
+        0.27
+      ],
+      [
+        0.17,
+        0.27
+      ]
+    ],
+    [
+      [
+        0.425,
+        0.15
+      ],
+      [
+        0.468,
+        0.15
+      ],
+      [
+        0.468,
+        0.89
+      ],
+      [
+        0.425,
+        0.89
+      ]
+    ],
+    [
+      [
+        0.18,
+        0.49
+      ],
+      [
+        0.45,
+        0.49
+      ],
+      [
+        0.45,
+        0.56
+      ],
+      [
+        0.18,
+        0.56
+      ]
+    ]
+  ]
+}

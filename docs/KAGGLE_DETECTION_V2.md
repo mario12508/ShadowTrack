@@ -1,5 +1,7 @@
 # ShadowTrack Detection v2
 
+> Упомянутые ниже GPU_PENDING/LOCAL_VALIDATED относятся к этапу подготовки этой инструкции. Сейчас реальный FULL уже импортирован в MVP. Для запуска готовых результатов используйте [MVP_SETUP.md](MVP_SETUP.md); ниже — workflow повторного получения детекций.
+
 Статус нового режима: **LOCAL_VALIDATED / GPU_PENDING**. Старый реальный
 segmentation SAMPLE сохранён. Новый YOLO Detection на офисных видео агентом ещё
 не запускался: в локальном окружении нет torch/CUDA. Скорость и качество v2 нельзя
@@ -17,7 +19,7 @@ timestamp_segment_id, bbox_xyxy, confidence, class_id=0, model_hash/config_hash,
 task=detect, processed=true, scene_config_hash. У пустого raw кадра:
 `frame_status="empty"`, `detections=[]`. Если все raw кандидаты отклонены сценой,
 кадр всё равно содержит эти кандидаты и `frame_status="detections"`.
-Формальная схема: [detection_frame_v2.schema.json](schemas/detection_frame_v2.schema.json).
+Формальная схема: [detection_frame_v2.schema.json](../schemas/detection_frame_v2.schema.json).
 
 В каждом raw detection есть `scene_filter`: accepted/rejected/uncertain,
 reasons, rule_version, config_hash. Raw bbox не удаляются; crop-кандидаты имеют
@@ -50,7 +52,7 @@ schema/license и **копия неизменного** `input_evidence/`. Ис�
 ## Модели и версии
 
 Официальные pretrained detection weights закреплены в
-[detection_v2_lock.json](configs/detection_v2_lock.json):
+[detection_v2_lock.json](../configs/detection_v2_lock.json):
 
 - `yolo11n.pt`: 5 613 764 bytes,
   SHA256 `0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1`.
@@ -74,7 +76,7 @@ Enterprise terms; текст закреплённой лицензии вклю�
    Kaggle распакует ZIP; CODE_DIR указывает папку, не архив. Подключить Private
    videos Dataset с пятью MKV. Dataset, Notebook, версии и outputs должны
    оставаться Private: MP4, bbox и история движения не являются анонимными данными.
-2. Открыть [kaggle_detection_v2.ipynb](notebooks/kaggle_detection_v2.ipynb),
+2. Открыть [kaggle_detection_v2.ipynb](../notebooks/kaggle_detection_v2.ipynb),
    выбрать GPU accelerator, при скачивании весов включить internet. Указать
    CODE_DIR, VIDEO_DIR, WEIGHTS_DIR; EVIDENCE_DIR по умолчанию равен CODE_DIR.
    Уникальные вложенные папки находятся автоматически. Legacy `.json.gz` или
@@ -112,7 +114,7 @@ Enterprise terms; текст закреплённой лицензии вклю�
 
 ## Scene filter и crop
 
-[scene_filter_v1.json](configs/scene_filter_v1.json) привязан к source SHA256 и
+[scene_filter_v1.json](../configs/scene_filter_v1.json) привязан к source SHA256 и
 разрешению каждой камеры. Узкие image-space области взяты из проверенных кадров
 SAMPLE, а не выданы за метрическую metadata. Лампа камеры 2, часть ложного
 настольного футбола и ТВ имеют объяснимые rejection rules; лестница/края/стекло
@@ -171,7 +173,7 @@ CLI выбирает pinned model lock по schema v1/v2. При необход�
 `--model-lock configs/detection_v2_lock.json`. Исходные MKV должны быть локально
 неизменными; их SHA256 сверяется с audit. Ни import, ни ByteTrack не загружают YOLO.
 
-Шаблон [local_track_v2.toml](configs/local_track_v2.toml) включает derived video.
+Шаблон [local_track_v2.toml](../configs/local_track_v2.toml) включает derived video.
 Указать detection_run, configuration_name и output paths. Для большого FULL
 при необходимости отключить `[video].enabled`, сохранив machine tracks первыми.
 Видеовыход — `private_outputs/local_track_v2_videos/camera_*_local_*.mp4`.
@@ -209,4 +211,4 @@ counts, пустые кадры, sidecar PTS, отсутствие masks и от
 
 Не запускались FULL, Re-ID, global association, BEV или frontend. Исходные MKV,
 Time Alignment Engine, старый GPU SAMPLE и evidence не изменены. Старый
-[segmentation notebook](notebooks/kaggle_detection.ipynb) остаётся работоспособным.
+[segmentation notebook](../notebooks/kaggle_detection.ipynb) остаётся работоспособным.

@@ -18,7 +18,7 @@ def build_code_artifact(root: Path, output: Path, evidence_dir: Path | None = No
     files += [root/name for name in ("configs/detection_v2_lock.json","configs/detection_v2.json","configs/scene_filter_v1.json","configs/local_track_v2.toml") if (root/name).exists()]
     files += sorted((root/"licenses").glob("*.txt"))
     files += sorted((root/"schemas").glob("*.json"))
-    for name in ("README.md","KAGGLE_SETUP.md","DETECTION_REPORT.md","KAGGLE_DETECTION_V2.md","notebooks/kaggle_detection.ipynb","notebooks/kaggle_detection_v2.ipynb"):
+    for name in ("README.md","docs/KAGGLE_SETUP.md","docs/DETECTION_REPORT.md","docs/KAGGLE_DETECTION_V2.md","notebooks/kaggle_detection.ipynb","notebooks/kaggle_detection_v2.ipynb"):
         if (root/name).is_file():
             if name.endswith(".ipynb"):
                 notebook = read_json(root/name)

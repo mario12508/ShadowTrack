@@ -99,6 +99,7 @@ def global_coverage(db,start,end):
     cameras=[r[0] for r in db.execute('SELECT id FROM camera')]
     if len(cameras)!=5:return False
     for camera in cameras:
-        intervals=db.execute('SELECT MIN(global_time),MAX(global_time) FROM frame WHERE camera_id=? AND global_time IS NOT NULL GROUP BY segment_id',(camera,))
-        if not any(a<=start and b>=end for a,b in intervals):return False
+        points=db.execute('SELECT global_time FROM frame WHERE camera_id=? AND global_time BETWEEN ? AND ? ORDER BY global_time',(camera,start-.1,end+.1)).fetchall()
+        if not points or points[0][0]>start+.06 or points[-1][0]<end-.06:return False
+        if any(b[0]-a[0]>.2 for a,b in zip(points,points[1:])):return False
     return True

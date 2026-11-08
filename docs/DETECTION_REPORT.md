@@ -1,5 +1,7 @@
 # ShadowTrack hybrid detection pipeline
 
+> Исторический отчёт этапа детекции/SAMPLE. Актуальное состояние FULL, MTMC и требований описано в [MVP_REPORT.md](MVP_REPORT.md) и [MTMC_REPORT.md](MTMC_REPORT.md).
+
 **Detection v2: LOCAL_VALIDATED / GPU_PENDING.** Добавлены batched YOLO Detection,
 неизменяемые raw frame records schema v2 с пустыми кадрами, отдельный scene_filter,
 один decode на камеру, DEMO MP4 как производный результат и FULL coverage всех
@@ -26,9 +28,9 @@ camera 1: 30 083, 2: 30 077, 3: 30 080, 4: 23 906, 5: 29 964. Каждый вы�
 с решениями scene_filter; у пустого кадра есть отдельная processed запись.
 Короткие окна требуют одного полного decode на камеру для проверки порядка/PTS/EOF.
 
-Артефакты локальной проверки: [pytest XML](artifacts/detection/v2/tests.xml),
-[планы](artifacts/detection/v2/plan_summary.json),
-[проверка пакета и неизменности входов](artifacts/detection/v2/verification.json).
+Артефакты локальной проверки: [pytest XML](../artifacts/detection/v2/tests.xml),
+[планы](../artifacts/detection/v2/plan_summary.json),
+[проверка пакета и неизменности входов](../artifacts/detection/v2/verification.json).
 Приёмка реализации: **LOCAL_VALIDATED_GPU_PENDING**. Новые GPU benchmark, визуальная
 проверка правил и реальные пять офисных MP4 остаются невыполненными до ручного
 запуска Kaggle. Ускорение и превосходство качества не заявляются. FULL не запускался.
@@ -49,7 +51,7 @@ camera 1: 30 083, 2: 30 077, 3: 30 080, 4: 23 906, 5: 29 964. Каждый вы�
 
 ## Что реализовано
 
-- [Notebook](notebooks/kaggle_detection.ipynb) импортирует версионированный общий
+- [Notebook](../notebooks/kaggle_detection.ipynb) импортирует версионированный общий
   `src/shadowtrack/detection` из распакованной папки input. Outputs и execution counts
   очищены; исходное значение `EXECUTE=False`, режим SAMPLE.
 - Model/device/version pin, `torch.cuda.is_available`, `nvidia-smi`, available
@@ -75,7 +77,7 @@ camera 1: 30 083, 2: 30 077, 3: 30 080, 4: 23 906, 5: 29 964. Каждый вы�
   приблизительный ETA камеры и JSON/JSONL telemetry вне detection chunks.
   Повторное RGB преобразование одного кадра для quality исключено.
 
-Формальный envelope: [detection_frame.schema.json](schemas/detection_frame.schema.json).
+Формальный envelope: [detection_frame.schema.json](../schemas/detection_frame.schema.json).
 Дополнительные проверки идентичности, геометрии, исходных PTS и полноты RLE
 выполняет общий Python validator.
 
@@ -127,11 +129,11 @@ EOF-check: поток декодируется целиком, но YOLO при�
 
 Модель получена из официального versioned asset, размер 6 182 636 bytes;
 SHA256 `55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152`.
-Lock: [detection_model_lock.json](configs/detection_model_lock.json).
+Lock: [detection_model_lock.json](../configs/detection_model_lock.json).
 Файл весов не включается в исходники/code ZIP; пользователь прикрепляет его
 вручную как private input. Лицензия закреплённого компонента — AGPL-3.0,
 альтернативные Enterprise terms предоставляет Ultralytics; условия должны быть
-рассмотрены перед использованием. См. [лицензию](licenses/ULTRALYTICS_AGPL-3.0.txt)
+рассмотрены перед использованием. См. [лицензию](../licenses/ULTRALYTICS_AGPL-3.0.txt)
 и [официальные условия](https://www.ultralytics.com/license).
 
 ## Измерения и качество
@@ -189,7 +191,7 @@ ByteTrack закреплён на `supervision==0.25.1` (MIT). Локальны�
 ## Проверки
 
 **102 passed, 0 failed, 0 skipped:** все прежние 45 тестов и 57 CPU-проверок detection.
-[Последний JUnit](artifacts/detection/sample_review/tests.xml). Новые тесты включают:
+[Последний JUnit](../artifacts/detection/sample_review/tests.xml). Новые тесты включают:
 
 - empty frame и полный RLE roundtrip;
 - shuffled/duplicate frames, cross-segment chunks, wrong PTS;
@@ -211,10 +213,10 @@ ByteTrack закреплён на `supervision==0.25.1` (MIT). Локальны�
   прерывания, запрет image arrays в telemetry и отключаемый вывод без изменения detections.
 - Kaggle download ZIP с directory entries и отказ для traversal directory entry.
 
-Источники/движок сохранены по [preserved_hashes.json](artifacts/detection/preserved_hashes.json).
-Проверка исходной подготовки code package 0e05589: [verification.json](artifacts/detection/verification.json).
-Проверка полученного SAMPLE: [sample validation](artifacts/detection/sample_review/validation.json).
-Фактический runtime: [runtime.json](artifacts/detection/runtime.json).
+Источники/движок сохранены по [preserved_hashes.json](../artifacts/detection/preserved_hashes.json).
+Проверка исходной подготовки code package 0e05589: [verification.json](../artifacts/detection/verification.json).
+Проверка полученного SAMPLE: [sample validation](../artifacts/detection/sample_review/validation.json).
+Фактический runtime: [runtime.json](../artifacts/detection/runtime.json).
 
 ## Команды и граница этапа
 
